@@ -6,10 +6,10 @@ description: >
   wants a SpotShare briefing, market research, or parking intelligence for that city. Also
   triggers when the user says "run research for [city]", "what's happening in [city]",
   "next city", "run the next city", "San Diego brief", or any similar phrase referencing a
-  city in the context of SpotShare. The skill runs 5 targeted research queries via the
-  last30days engine, filters findings into Tier 1 / Tier 2 / Exclude buckets, and sends a
-  formatted briefing email via Gmail. Always use this skill when SpotShare + a city name
-  appear together in any form.
+  city in the context of SpotShare. The skill runs 6 targeted research queries via the
+  last30days engine, filters findings into Tier 0 / Tier 1 / Tier 2 / Exclude buckets, and
+  sends a formatted briefing email via Gmail. Always use this skill when SpotShare + a city
+  name appear together in any form.
 ---
 
 # SpotShare City Research Skill
@@ -32,20 +32,28 @@ You need:
 Do not proceed without the city name.
 
 ---
+
 ## Step 1: Build the Research Queries
 
 For the given city, run the `last30days` engine with the following queries.
-All 5 queries must include the city name. No national-only queries.
+
+### Always-On Queries (run for every city)
 
 | # | Query | Why |
 |---|-------|-----|
-| 1 | `property manager OR CAM "luxury condo" [CITY]` | Find buyers talking about their buildings |
-| 2 | `"community association manager" [CITY] amenities OR technology` | CAMs discussing building upgrades |
-| 3 | `HOA board [CITY] downtown amenity OR app OR resident complaint` | Boards evaluating solutions |
-| 4 | `"property management" [CITY] condo resident experience` | PMs talking about what residents want |
-| 5 | `[CITY] luxury condo "guest parking" OR "visitor parking"` | One parking query, city-locked |
+| 1 | `"guest parking" condo HOA` | Core pain point — PM/CAM language |
+| 2 | `"visitor parking" condo OR HOA OR "property manager"` | Alternate terminology |
+| 3 | `"community association manager" OR CAM parking` | Customer-specific voice |
+| 4 | `"HOA parking" amenities OR software OR app` | Solution-aware conversations |
 
-Replace `[CITY]` with the city name provided in every query.
+### City-Specific Queries (swap city each run)
+
+| # | Query | Why |
+|---|-------|-----|
+| 5 | `"guest parking" OR "visitor parking" [CITY]` | Local pain points + content opportunity |
+| 6 | `"how" OR "where" OR "best" "guest parking" OR "visitor parking" [CITY] condo luxury` | Search-intent signal — people already Googling for an answer that doesn't exist yet; flags whether a city SEO page is worth building |
+
+Replace `[CITY]` with the city name provided.
 
 ---
 
@@ -57,20 +65,15 @@ Use these flags on every invocation:
 --emit=compact
 --auto-resolve
 --days=30
+--subreddits=HOA,PropertyManagement,CondoLiving,RealEstate,fuckHOA,BADHOA
 --x-handle=CAIsocial
---subreddits=HOA,PropertyManagement,CondoLiving,RealEstate
---x-related=FirstService,Yardi,RealPage,Parkade,[CITY_PM_COMPANIES]
+--x-related=FirstService,Yardi,RealPage,Parkade
 --search=reddit,x,youtube,tiktok,grounding
 --web-backend=brave
 ```
 
-Replace `[CITY_PM_COMPANIES]` with 2-3 major property management companies 
-known to operate luxury condo buildings in [CITY]. Research these before running 
-if not already known. Example: for San Diego → BraeRock, ACCU, Action Property Management.
-
-**Subreddit note:** r/fuckHOA and r/BADHOA removed — these pull resident 
-venting, not property manager signal. The four remaining subreddits skew 
-toward PMs and CAMs.
+**Subreddit whitelist** — only these 6. Never pull from: r/BestofRedditorUpdates,
+r/AITAH, r/EntitledPeople, r/mildlyinfuriating, r/neighborsfromhell. These are noise.
 
 **Optional save flags:**
 ```
@@ -85,38 +88,59 @@ toward PMs and CAMs.
 
 After the engine returns results, filter ALL findings before writing the briefing.
 
-### INCLUDE — Tier 1 (Email-Worthy)
+### INCLUDE — Tier 0 (Educational Content Angles)
+
+Parking-helpful content that is NOT SpotShare-specific. SpotShare is not the obvious
+solution here — this is genuinely useful information for property managers about parking
+in their city. Full write-up. Output goes in its own section in the email.
+
+Flag anything that is:
+- City parking policy changes (meter pricing, parking minimums, zoning updates)
+- New condo/HOA development pipeline stories with parking ratio implications
+- Parking cost data relevant to residents or guests in that city
+- HOA or condo parking law updates (state or local)
+- Industry stats or reports about urban parking scarcity
+- Any data a property manager would find useful even if SpotShare didn't exist
+
+Output format for each Tier 0 finding:
+[Source]
+[1-3 sentence summary of the useful information. Neutral tone — no SpotShare pitch.]
+Content angle: [One sentence on what a helpful, non-salesy article or page about this would cover.]
+
+### INCLUDE — Tier 1 (SpotShare-Specific, Act On These)
 
 High signal. Full write-up. Must be within 30 days (prefer 72 hours for breaking stories).
 
-- Property managers / CAMs in [CITY] discussing building operations, amenities, or resident complaints
-- CAMs or HOA boards in [CITY] actively evaluating apps, software, or technology for their building
-- Luxury condo buildings in [CITY] with documented guest parking problems
-- Competitor mentions (Parkade, ParqEx, Community Boss, SpotHero) in the context of [CITY] buildings
-- News or local press about [CITY] condo/HOA amenity decisions or parking policy
-- A CAM/PM creator or account based in [CITY] discovered on TikTok or YouTube
+- Property managers / CAMs discussing parking problems for their buildings
+- Buildings actively looking for guest parking apps, software, or amenity solutions
+- HOA boards discussing new building technology or amenities
+- City-specific guest parking scarcity threads (content opportunity)
+- Parking ticket complaints in downtown condos (content opportunity)
+- Competitor mentions: Parkade, ParqEx, Community Boss / Parking Boss, SpotHero
+- Industry org content (CAI) about parking or amenities
+- News articles about city parking policy changes or condo parking drama
+- **Questions phrased as "how do I / where do I / what's the best" about [CITY] guest parking — flag as SEO PAGE OPPORTUNITY**
 
 ### INCLUDE — Tier 2 (Also on Our Radar)
 
 Lower signal. One-liner in the footer only, with a note on usefulness.
 
-- PM/CAM TikTok or YouTube creators discovered in any market → creator watch list
-- HOA board or resident language around amenity frustration → social content hooks
-- Viral condo living content (not parking-specific) → reactive content opportunity
-- CAM vs property manager identity discussions → customer culture understanding
-- National competitor activity (Parkade, ParqEx, etc.) not tied to a specific city → competitive intel
+- Resident rants about parking disputes → social content language
+- HOA drama about parking rules → meme/social hooks
+- CAM vs property manager identity discussions → customer culture
+- Viral parking stories → reactive content hooks
+- PM/CAM TikTok creators discovered → creator watch list
 
 ### EXCLUDE — Always Drop
 
-- Personal neighbor disputes of any kind
+- Personal "someone parked in my spot" disputes
 - Car vandalism / damage stories
 - Event parking tips (concerts, stadiums, airports)
 - Generic "how to find parking downtown" content
 - Content older than 30 days
 - Anything from r/BestofRedditorUpdates, r/AITAH, r/EntitledPeople, r/mildlyinfuriating
 - NFL / sports / entertainment parking
-- Resident venting with no property manager or board angle
-- Anything not connected to luxury multi-unit residential, HOAs, or property management professionals
+- Anything unrelated to multi-unit residential, HOAs, or property management
 
 ### PR OPPORTUNITY FLAG
 
@@ -156,13 +180,26 @@ PR OPPORTUNITY
 
 ---
 
+EDUCATIONAL CONTENT ANGLES — [CITY]
+
+These are parking facts and local context worth publishing about — no SpotShare pitch needed.
+A property manager in [CITY] would find this useful on its own.
+
+[For each Tier 0 finding:]
+
+[Source]
+[1-3 sentence summary. Neutral, helpful tone.]
+Content angle: [One sentence on what the article or page would cover.]
+
+---
+
 TIER 1 — ACT ON THESE
 
 [For each Tier 1 finding:]
 
 [Platform] · [Subreddit or Account or Source]
 [1-3 sentence summary. Plain language. Quote key phrases residents/PMs used.]
-Opportunity: [One sentence — content, outreach, or pitch angle.]
+Opportunity: [One sentence — content, outreach, or pitch angle. If flagged SEO PAGE OPPORTUNITY, say so explicitly.]
 [Link if available]
 
 ---
@@ -189,7 +226,7 @@ Use the Gmail MCP to send the briefing.
 - Body: formatted briefing from Step 5
 
 After sending, confirm:
-"Sent. [X] Tier 1 findings, [Y] Tier 2 for [CITY]. Ready to run the next city whenever — just drop the name."
+"Sent. [X] Tier 0 content angles, [Y] Tier 1 findings, [Z] Tier 2 for [CITY]. Ready to run the next city whenever — just drop the name."
 
 ---
 

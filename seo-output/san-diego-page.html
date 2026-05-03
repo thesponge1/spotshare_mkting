@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Parking in Downtown San Diego Condos (2026 Guide) | SpotShare</title>
+  <meta name="description" content="Downtown SD parking rates hit $2.50/hr in 2025 — projected to reach $3.50 by 2026. Here's what HOA boards and property managers need to know, and how 15 downtown buildings are already solving it." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid #e8e8f0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: #4f46e5; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-cta {
+      background: #4f46e5;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 16px 48px;
+      font-size: 13px;
+      color: #888;
+      background: #fafafa;
+      border-bottom: 1px solid #e8e8f0;
+    }
+    .breadcrumb a { color: #4f46e5; text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 80px 48px;
+      max-width: 100%;
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(79, 70, 229, 0.3);
+      border: 1px solid rgba(79, 70, 229, 0.5);
+      color: #a5b4fc;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #818cf8; }
+    .hero-sub {
+      font-size: 20px;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+    .hero-intro {
+      font-size: 17px;
+      color: #cbd5e1;
+      line-height: 1.75;
+      border-left: 3px solid #4f46e5;
+      padding-left: 20px;
+    }
+
+    /* STAT BAR */
+    .stat-bar {
+      background: #4f46e5;
+      padding: 24px 48px;
+      display: flex;
+      gap: 0;
+      justify-content: center;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 40px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      display: block;
+      letter-spacing: -0.5px;
+    }
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid #e8e8f0;
+    }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      color: #1a1a2e;
+    }
+    h2 .accent { color: #4f46e5; }
+
+    p {
+      font-size: 17px;
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 28px 0;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    thead {
+      background: #f8fafc;
+    }
+    th {
+      padding: 14px 20px;
+      text-align: left;
+      font-weight: 600;
+      color: #475569;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #374151;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    .rate-high { color: #dc2626; font-weight: 700; }
+    .rate-med { color: #d97706; font-weight: 600; }
+    td .note { font-size: 13px; color: #94a3b8; display: block; margin-top: 2px; }
+
+    .source-note {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .callout p { color: #1e40af; font-size: 16px; margin: 0; }
+    .callout strong { color: #1e3a8a; }
+
+    .callout-warning {
+      background: #fff7ed;
+      border-left-color: #f97316;
+    }
+    .callout-warning p { color: #9a3412; }
+    .callout-warning strong { color: #7c2d12; }
+
+    /* TWO-COL BULLETS */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .benefit-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .benefit-card .icon { font-size: 22px; margin-bottom: 8px; }
+    .benefit-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+    .benefit-card p { font-size: 14px; color: #64748b; margin: 0; line-height: 1.5; }
+
+    /* TESTIMONIAL */
+    .testimonial {
+      background: #f8f9ff;
+      border: 1px solid #e0e4ff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 28px 0;
+      position: relative;
+    }
+    .testimonial::before {
+      content: '"';
+      font-size: 80px;
+      color: #c7d2fe;
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .testimonial blockquote {
+      font-size: 17px;
+      font-style: italic;
+      color: #374151;
+      line-height: 1.7;
+      padding-top: 20px;
+      margin-bottom: 16px;
+    }
+    .testimonial cite {
+      font-size: 14px;
+      color: #6b7280;
+      font-style: normal;
+      font-weight: 600;
+    }
+    .testimonial .placeholder {
+      font-size: 13px;
+      color: #94a3b8;
+      font-style: italic;
+      border: 1px dashed #c7d2fe;
+      border-radius: 6px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    /* FAQ */
+    .faq-list { margin-top: 24px; }
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 20px 24px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #1a1a2e;
+      background: #fafafa;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q::after { content: '+'; font-size: 20px; color: #4f46e5; font-weight: 400; }
+    .faq-a {
+      padding: 0 24px 20px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+      padding: 72px 48px;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-section h2 {
+      color: #fff;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      color: #94a3b8;
+      font-size: 18px;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid #e8e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    footer a { color: #4f46e5; text-decoration: none; }
+
+    /* CITIES NAV */
+    .cities-nav {
+      background: #f8fafc;
+      padding: 40px 48px;
+      border-top: 1px solid #e8e8f0;
+    }
+    .cities-nav h3 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+    .cities-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .city-pill {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .city-pill.active {
+      background: #4f46e5;
+      color: #fff;
+      border-color: #4f46e5;
+    }
+    .city-pill.coming-soon {
+      color: #cbd5e1;
+      border-color: #f1f5f9;
+      cursor: default;
+    }
+
+    @media (max-width: 768px) {
+      nav, .breadcrumb, .hero, .container, .cta-section, .cities-nav, footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .hero h1 { font-size: 32px; }
+      .stat-bar { flex-wrap: wrap; }
+      .stat-item { border-right: none; padding: 12px 20px; }
+      .two-col { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Spot<span>Share</span></a>
+    <div class="nav-links">
+      <a href="/cities">Cities</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/blog">Resources</a>
+      <a href="/demo" class="nav-cta">Get a Demo</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/cities">Cities</a>
+    <span>›</span>
+    San Diego
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">San Diego · 2026 Guide</div>
+      <h1>Guest Parking in<br /><span>Downtown San Diego</span><br />Condos</h1>
+      <p class="hero-sub">What property managers and HOA boards need to know in 2026</p>
+      <p class="hero-intro">
+        Most downtown San Diego condo buildings were designed with one parking problem nobody thought to solve: what to do with guests. Every resident has an assigned spot. Nobody has a guest spot. And the street outside now costs $2.50 an hour — more during a Padres game. It's the complaint HOA boards hear most often, and thanks to the city's own parking reform, it's going to keep getting worse.
+      </p>
+    </div>
+  </div>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="stat-item">
+      <span class="stat-number">$2.50</span>
+      <span class="stat-label">Per hour, street meters</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$10</span>
+      <span class="stat-label">Event pricing, game days</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">15</span>
+      <span class="stat-label">Downtown buildings on SpotShare</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">0</span>
+      <span class="stat-label">New spaces required to solve it</span>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="container">
+
+    <!-- SECTION 1: PARKING COSTS -->
+    <section>
+      <h2>What It Costs Your Guests to Park <span class="accent">Right Now</span></h2>
+      <p>Downtown San Diego parking rates changed significantly in 2025. If you're managing resident expectations or preparing for HOA board questions, here's what visitors are actually paying:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Parking Type</th>
+              <th>Current Rate</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Street meters (standard)</td>
+              <td class="rate-high">$2.50/hr</td>
+              <td><span class="note">Doubled in 2025</span></td>
+            </tr>
+            <tr>
+              <td>East Village, Gaslamp, Marina — event days</td>
+              <td class="rate-high">$10/hr</td>
+              <td><span class="note">~200 blocks; Padres games, concerts</span></td>
+            </tr>
+            <tr>
+              <td>Balboa Park daily rate</td>
+              <td class="rate-med">$16/day</td>
+              <td><span class="note">In effect early 2026</span></td>
+            </tr>
+            <tr>
+              <td>Projected street rate — late 2026</td>
+              <td class="rate-med">$3.00–3.50/hr</td>
+              <td><span class="note">Dynamic pricing rolling out citywide</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">Source: Downtown San Diego Parking Costs 2025 — rethinkdowntown.com</p>
+
+      <div class="callout callout-warning">
+        <p><strong>For property managers:</strong> A two-hour dinner visit runs $5 at the meter on a normal night. A Sunday afternoon in the Gaslamp during baseball season? $20 before your resident's guest has walked through the door. This is showing up in HOA complaint logs.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: REGULATORY -->
+    <section>
+      <h2>Why Newer Buildings Have <span class="accent">Less</span> Guest Parking</h2>
+      <p>The intuitive assumption is that newer condo buildings have better amenities — including parking. In San Diego, the data says otherwise.</p>
+      <p>In 2022, the city eliminated minimum parking requirements for properties in Transit Priority Areas — the dense, walkable neighborhoods served by transit that include most of downtown. A follow-on amendment to the municipal parking code took effect <strong>March 11, 2026</strong>. The city's stated goal is explicit: reduce parking supply citywide to encourage transit use.</p>
+
+      <div class="callout">
+        <p><strong>The practical result:</strong> Developers building new condos in TPAs are no longer required to build as many spaces as they used to. Buildings going up in East Village, Little Italy, and the Marina District today may have significantly lower parking ratios than the building next door built in 2010.</p>
+      </div>
+
+      <p>For HOA boards, this means two things:</p>
+
+      <div class="two-col">
+        <div class="benefit-card">
+          <div class="icon">📉</div>
+          <h4>The supply problem isn't going away</h4>
+          <p>Guest parking isn't being solved by new construction — it's being designed out of new buildings by city policy.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">🏆</div>
+          <h4>It's now a competitive differentiator</h4>
+          <p>Buildings that manage existing parking well have a real advantage for residents who care about hosting guests.</p>
+        </div>
+      </div>
+
+      <p class="source-note">Source: sandiego.gov — San Diego Parking Reform program page</p>
+    </section>
+
+    <!-- SECTION 3: HOW BUILDINGS SOLVE IT -->
+    <section>
+      <h2>How 15 Downtown San Diego Buildings Are <span class="accent">Solving It</span></h2>
+      <p>SpotShare is currently active in 15 buildings across downtown San Diego — in East Village, the Gaslamp Quarter, the Marina District, Little Italy, and Cortez Hill.</p>
+      <p>The model works because of how downtown condo parking is actually structured: every resident owns or rents an assigned spot. Most of those spots sit empty for most of the day. SpotShare lets residents make their spot available to other residents' guests when they're not using it — no new construction, no dedicated infrastructure, no HOA capital expense.</p>
+
+      <div class="two-col">
+        <div class="benefit-card">
+          <div class="icon">✅</div>
+          <h4>For the HOA board</h4>
+          <p>Solve the #1 recurring complaint. No capital expense. Present it as a new amenity at the next meeting.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">✅</div>
+          <h4>For residents</h4>
+          <p>Stop sending guests to $2.50/hr meters. Reserve a spot for them in the building before they arrive.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">✅</div>
+          <h4>For property managers</h4>
+          <p>No new infrastructure. Managed through the SpotShare platform. Launches in the building within days.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">✅</div>
+          <h4>For the building</h4>
+          <p>Existing parking supply gets utilized. No new spaces needed. The amenity is already in the garage.</p>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="placeholder">
+          ✏️ <strong>Placeholder — pull a real quote from a San Diego property manager or resident before publishing.</strong><br /><br />
+          Example format:<br /><br />
+          "We had guest parking complaints at every single HOA meeting for three years. Within 60 days of launching SpotShare, they stopped."<br />
+          — Property Manager, [Building Name], East Village
+        </div>
+      </div>
+
+      <p>If you manage a building in downtown San Diego and want to see which buildings in your neighborhood are on SpotShare, reach out and we'll show you the map.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2>Frequently Asked <span class="accent">Questions</span></h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Does my downtown San Diego condo have to provide guest parking?</div>
+          <div class="faq-a">
+            <p>No — and there's no law requiring it. Most downtown San Diego condos were built with resident-only assigned parking. Every space belongs to a unit. San Diego's parking reform has made this more common in newer buildings, not less: developers in Transit Priority Areas can now be built with fewer total spaces than they used to be required to provide.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How much does visitor parking cost in downtown San Diego right now?</div>
+          <div class="faq-a">
+            <p>Street meters throughout downtown San Diego cost $2.50/hour as of 2025 — double what they were previously. During Padres games, concerts, and events in the East Village, Gaslamp Quarter, and Marina District, the city activates event pricing across roughly 200 blocks: $10/hour. The city is also rolling out dynamic pricing, with rates projected to reach $3.00–$3.50/hour by late 2026.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Which neighborhoods have the worst guest parking availability?</div>
+          <div class="faq-a">
+            <p>East Village, the Gaslamp Quarter, and the Marina District have the highest concentration of downtown condos with zero dedicated guest parking — combined with the highest meter rates and the most frequent event-pricing activations. Little Italy and Cortez Hill face similar constraints with slightly different parking dynamics.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How do HOA buildings manage guest parking without adding new spaces?</div>
+          <div class="faq-a">
+            <p>The most common approach in downtown San Diego is a shared resident parking model: residents who aren't using their assigned spot make it available to other residents' guests through a building app. SpotShare is one platform built specifically for this. It requires no new construction and no capital outlay from the HOA — just an amenity vote and a building rollout.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What is SpotShare?</div>
+          <div class="faq-a">
+            <p>SpotShare is a guest parking infrastructure platform for luxury condos and HOA communities. Buildings use SpotShare to turn idle resident-owned parking spots into a shared guest parking amenity. SpotShare is based in San Diego and currently operates in 15 downtown buildings. It is not a public parking marketplace — it's a building-specific amenity managed by the property.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Is Your Building on the List?</h2>
+    <p>15 downtown San Diego buildings have already solved their guest parking problem with SpotShare. If yours isn't one of them, we can show you how it works.</p>
+    <div class="cta-buttons">
+      <a href="/demo" class="btn-primary">Get a Demo for Your Building</a>
+      <a href="/cities/san-diego/buildings" class="btn-secondary">See Participating Buildings</a>
+    </div>
+  </div>
+
+  <!-- CITIES NAV -->
+  <div class="cities-nav">
+    <div class="container" style="padding: 0;">
+      <h3>SpotShare Cities</h3>
+      <div class="cities-list">
+        <a href="/cities/san-diego" class="city-pill active">San Diego</a>
+        <a href="/cities/miami" class="city-pill coming-soon">Miami (coming soon)</a>
+        <a href="/cities/chicago" class="city-pill coming-soon">Chicago (coming soon)</a>
+        <a href="/cities/new-york" class="city-pill coming-soon">New York (coming soon)</a>
+        <a href="/cities/los-angeles" class="city-pill coming-soon">Los Angeles (coming soon)</a>
+        <a href="/cities/seattle" class="city-pill coming-soon">Seattle (coming soon)</a>
+        <a href="/cities/boston" class="city-pill coming-soon">Boston (coming soon)</a>
+        <a href="/cities/washington-dc" class="city-pill coming-soon">Washington DC (coming soon)</a>
+        <a href="/cities" class="city-pill">View all cities →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 SpotShare. Guest parking infrastructure for luxury condos.</span>
+    <span>Page last updated May 2026 · <a href="/cities/san-diego">spotshare.io/cities/san-diego</a></span>
+  </footer>
+
+  <!-- SCHEMA MARKUP -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://spotshare.io"},
+          {"@type": "ListItem", "position": 2, "name": "Cities", "item": "https://spotshare.io/cities"},
+          {"@type": "ListItem", "position": 3, "name": "San Diego", "item": "https://spotshare.io/cities/san-diego"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does my downtown San Diego condo have to provide guest parking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Most downtown San Diego condos have no assigned guest parking. San Diego's 2022 parking reform eliminated minimum parking requirements in Transit Priority Areas, meaning newer buildings are permitted to be built with fewer spaces."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does visitor parking cost in downtown San Diego?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Street meters in downtown San Diego cost $2.50/hour as of 2025, doubled from prior rates. During Padres games and concerts in East Village, Gaslamp, and Marina District, event pricing reaches $10/hour. Rates are projected to reach $3.00–3.50/hour by late 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which neighborhoods in San Diego have the worst guest parking availability?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "East Village, the Gaslamp Quarter, and the Marina District have the highest concentration of downtown condos with zero dedicated guest parking, combined with the highest street parking costs and event-driven pricing spikes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>
