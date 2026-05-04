@@ -26,7 +26,7 @@ formatted briefing email via Gmail.
 
 You need:
 1. **City name** — extract from the user's message. If missing, ask for it.
-2. **Recipient email** — ask if not already known from conversation history.
+2. **Recipient email** — always `hello@spotshare.com`. No need to ask.
 3. **Gmail connected** — required to send the briefing at the end.
 
 Do not proceed without the city name.
@@ -221,7 +221,7 @@ That's it for [CITY].
 
 Use the Gmail MCP to send the briefing.
 
-- To: recipient email (ask if not known)
+- To: hello@spotshare.com
 - Subject: SpotShare City Brief: [CITY] — [TODAY'S DATE]
 - Body: formatted briefing from Step 5
 
