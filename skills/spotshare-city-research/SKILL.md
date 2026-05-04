@@ -239,7 +239,7 @@ If the user says "next city" or "what's next," use this 30-day rotation:
 | 1 | San Diego |
 | 2 | Atlanta |
 | 3 | Chicago |
-| 4 | Seattle / Bellevue |
+| 4 | Seattle and Bellevue |
 | 5 | St. Petersburg, FL |
 | 6 | New York City |
 | 7 | Miami |
@@ -260,9 +260,9 @@ If the user says "next city" or "what's next," use this 30-day rotation:
 | 22 | Fort Lauderdale |
 | 23 | Honolulu |
 | 24 | Las Vegas |
-| 25 | Phoenix / Scottsdale |
+| 25 | Phoenix and Scottsdale |
 | 26 | Baltimore |
-| 27 | Raleigh / Durham |
+| 27 | Raleigh and Durham |
 | 28 | Salt Lake City |
 | 29 | New Orleans |
 | 30 | Pittsburgh |
