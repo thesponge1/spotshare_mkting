@@ -8,8 +8,8 @@ description: >
   "next city", "run the next city", "San Diego brief", or any similar phrase referencing a
   city in the context of SpotShare. The skill runs 6 targeted research queries via the
   last30days engine, filters findings into Tier 0 / Tier 1 / Tier 2 / Exclude buckets, and
-  sends a formatted briefing email via Gmail. Always use this skill when SpotShare + a city
-  name appear together in any form.
+  saves a structured city intelligence record + briefing narrative to the city research
+  folder. Always use this skill when SpotShare + a city name appear together in any form.
 ---
 
 # SpotShare City Research Skill
@@ -17,8 +17,9 @@ description: >
 ## What This Skill Does
 
 Given a city name, run targeted social + web research to find conversations, complaints,
-and content opportunities relevant to SpotShare. Filter findings by signal quality. Send a
-formatted briefing email via Gmail.
+and content opportunities relevant to SpotShare. Filter findings by signal quality. Save
+a structured city intelligence record and briefing narrative to the city research folder.
+This output feeds the programmatic SEO skill and future Notion dashboard directly.
 
 ---
 
@@ -26,8 +27,6 @@ formatted briefing email via Gmail.
 
 You need:
 1. **City name** — extract from the user's message. If missing, ask for it.
-2. **Recipient email** — always `hello@spotshare.com`. No need to ask.
-3. **Gmail connected** — required to send the briefing at the end.
 
 Do not proceed without the city name.
 
@@ -51,7 +50,7 @@ For the given city, run the `last30days` engine with the following queries.
 | # | Query | Why |
 |---|-------|-----|
 | 5 | `"guest parking" OR "visitor parking" [CITY]` | Local pain points + content opportunity |
-| 6 | `"how" OR "where" OR "best" "guest parking" OR "visitor parking" [CITY] condo luxury` | Search-intent signal — people already Googling for an answer that doesn't exist yet; flags whether a city SEO page is worth building |
+| 6 | `"how" OR "where" OR "best" "guest parking" OR "visitor parking" [CITY] condo luxury` | Search-intent signal — flags whether a city SEO page is worth building |
 
 Replace `[CITY]` with the city name provided.
 
@@ -70,17 +69,13 @@ Use these flags on every invocation:
 --x-related=FirstService,Yardi,RealPage,Parkade
 --search=reddit,x,youtube,tiktok,grounding
 --web-backend=brave
-```
-
-**Subreddit whitelist** — only these 6. Never pull from: r/BestofRedditorUpdates,
-r/AITAH, r/EntitledPeople, r/mildlyinfuriating, r/neighborsfromhell. These are noise.
-
-**Optional save flags:**
-```
 --save-dir=~/spotshare-research/cities/[CITY]/
 --save-suffix="$(date +%Y-%m-%d)"
 --store
 ```
+
+**Subreddit whitelist** — only these 6. Never pull from: r/BestofRedditorUpdates,
+r/AITAH, r/EntitledPeople, r/mildlyinfuriating, r/neighborsfromhell. These are noise.
 
 ---
 
@@ -92,7 +87,7 @@ After the engine returns results, filter ALL findings before writing the briefin
 
 Parking-helpful content that is NOT SpotShare-specific. SpotShare is not the obvious
 solution here — this is genuinely useful information for property managers about parking
-in their city. Full write-up. Output goes in its own section in the email.
+in their city. Full write-up. Output goes in its own section in the briefing.
 
 Flag anything that is:
 - City parking policy changes (meter pricing, parking minimums, zoning updates)
@@ -123,7 +118,7 @@ High signal. Full write-up. Must be within 30 days (prefer 72 hours for breaking
 
 ### INCLUDE — Tier 2 (Also on Our Radar)
 
-Lower signal. One-liner in the footer only, with a note on usefulness.
+Lower signal. One-liner in the briefing footer only, with a note on usefulness.
 
 - Resident rants about parking disputes → social content language
 - HOA drama about parking rules → meme/social hooks
@@ -145,8 +140,8 @@ Lower signal. One-liner in the footer only, with a note on usefulness.
 ### PR OPPORTUNITY FLAG
 
 If any finding is a trending story or viral moment with a short shelf life, flag it
-separately at the top of the email. One paragraph: what the story is, why SpotShare can
-insert itself, how time-sensitive it is.
+separately at the top of the briefing. One paragraph: what the story is, why SpotShare
+can insert itself, how time-sensitive it is.
 
 ---
 
@@ -162,49 +157,88 @@ insert itself, how time-sensitive it is.
 
 ---
 
-## Step 5: Compose the Briefing Email
+## Step 5: Compose the City Intelligence Record
 
-**Subject:** SpotShare City Brief: [CITY] — [TODAY'S DATE]
+This is the structured data block. It lives at the TOP of the saved file and is what the
+programmatic SEO skill and future dashboard will read from. Fill every field from research
+findings. Use "unknown" only if genuinely no signal exists — do not guess.
 
-**Body:**
+```
+---
+city: [CITY]
+run_date: [YYYY-MM-DD]
+city_slug: [city-name-lowercase-hyphenated]
 
-Hey —
+# PARKING PRESSURE SIGNALS
+parking_cost_signal: [low / moderate / high / critical] — [one-line evidence]
+availability_signal: [low / moderate / high / critical] — [one-line evidence]
+regulatory_trend: [improving / stable / worsening] — [one-line evidence]
+hoa_friction_level: [low / moderate / high] — [one-line evidence]
+new_development_pipeline: [yes / no / unknown] — [one-line evidence if yes]
+visitor_parking_ratio: [adequate / low / near-zero / unknown] — [one-line evidence]
 
-Here's what's moving in [CITY] this week for SpotShare.
+# SPOTSHARE MARKET SIGNALS
+market_readiness: [tier-1 / tier-2 / tier-3]
+seo_page_opportunity: [yes / no / maybe] — [reason]
+competitor_presence: [none / light / active] — [names if active]
+timing_trigger: [one-line description of any development, policy, or PR moment worth acting on now — or "none"]
+outreach_angle: [one sentence on the strongest angle for a cold outreach email to a PM in this city right now]
+
+# CONTENT SIGNALS
+tier0_count: [n]
+tier1_count: [n]
+tier2_count: [n]
+pr_opportunity: [yes / no]
+top_keywords_found: [comma-separated list of phrases residents/PMs actually used]
+content_gap: [one sentence — what is being searched but not answered anywhere online]
+---
+```
+
+---
+
+## Step 6: Compose the Briefing Narrative
+
+This is the human-readable section. It lives BELOW the structured record in the same file.
+Same content as before — just no longer formatted as an email.
+
+```
+# SpotShare City Brief: [CITY] — [TODAY'S DATE]
+
+Here's what's moving in [CITY] this cycle.
 
 ---
 
 [IF PR OPPORTUNITY EXISTS:]
-PR OPPORTUNITY
+## PR OPPORTUNITY
 [One paragraph. What the story is. Why SpotShare can insert itself. How time-sensitive.]
 
 ---
 
-EDUCATIONAL CONTENT ANGLES — [CITY]
+## EDUCATIONAL CONTENT ANGLES — [CITY]
 
-These are parking facts and local context worth publishing about — no SpotShare pitch needed.
+These are parking facts and local context worth publishing — no SpotShare pitch needed.
 A property manager in [CITY] would find this useful on its own.
 
 [For each Tier 0 finding:]
 
-[Source]
+**[Source]**
 [1-3 sentence summary. Neutral, helpful tone.]
 Content angle: [One sentence on what the article or page would cover.]
 
 ---
 
-TIER 1 — ACT ON THESE
+## TIER 1 — ACT ON THESE
 
 [For each Tier 1 finding:]
 
-[Platform] · [Subreddit or Account or Source]
+**[Platform] · [Subreddit or Account or Source]**
 [1-3 sentence summary. Plain language. Quote key phrases residents/PMs used.]
 Opportunity: [One sentence — content, outreach, or pitch angle. If flagged SEO PAGE OPPORTUNITY, say so explicitly.]
 [Link if available]
 
 ---
 
-ALSO ON OUR RADAR
+## ALSO ON OUR RADAR
 
 [Tier 2 one-liners with usefulness note]
 
@@ -212,60 +246,112 @@ ALSO ON OUR RADAR
 
 [If no Tier 1:]
 No Tier 1 findings for [CITY] this cycle.
-
-That's it for [CITY].
+```
 
 ---
 
-## Step 6: Send via Gmail
+## Step 7: Save the File
 
-Use the Gmail MCP to send the briefing.
+Save the complete output (structured record + briefing narrative) as a single `.md` file:
 
-- To: hello@spotshare.com
-- Subject: SpotShare City Brief: [CITY] — [TODAY'S DATE]
-- Body: formatted briefing from Step 5
+```
+~/spotshare-research/cities/[CITY]/[city-slug]-[YYYY-MM-DD].md
+```
 
-After sending, confirm:
-"Sent. [X] Tier 0 content angles, [Y] Tier 1 findings, [Z] Tier 2 for [CITY]. Ready to run the next city whenever — just drop the name."
+Example:
+```
+~/spotshare-research/cities/San Diego/san-diego-2026-05-06.md
+```
+
+The file structure is always:
+1. Structured YAML frontmatter block (Step 5)
+2. Briefing narrative (Step 6)
+
+This is the source of truth the programmatic SEO skill reads from.
+
+---
+
+## Step 7b: Update City Index
+
+After saving the city file, update `city-index.json` at the project root:
+
+1. Read `city-index.json`
+2. Find the entry where `city_slug` matches the city just researched
+3. Update the `research` object:
+   - `last_run_date` → today's date (`YYYY-MM-DD`)
+   - `file_path` → the path of the file just saved (relative to project root)
+   - `market_readiness` → from frontmatter `market_readiness`
+   - `seo_page_opportunity` → from frontmatter `seo_page_opportunity` (strip any trailing annotation after `—`)
+   - `competitor_presence` → from frontmatter `competitor_presence` (strip any trailing annotation after `—`)
+   - `timing_trigger` → from frontmatter `timing_trigger`
+   - `tier0_count` → from frontmatter `tier0_count`
+   - `tier1_count` → from frontmatter `tier1_count`
+4. Recalculate `status`:
+   - If `seo.page_built` is true and `last_run_date` is more than 30 days ago → `"needs-refresh"`
+   - If `seo.page_built` is true → `"page-live"`
+   - If research fields are populated but `seo.page_built` is false → `"researched"`
+   - If no research → `"not-started"`
+5. Write `city-index.json` back
+
+---
+
+## Step 8: Confirm in Chat
+
+After saving, print this confirmation in chat:
+
+```
+Done. [CITY] — [YYYY-MM-DD]
+Saved to: ~/spotshare-research/cities/[CITY]/[city-slug]-[YYYY-MM-DD].md
+
+Tier 0: [n] content angles
+Tier 1: [n] act-on findings
+Tier 2: [n] on radar
+Market readiness: [tier]
+SEO opportunity: [yes / no / maybe]
+Competitor presence: [none / light / active]
+[If timing trigger exists:] ⚡ Timing trigger: [one-liner]
+[If PR opportunity exists:] 🚨 PR opportunity flagged
+
+Ready for the next city — just drop the name.
+```
 
 ---
 
 ## City Rotation Reference
 
-If the user says "next city" or "what's next," use this 30-day rotation:
+### Reading the State File
 
-| Day | City |
-|-----|------|
-| 1 | San Diego |
-| 2 | Atlanta |
-| 3 | Chicago |
-| 4 | Seattle and Bellevue |
-| 5 | St. Petersburg, FL |
-| 6 | New York City |
-| 7 | Miami |
-| 8 | San Francisco |
-| 9 | Los Angeles |
-| 10 | Boston |
-| 11 | Washington DC |
-| 12 | Denver |
-| 13 | Austin |
-| 14 | Portland |
-| 15 | Philadelphia |
-| 16 | Houston |
-| 17 | Dallas |
-| 18 | Minneapolis |
-| 19 | Nashville |
-| 20 | Charlotte |
-| 21 | Tampa |
-| 22 | Fort Lauderdale |
-| 23 | Honolulu |
-| 24 | Las Vegas |
-| 25 | Phoenix and Scottsdale |
-| 26 | Baltimore |
-| 27 | Raleigh and Durham |
-| 28 | Salt Lake City |
-| 29 | New Orleans |
-| 30 | Pittsburgh |
+The city rotation is tracked in the `rotation` block of `city-index.json` at the project root.
+
+On every run, read the file and resolve the current city like this:
+
+1. If the user named a specific city → use that city (manual override). Do NOT advance the counter.
+2. If the user said "next city" or gave no city → read `rotation.current_index`, look up `cities[current_index].city`, use that city.
+
+After a successful run (file saved, confirmation printed), update `city-index.json`:
+- Increment `rotation.current_index` by 1. If it exceeds the last index (29), reset to 0.
+- Set `rotation.last_run_date` to today's date in `YYYY-MM-DD` format.
+- Set `rotation.last_city` to the city that was just run.
+
+### State File Location
+
+./city-index.json
+
+### Rotation Block Shape
+
+```json
+{
+  "rotation": {
+    "current_index": 3,
+    "last_run_date": "2026-05-04",
+    "last_city": "Chicago"
+  },
+  "cities": [...]
+}
+```
+
+Only `rotation.current_index`, `rotation.last_run_date`, and `rotation.last_city` are ever written back.
+The `cities` array is read-only — never modify it.
 
 ---
 

@@ -110,14 +110,33 @@ Do not include building counts or "X buildings are already solving this" framing
 
 ### Data Requirements Per City
 
-From `city-research/[city]-research.md`:
-- Current meter rates (standard + event)
-- Projected rate increases
-- Parking reform / policy changes (dates, scope)
-- Neighborhoods with worst guest parking availability
-- Any local context specific to that market (stadiums, events, density)
+Read from the YAML frontmatter block at the top of:
+`~/spotshare-research/cities/[CITY]/[city-slug]-[YYYY-MM-DD].md`
 
-All market stats must have source notes. Use: `Source: [source name] — [domain]`
+Use the most recent file for that city if multiple runs exist.
+
+**Fields used for page generation:**
+
+| Field | Used In |
+|-------|---------|
+| `parking_cost_signal` | Section 1 framing, meta description |
+| `availability_signal` | Section 1 framing, intro paragraph |
+| `regulatory_trend` | Section 2 — policy/zoning context |
+| `visitor_parking_ratio` | Section 2 — why newer buildings have less parking |
+| `hoa_friction_level` | Section 3 — how buildings are solving it |
+| `new_development_pipeline` | Section 2 — optional context if yes |
+| `competitor_presence` | FAQ — omit competitor names, use to inform how competitive the market is |
+| `top_keywords_found` | On-page language — use exact phrases residents/PMs used |
+| `content_gap` | FAQ — answer the question that isn't being answered anywhere online |
+| `seo_page_opportunity` | Go/no-go signal — only build the page if this is `yes` or `maybe` |
+| `timing_trigger` | Optional callout box if a policy or development story is active |
+
+**All market stats still require source notes.** The frontmatter fields provide framing
+signals — they do not replace sourced data. If a field says `high` for parking cost,
+still pull the actual dollar figures from the briefing narrative below the frontmatter.
+
+**Go/no-go rule:** If `seo_page_opportunity` is `no`, flag it and do not generate the
+page. Confirm with the user before proceeding.
 
 ### Schema Markup
 
@@ -157,11 +176,28 @@ In addition to standard pSEO pre-launch checklist:
 
 ## Research → Page Workflow
 
-1. Run `spotshare-city-research` skill to produce `city-research/[city]-research.md`
-2. Review research for data completeness (rates, policy, neighborhoods)
-3. Generate page using this template, pulling data from research file
-4. Tone-check against SpotShare rules above before outputting final HTML
-5. Output to `seo-output/[city]-page.html`
+1. Run `spotshare-city-research` skill — saves structured `.md` to `~/spotshare-research/cities/[CITY]/`
+2. Read YAML frontmatter from the most recent city file
+3. Check `seo_page_opportunity` — if `no`, stop and flag. If `yes` or `maybe`, proceed.
+4. Pull signal fields from frontmatter for framing and tone
+5. Pull exact dollar figures and sourced stats from the briefing narrative section
+6. Generate page using template, combining both layers
+7. Tone-check against SpotShare rules before outputting final HTML
+8. Output to `seo-output/[city-slug]-page.html`
+9. Update city index (see below)
+
+### Step: Update City Index
+
+After saving the page file, update `city-index.json` at the project root:
+
+1. Read `city-index.json`
+2. Find the entry where `city_slug` matches the city just built
+3. Update the `seo` object:
+   - `page_built` → `true`
+   - `page_path` → `"seo-output/[city-slug]-page.html"`
+   - `last_built_date` → today's date (`YYYY-MM-DD`)
+4. Set `status` → `"page-live"`
+5. Write `city-index.json` back
 
 ---
 
