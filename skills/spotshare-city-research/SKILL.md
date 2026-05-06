@@ -282,8 +282,10 @@ After saving the city file, update `city-index.json` at the project root:
    - `file_path` → the path of the file just saved (relative to project root)
    - `market_readiness` → from frontmatter `market_readiness`
    - `seo_page_opportunity` → from frontmatter `seo_page_opportunity` (strip any trailing annotation after `—`)
-   - `competitor_presence` → from frontmatter `competitor_presence` (strip any trailing annotation after `—`)
-   - `market_moment` → from frontmatter `market_moment`
+   - `competitor_presence` → from frontmatter `competitor_presence` (strip any trailing annotation after `—`, keep just the signal word: `none` / `light` / `active`)
+   - `market_moment` → from frontmatter `market_moment` (primary/first moment, used in table display)
+   - `market_moments` → array of all distinct market moments identified in the briefing. Each is a one-to-two sentence description. Include any PR OPPORTUNITY as the first item if present. Include timing triggers and key regulatory/competitor moments. Typically 2–4 items.
+   - `competitors` → array of competitor objects from the Tier 1, Tier 2, and "Also on Radar" sections. Each object: `{ "tier": "1" | "2" | "watch", "name": "...", "description": "..." }`. Use tier "1" for Tier 1 competitor mentions, "2" for Tier 2, "watch" for competitors flagged as worth monitoring. Description should be 1–2 sentences: what they're doing and why it matters for SpotShare.
    - `tier0_count` → from frontmatter `tier0_count`
    - `tier1_count` → from frontmatter `tier1_count`
 4. Recalculate `status`:

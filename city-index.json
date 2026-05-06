@@ -15,8 +15,29 @@
         "seo_page_opportunity": "yes",
         "competitor_presence": "active",
         "market_moment": "Parkade comparison page actively ranking against SpotShare by name",
+        "market_moments": [
+          "Parkade comparison page at parkade.com/spotshare actively ranking against SpotShare by name — calls SpotShare a \"2003-era web app\" and cites $300–500/month vs. $1/spot/month",
+          "March 11, 2026 parking code amendment took effect — new San Diego condo developments in TPAs can now be built with fewer spaces, making guest parking scarcity permanent in newer buildings",
+          "Third-party real estate blog (92101urbanliving.com) already ranking for \"guest parking downtown San Diego condo\" on SpotShare's behalf — first-party SEO gap SpotShare should own"
+        ],
+        "competitors": [
+          { "tier": "1", "name": "Parkade", "description": "Live comparison page at parkade.com/spotshare targeting SpotShare by name; calls SpotShare a \"2003-era web app\" and leads with a testimonial claiming 143 residents installed Parkade in 7 days vs. 10–12 on SpotShare." },
+          { "tier": "1", "name": "ParqEx (GuestParq)", "description": "Marketing guest parking as a condo amenity to HOA PMs — \"the newest amenity to offer for property managers and residents of condominium buildings.\" Same positioning SpotShare should own; appearing in search results for visitor parking HOA queries." },
+          { "tier": "1", "name": "SimplyPermits", "description": "Published a \"best HOA software for guest parking\" roundup targeting the exact search query a CAM would type when evaluating solutions. Post favors their own product; SpotShare does not appear in it." },
+          { "tier": "2", "name": "Community Boss", "description": "Top-of-funnel content appearing in parking software search results alongside Parkade and SimplyPermits." },
+          { "tier": "watch", "name": "ButterflyMX", "description": "15,000+ buildings. Expanding into visitor parking and vehicle access control — occupying the \"building technology amenity\" budget category that SpotShare competes for in HOA board conversations." }
+        ],
         "tier1_count": 4,
-        "tier0_count": 2
+        "tier0_count": 2,
+        "parking_cost_signal": "high — street meter rates $2.50/hour (doubled 2025); event pricing $10/hour across ~200 downtown blocks; Balboa Park daily $16; rates projected $3.00–3.50/hour by late 2026",
+        "availability_signal": "critical — most downtown San Diego condos provide zero assigned guest parking; residents must direct guests to expensive street or garage parking",
+        "regulatory_trend": "worsening — parking minimums eliminated for commercial properties in TPAs (2022); new municipal parking code amendment took effect March 11, 2026; city explicitly targeting reduced parking supply",
+        "hoa_friction_level": "high — vocal minority parking conflicts active in HOAs nationally; Parkade comparison page targeting SpotShare by name live in search",
+        "visitor_parking_ratio": "near-zero — SpotShare's own third-party coverage on 92101urbanliving.com cites \"zero assigned guest parking\" as the defining problem for downtown SD condos",
+        "new_development_pipeline": "yes — new condo developments in TPAs built with fewer total spaces, reducing guest parking ratios in newer buildings",
+        "content_gap": "No authoritative first-party answer to \"how do downtown San Diego condo buildings handle guest parking\" — a third-party real estate blog currently owns this SERP on SpotShare's behalf",
+        "top_keywords_found": ["guest parking downtown San Diego condo", "visitor parking condo", "HOA parking app", "best HOA parking software", "condo guest parking solution", "GuestParq", "amenity parking"],
+        "outreach_angle": "San Diego is SpotShare's home market — lead with local building proof points to counter Parkade's generic national pitch and the March 2026 parking code change that makes guest parking scarcity permanent in new buildings"
       },
       "seo": {
         "page_built": true,
