@@ -9,7 +9,7 @@
       "city": "San Diego",
       "city_slug": "san-diego",
       "research": {
-        "last_run_date": "2026-05-03",
+        "last_run_date": "2026-05-06",
         "file_path": "research/sandiego-data.md",
         "market_readiness": "tier-1",
         "seo_page_opportunity": "yes",
@@ -21,7 +21,7 @@
       "seo": {
         "page_built": true,
         "page_path": "seo-output/san-diego-page.html",
-        "last_built_date": "2026-05-05"
+        "last_built_date": "2026-05-06"
       },
       "status": "page-live"
     },

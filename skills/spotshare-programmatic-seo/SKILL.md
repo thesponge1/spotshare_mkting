@@ -111,9 +111,7 @@ Do not include building counts or "X buildings are already solving this" framing
 ### Data Requirements Per City
 
 Read from the YAML frontmatter block at the top of:
-`~/spotshare-research/cities/[CITY]/[city-slug]-[YYYY-MM-DD].md`
-
-Use the most recent file for that city if multiple runs exist.
+`research/[city-slug]-data.md`
 
 **Fields used for page generation:**
 
@@ -176,8 +174,8 @@ In addition to standard pSEO pre-launch checklist:
 
 ## Research → Page Workflow
 
-1. Run `spotshare-city-research` skill — saves structured `.md` to `~/spotshare-research/cities/[CITY]/`
-2. Read YAML frontmatter from the most recent city file
+1. Run `spotshare-city-research` skill — saves structured `.md` to `research/[city-slug]-data.md`
+2. Read YAML frontmatter from `research/[city-slug]-data.md`
 3. Check `seo_page_opportunity` — if `no`, stop and flag. If `yes` or `maybe`, proceed.
 4. Pull signal fields from frontmatter for framing and tone
 5. Pull exact dollar figures and sourced stats from the briefing narrative section

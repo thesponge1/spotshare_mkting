@@ -252,15 +252,15 @@ No Tier 1 findings for [CITY] this cycle.
 
 ## Step 7: Save the File
 
-Save the complete output (structured record + briefing narrative) as a single `.md` file:
+Save the complete output (structured record + briefing narrative) as a single `.md` file inside the project:
 
 ```
-~/spotshare-research/cities/[CITY]/[city-slug]-[YYYY-MM-DD].md
+research/[city-slug]-data.md
 ```
 
 Example:
 ```
-~/spotshare-research/cities/San Diego/san-diego-2026-05-06.md
+research/san-diego-data.md
 ```
 
 The file structure is always:
@@ -301,7 +301,7 @@ After saving, print this confirmation in chat:
 
 ```
 Done. [CITY] — [YYYY-MM-DD]
-Saved to: ~/spotshare-research/cities/[CITY]/[city-slug]-[YYYY-MM-DD].md
+Saved to: research/[city-slug]-data.md
 
 Tier 0: [n] content angles
 Tier 1: [n] act-on findings
