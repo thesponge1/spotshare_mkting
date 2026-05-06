@@ -129,7 +129,7 @@ Use the most recent file for that city if multiple runs exist.
 | `top_keywords_found` | On-page language — use exact phrases residents/PMs used |
 | `content_gap` | FAQ — answer the question that isn't being answered anywhere online |
 | `seo_page_opportunity` | Go/no-go signal — only build the page if this is `yes` or `maybe` |
-| `timing_trigger` | Optional callout box if a policy or development story is active |
+| `market_moment` | Optional callout box if a policy or development story is active |
 
 **All market stats still require source notes.** The frontmatter fields provide framing
 signals — they do not replace sourced data. If a field says `high` for parking cost,

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpotShare City Pipeline Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #6366f1;
+      --accent-dim: #4f52c9;
+      --accent-glow: rgba(99, 102, 241, 0.15);
+      --bg: #0d0e14;
+      --bg-card: #13151f;
+      --bg-card-hover: #181a27;
+      --bg-table-row: #0f111a;
+      --bg-table-alt: #111320;
+      --border: rgba(255,255,255,0.07);
+      --text: #e2e4f0;
+      --text-muted: #6b7280;
+      --text-dim: #9ca3af;
+      --green: #22c55e;
+      --green-bg: rgba(34, 197, 94, 0.12);
+      --yellow: #eab308;
+      --yellow-bg: rgba(234, 179, 8, 0.12);
+      --blue: #3b82f6;
+      --blue-bg: rgba(59, 130, 246, 0.12);
+      --gray: #6b7280;
+      --gray-bg: rgba(107, 114, 128, 0.12);
+      --red: #ef4444;
+      --red-bg: rgba(239, 68, 68, 0.12);
+      --orange: #f97316;
+      --orange-bg: rgba(249, 115, 22, 0.12);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    header h1 { font-size: 16px; font-weight: 600; color: var(--text); }
+    header .subtitle { font-size: 13px; color: var(--text-muted); margin-left: auto; }
+
+    /* ── Main layout ── */
+    main { max-width: 1280px; margin: 0 auto; padding: 32px 24px 64px; }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* ── Stat cards ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .stats-grid { grid-template-columns: 1fr; } }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+    .stat-label { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 10px; }
+    .stat-value { font-size: 36px; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 4px; }
+    .stat-sub { font-size: 12px; color: var(--text-muted); }
+
+    /* ── Alert cards ── */
+    .alerts-section { margin-bottom: 32px; }
+    .alerts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+
+    .alert-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      border-radius: 10px;
+      padding: 16px 20px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .alert-card:hover { background: var(--bg-card-hover); border-color: rgba(99, 102, 241, 0.6); }
+    .alert-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--accent);
+    }
+    .alert-city { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; padding-left: 4px; }
+    .alert-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; padding-left: 4px; }
+    .alert-trigger {
+      font-size: 13px;
+      color: #a5b4fc;
+      background: var(--accent-glow);
+      border-radius: 6px;
+      padding: 8px 12px;
+      line-height: 1.4;
+    }
+
+    /* ── Table section ── */
+    .table-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .table-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .table-header h2 { font-size: 14px; font-weight: 600; }
+    .city-count {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--gray-bg);
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+    .table-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+    thead th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.15s;
+    }
+    thead th:hover { color: var(--text); }
+    thead th .sort-icon { display: inline-block; margin-left: 4px; opacity: 0.4; font-size: 10px; }
+    thead th.sorted { color: var(--accent); }
+    thead th.sorted .sort-icon { opacity: 1; }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.1s;
+      cursor: pointer;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(odd)  { background: var(--bg-table-row); }
+    tbody tr:nth-child(even) { background: var(--bg-table-alt); }
+    tbody tr:hover { background: var(--bg-card-hover); }
+
+    td { padding: 12px 16px; color: var(--text); vertical-align: middle; white-space: nowrap; }
+    td.city-name { font-weight: 500; white-space: normal; min-width: 140px; }
+    td.moment-cell { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-muted); }
+    td.moment-cell.has-value { cursor: help; color: #a5b4fc; }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+    .badge-not-started   { background: var(--gray-bg);   color: var(--gray);   }
+    .badge-not-started   .badge-dot { background: var(--gray); }
+    .badge-researched    { background: var(--blue-bg);   color: var(--blue);   }
+    .badge-researched    .badge-dot { background: var(--blue); }
+    .badge-page-live     { background: var(--green-bg);  color: var(--green);  }
+    .badge-page-live     .badge-dot { background: var(--green); }
+    .badge-needs-refresh { background: var(--yellow-bg); color: var(--yellow); }
+    .badge-needs-refresh .badge-dot { background: var(--yellow); }
+
+    .badge-tier-1  { background: var(--green-bg);  color: var(--green); }
+    .badge-tier-2  { background: var(--yellow-bg); color: var(--yellow); }
+    .badge-tier-3  { background: var(--gray-bg);   color: var(--gray); }
+    .badge-unknown { background: var(--gray-bg);   color: var(--gray); }
+
+    .badge-yes   { background: var(--green-bg);  color: var(--green); }
+    .badge-maybe { background: var(--yellow-bg); color: var(--yellow); }
+    .badge-no    { background: var(--gray-bg);   color: var(--gray); }
+
+    .check-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px; height: 18px;
+      border-radius: 4px;
+    }
+    .check-icon.checked   { background: var(--green-bg); color: var(--green); }
+    .check-icon.unchecked { background: var(--gray-bg);  color: var(--gray); }
+
+    /* ── Footer ── */
+    footer { text-align: center; padding: 32px 24px 24px; font-size: 12px; color: var(--text-muted); }
+    footer span { color: var(--text-dim); }
+
+    /* ════════════════════════════════════════════════
+       DETAIL PANEL
+    ════════════════════════════════════════════════ */
+
+    /* Backdrop */
+    #panel-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(2px);
+      z-index: 100;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    #panel-backdrop.visible { opacity: 1; }
+
+    /* Panel drawer */
+    #detail-panel {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      width: 580px;
+      max-width: 100vw;
+      background: #0f1119;
+      border-left: 1px solid var(--border);
+      z-index: 101;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    #detail-panel.open { transform: translateX(0); }
+
+    /* Panel header */
+    .panel-header {
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .panel-header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .panel-city-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .panel-close {
+      background: var(--gray-bg);
+      border: none;
+      color: var(--text-muted);
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: background 0.15s, color 0.15s;
+    }
+    .panel-close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+
+    .panel-badges { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+    .btn-seo-page {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn-seo-page.active {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-seo-page.active:hover { opacity: 0.85; }
+    .btn-seo-page.disabled {
+      background: var(--gray-bg);
+      color: var(--text-muted);
+      cursor: not-allowed;
+    }
+
+    /* Panel body */
+    .panel-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 28px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .panel-body::-webkit-scrollbar { width: 5px; }
+    .panel-body::-webkit-scrollbar-track { background: transparent; }
+    .panel-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+    /* Panel section */
+    .ps { display: flex; flex-direction: column; gap: 10px; }
+
+    .ps-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Market Moment callout */
+    .moment-callout {
+      background: linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(99,102,241,0.06) 100%);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .moment-callout-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: #c7d2fe;
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    .moment-callout-sub {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Signal grid */
+    .signal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    @media (max-width: 480px) { .signal-grid { grid-template-columns: 1fr; } }
+
+    .signal-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .signal-name { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+    .signal-value { font-size: 13px; font-weight: 600; }
+    .signal-red    { color: var(--red); }
+    .signal-yellow { color: var(--yellow); }
+    .signal-green  { color: var(--green); }
+    .signal-gray   { color: var(--text-muted); font-weight: 400; font-style: italic; }
+
+    /* Intelligence cards */
+    .intel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 520px) { .intel-grid { grid-template-columns: 1fr; } }
+
+    .intel-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .intel-tier {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .intel-count {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .intel-count.no-data { font-size: 14px; color: var(--text-muted); font-style: italic; font-weight: 400; }
+    .intel-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+    /* Competitor presence */
+    .competitor-value {
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .competitor-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .competitor-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .competitor-note a:hover { text-decoration: underline; }
+
+    /* SEO signals */
+    .seo-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .seo-row-label { font-size: 12px; color: var(--text-muted); }
+    .seo-row-value { font-size: 13px; font-weight: 500; }
+
+    .keywords-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .keyword-pill {
+      font-size: 11px;
+      font-weight: 500;
+      background: var(--blue-bg);
+      color: var(--blue);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* Content gap */
+    .content-gap-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: var(--text-dim);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* No-data placeholder */
+    .no-data {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Research history */
+    .history-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .history-row a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 12px;
+    }
+    .history-row a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">S</div>
+  <h1>SpotShare SEO Pipeline</h1>
+  <div class="subtitle">City Market Dashboard</div>
+</header>
+
+<main>
+
+  <!-- Section 1: Pipeline Summary -->
+  <div class="section-label">Pipeline Summary</div>
+  <div class="stats-grid" id="stats-grid"></div>
+
+  <!-- Section 2: City Pipeline Table -->
+  <div class="section-label">City Pipeline</div>
+  <div class="table-section">
+    <div class="table-header">
+      <h2>All Markets</h2>
+      <span class="city-count" id="city-count"></span>
+      <span class="table-hint">Click any row for details</span>
+    </div>
+    <div class="table-wrapper">
+      <table id="city-table">
+        <thead>
+          <tr>
+            <th data-col="city">City <span class="sort-icon">↕</span></th>
+            <th data-col="status">Status <span class="sort-icon">↕</span></th>
+            <th data-col="readiness">Market Readiness <span class="sort-icon">↕</span></th>
+            <th data-col="opportunity">Opportunity <span class="sort-icon">↕</span></th>
+            <th data-col="competitor">Competitor Presence <span class="sort-icon">↕</span></th>
+            <th data-col="last_run">Last Research Run <span class="sort-icon">↕</span></th>
+            <th data-col="page_built">Page Built <span class="sort-icon">↕</span></th>
+            <th data-col="moment">Market Moment <span class="sort-icon">↕</span></th>
+          </tr>
+        </thead>
+        <tbody id="city-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<footer id="footer"></footer>
+
+<!-- ── Detail Panel ── -->
+<div id="panel-backdrop"></div>
+<div id="detail-panel" role="dialog" aria-modal="true" aria-label="City detail">
+  <div class="panel-header">
+    <div class="panel-header-top">
+      <div class="panel-city-name" id="panel-city-name"></div>
+      <button class="panel-close" id="panel-close" aria-label="Close">✕</button>
+    </div>
+    <div class="panel-badges" id="panel-badges"></div>
+  </div>
+  <div class="panel-body" id="panel-body"></div>
+</div>
+
+<script>
+// ── Data ─────────────────────────────────────────────────────────────────────
+const DATA = {"rotation":{"current_index":3,"last_run_date":"2026-05-04","last_city":"Chicago"},"cities":[{"city":"San Diego","city_slug":"san-diego","research":{"last_run_date":"2026-05-03","file_path":"research/sandiego-data.md","market_readiness":"tier-1","seo_page_opportunity":"yes","competitor_presence":"active","market_moment":"Parkade comparison page actively ranking against SpotShare by name","tier1_count":4,"tier0_count":2},"seo":{"page_built":true,"page_path":"seo-output/san-diego-page.html","last_built_date":"2026-05-05"},"status":"page-live"},{"city":"Atlanta","city_slug":"atlanta","research":{"last_run_date":"2026-05-04","file_path":"research/atlanta-data.md","market_readiness":"tier-1","seo_page_opportunity":"yes","competitor_presence":"active","market_moment":"Buckhead luxury condo pipeline active with new HOA boards making first amenity decisions","tier1_count":3,"tier0_count":3},"seo":{"page_built":true,"page_path":"seo-output/atlanta-page.html","last_built_date":"2026-05-05"},"status":"page-live"},{"city":"Chicago","city_slug":"chicago","research":{"last_run_date":"2026-05-04","file_path":"research/chicago-data.md","market_readiness":"tier-1","seo_page_opportunity":"yes","competitor_presence":"active","market_moment":"ParqEx River North case study live; Chicago congestion pricing legislation in discussion","tier1_count":3,"tier0_count":2},"seo":{"page_built":true,"page_path":"seo-output/chicago-page.html","last_built_date":"2026-05-05"},"status":"page-live"},{"city":"Seattle and Bellevue","city_slug":"seattle-and-bellevue","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"St. Petersburg, FL","city_slug":"st-petersburg-fl","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"New York City","city_slug":"new-york-city","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Miami","city_slug":"miami","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"San Francisco","city_slug":"san-francisco","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Los Angeles","city_slug":"los-angeles","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Boston","city_slug":"boston","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Washington DC","city_slug":"washington-dc","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Denver","city_slug":"denver","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Austin","city_slug":"austin","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Portland","city_slug":"portland","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Philadelphia","city_slug":"philadelphia","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Houston","city_slug":"houston","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Dallas","city_slug":"dallas","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Minneapolis","city_slug":"minneapolis","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Nashville","city_slug":"nashville","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Charlotte","city_slug":"charlotte","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Tampa","city_slug":"tampa","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Fort Lauderdale","city_slug":"fort-lauderdale","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Honolulu","city_slug":"honolulu","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Las Vegas","city_slug":"las-vegas","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Phoenix and Scottsdale","city_slug":"phoenix-and-scottsdale","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Baltimore","city_slug":"baltimore","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Raleigh and Durham","city_slug":"raleigh-and-durham","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Salt Lake City","city_slug":"salt-lake-city","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"New Orleans","city_slug":"new-orleans","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Pittsburgh","city_slug":"pittsburgh","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"}]};
+
+const cities = DATA.cities;
+
+// ── Badge helpers ─────────────────────────────────────────────────────────────
+function statusBadge(status) {
+  const map = {
+    'not-started':    ['badge-not-started',   'Not Started'],
+    'researched':     ['badge-researched',     'Researched'],
+    'page-live':      ['badge-page-live',      'Page Live'],
+    'needs-refresh':  ['badge-needs-refresh',  'Needs Refresh'],
+  };
+  const [cls, label] = map[status] || ['badge-unknown', status || '—'];
+  return `<span class="badge ${cls}"><span class="badge-dot"></span>${label}</span>`;
+}
+
+function readinessBadge(r) {
+  if (!r) return `<span class="badge badge-unknown">—</span>`;
+  const map = { 'tier-1': 'badge-tier-1', 'tier-2': 'badge-tier-2', 'tier-3': 'badge-tier-3' };
+  return `<span class="badge ${map[r] || 'badge-unknown'}">${r}</span>`;
+}
+
+function opportunityBadge(o) {
+  if (!o) return `<span class="badge badge-unknown">—</span>`;
+  const cls = { yes: 'badge-yes', maybe: 'badge-maybe', no: 'badge-no' };
+  const lbl = { yes: 'Yes', maybe: 'Maybe', no: 'No' };
+  return `<span class="badge ${cls[o] || 'badge-unknown'}">${lbl[o] || o}</span>`;
+}
+
+function checkIcon(val) {
+  return val
+    ? `<span class="check-icon checked" title="Page built">✓</span>`
+    : `<span class="check-icon unchecked" title="Not built">✗</span>`;
+}
+
+function fmt(date) {
+  if (!date) return '—';
+  return new Date(date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+// Signal value → CSS class
+function signalClass(val) {
+  if (!val) return 'signal-gray';
+  const v = val.toLowerCase();
+  if (/critical|high|active|worsening|severe|heavy/.test(v)) return 'signal-red';
+  if (/moderate|medium|light|stable|mixed/.test(v))          return 'signal-yellow';
+  if (/low|none|improving|minimal|limited/.test(v))          return 'signal-green';
+  return 'signal-gray';
+}
+
+function signalVal(val) {
+  if (!val) return { cls: 'signal-gray', text: 'No data yet' };
+  return { cls: signalClass(val), text: val };
+}
+
+function noData(text) {
+  return `<span class="no-data">${text || 'No data yet'}</span>`;
+}
+
+// ── Stat cards ────────────────────────────────────────────────────────────────
+const total    = cities.length;
+const pageLive = cities.filter(c => c.status === 'page-live').length;
+
+const statsData = [
+  { label: 'Total Cities Tracked', value: total,    sub: 'in pipeline' },
+  { label: 'Pages Live',           value: pageLive, sub: 'published & indexed' },
+];
+
+const statsGrid = document.getElementById('stats-grid');
+statsData.forEach(s => {
+  statsGrid.innerHTML += `
+    <div class="stat-card">
+      <div class="stat-label">${s.label}</div>
+      <div class="stat-value">${s.value}</div>
+      <div class="stat-sub">${s.sub}</div>
+    </div>`;
+});
+
+// ── Table ─────────────────────────────────────────────────────────────────────
+document.getElementById('city-count').textContent = `${total} cities`;
+
+let sortCol = 'city', sortDir = 1;
+
+const sortKey = {
+  city:        c => c.city.toLowerCase(),
+  status:      c => c.status || '',
+  readiness:   c => c.research.market_readiness || 'zzz',
+  opportunity: c => c.research.seo_page_opportunity || 'zzz',
+  competitor:  c => c.research.competitor_presence || 'zzz',
+  last_run:    c => c.research.last_run_date || '',
+  page_built:  c => c.seo.page_built ? 0 : 1,
+  moment:      c => c.research.market_moment || '',
+};
+
+function renderRows() {
+  const sorted = [...cities].sort((a, b) => {
+    const ka = sortKey[sortCol](a), kb = sortKey[sortCol](b);
+    return ka < kb ? -sortDir : ka > kb ? sortDir : 0;
+  });
+
+  const tbody = document.getElementById('city-tbody');
+  tbody.innerHTML = '';
+
+  sorted.forEach(c => {
+    const moment = c.research.market_moment || '';
+    const truncated = moment.length > 45 ? moment.slice(0, 42) + '…' : moment;
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="city-name">${c.city}</td>
+      <td>${statusBadge(c.status)}</td>
+      <td>${readinessBadge(c.research.market_readiness)}</td>
+      <td>${opportunityBadge(c.research.seo_page_opportunity)}</td>
+      <td style="color:var(--text-dim)">${c.research.competitor_presence || '—'}</td>
+      <td style="color:var(--text-dim)">${fmt(c.research.last_run_date)}</td>
+      <td style="text-align:center">${checkIcon(c.seo.page_built)}</td>
+      <td class="moment-cell${moment ? ' has-value' : ''}" title="${moment ? moment.replace(/"/g, '&quot;') : ''}">${moment ? truncated : '—'}</td>`;
+    tr.addEventListener('click', () => openPanel(c));
+    tbody.appendChild(tr);
+  });
+}
+
+// Sort on header click
+document.querySelectorAll('thead th[data-col]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    sortDir = sortCol === col ? sortDir * -1 : 1;
+    sortCol = col;
+    document.querySelectorAll('thead th').forEach(h => {
+      h.classList.remove('sorted');
+      h.querySelector('.sort-icon').textContent = '↕';
+    });
+    th.classList.add('sorted');
+    th.querySelector('.sort-icon').textContent = sortDir === 1 ? '↑' : '↓';
+    renderRows();
+  });
+});
+
+renderRows();
+
+// ── Footer ────────────────────────────────────────────────────────────────────
+const allDates = cities.map(c => c.research.last_run_date).filter(Boolean).sort();
+const mostRecent = allDates.length ? allDates[allDates.length - 1] : DATA.rotation.last_run_date;
+document.getElementById('footer').innerHTML =
+  `Last research run: <span>${fmt(mostRecent)}</span> &nbsp;&middot;&nbsp; Data source: city-index.json`;
+
+// ── Detail Panel ──────────────────────────────────────────────────────────────
+const backdrop = document.getElementById('panel-backdrop');
+const panel    = document.getElementById('detail-panel');
+
+function openPanel(city) {
+  buildPanel(city);
+  backdrop.style.display = 'block';
+  // force reflow before adding classes so transitions fire
+  backdrop.offsetHeight;
+  backdrop.classList.add('visible');
+  panel.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('panel-close').focus();
+}
+
+function closePanel() {
+  backdrop.classList.remove('visible');
+  panel.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { backdrop.style.display = 'none'; }, 220);
+}
+
+backdrop.addEventListener('click', closePanel);
+document.getElementById('panel-close').addEventListener('click', closePanel);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+function buildPanel(c) {
+  const r = c.research;
+  const s = c.seo;
+
+  // Header
+  document.getElementById('panel-city-name').textContent = c.city;
+
+  const badgesEl = document.getElementById('panel-badges');
+  const seoBtn = s.page_built
+    ? `<a class="btn-seo-page active" href="${s.page_path}" target="_blank" rel="noopener">↗ View SEO Page</a>`
+    : `<button class="btn-seo-page disabled" disabled>No page yet</button>`;
+
+  badgesEl.innerHTML = statusBadge(c.status) + readinessBadge(r.market_readiness) + seoBtn;
+
+  // Body
+  const body = document.getElementById('panel-body');
+  let html = '';
+
+  // ── 1. Market Moment ──
+  if (r.market_moment) {
+    html += `
+      <div class="ps">
+        <div class="ps-label">Market Moment</div>
+        <div class="moment-callout">
+          <div class="moment-callout-text">${r.market_moment}</div>
+          <div class="moment-callout-sub">Active opportunity — act on this now</div>
+        </div>
+      </div>`;
+  }
+
+  // ── 2. Market Signals ──
+  const signals = [
+    { name: 'Parking Cost Signal',     key: 'parking_cost_signal' },
+    { name: 'Availability Signal',     key: 'availability_signal' },
+    { name: 'Regulatory Trend',        key: 'regulatory_trend' },
+    { name: 'HOA Friction Level',      key: 'hoa_friction_level' },
+    { name: 'Elevator-to-Parking Ratio', key: 'elevator_parking_ratio' },
+    { name: 'New Development Pipeline', key: 'new_development_pipeline' },
+  ];
+
+  html += `<div class="ps"><div class="ps-label">Market Signals</div><div class="signal-grid">`;
+  signals.forEach(sig => {
+    const val = r[sig.key];
+    const { cls, text } = signalVal(val);
+    html += `
+      <div class="signal-item">
+        <div class="signal-name">${sig.name}</div>
+        <div class="signal-value ${cls}">${text}</div>
+      </div>`;
+  });
+  html += `</div></div>`;
+
+  // ── 3. Competitor Presence ──
+  const compPresence = r.competitor_presence;
+  const { cls: compCls, text: compText } = signalVal(compPresence);
+  const researchLink = r.file_path
+    ? `<a href="${r.file_path}" target="_blank" rel="noopener">Open research file →</a>`
+    : `<span style="color:var(--text-muted);font-style:italic">No research file yet</span>`;
+
+  html += `
+    <div class="ps">
+      <div class="ps-label">Competitors</div>
+      <div class="competitor-value signal-value ${compCls}">${compText}</div>
+      <div class="competitor-note">Named competitors captured in research file &mdash; ${researchLink}</div>
+    </div>`;
+
+  // ── 4. Research Intelligence ──
+  function intelCard(tier, label, count, desc) {
+    const countHtml = count != null
+      ? `<div class="intel-count">${count}</div>`
+      : `<div class="intel-count no-data">No data yet</div>`;
+    return `
+      <div class="intel-card">
+        <div class="intel-tier">${tier}</div>
+        ${countHtml}
+        <div class="intel-desc"><strong>${label}</strong><br>${desc}</div>
+      </div>`;
+  }
+
+  html += `
+    <div class="ps">
+      <div class="ps-label">Research Intelligence</div>
+      <div class="intel-grid">
+        ${intelCard('Tier 0', 'Content Angles', r.tier0_count, 'Parking facts worth publishing. Feeds SEO pages.')}
+        ${intelCard('Tier 1', 'Direct Opportunities', r.tier1_count, 'Property managers, active complaints, competitor mentions. Act on these.')}
+        ${intelCard('Tier 2', 'Weak Signals', r.tier2_count ?? null, 'Social hooks and language. Useful for copy, not outreach.')}
+      </div>
+    </div>`;
+
+  // ── 5. SEO Signals ──
+  const oppVal = r.seo_page_opportunity;
+  const oppBadge = opportunityBadge(oppVal);
+
+  const contentGap = r.content_gap;
+  const keywords = r.top_keywords;
+
+  html += `
+    <div class="ps">
+      <div class="ps-label">SEO Signals</div>
+      <div class="seo-row">
+        <div class="seo-row-label">SEO Page Opportunity</div>
+        <div class="seo-row-value">${oppBadge}</div>
+      </div>
+      <div class="ps-label" style="margin-top:8px;border:none;padding:0">Content Gap</div>
+      ${contentGap
+        ? `<div class="content-gap-box">${contentGap}</div>`
+        : `<div class="content-gap-box">${noData('What\'s being searched but not answered online — not yet captured')}</div>`}
+      <div class="ps-label" style="margin-top:8px;border:none;padding:0">Top Keywords</div>
+      ${keywords && keywords.length
+        ? `<div class="keywords-list">${keywords.map(k => `<span class="keyword-pill">${k}</span>`).join('')}</div>`
+        : noData('No keywords captured yet')}
+    </div>`;
+
+  // ── 6. Research History ──
+  html += `
+    <div class="ps">
+      <div class="ps-label">Research History</div>
+      <div class="history-row">
+        <span style="color:var(--text-dim)">Last research run</span>
+        <span>${fmt(r.last_run_date)}</span>
+      </div>
+      ${s.page_built ? `
+      <div class="history-row" style="margin-top:8px">
+        <span style="color:var(--text-dim)">SEO page built</span>
+        <span>${fmt(s.last_built_date)}</span>
+      </div>` : ''}
+      <div style="margin-top:10px">
+        ${r.file_path
+          ? `<a href="${r.file_path}" target="_blank" rel="noopener" style="color:var(--accent);font-size:13px;text-decoration:none">Open raw research file →</a>`
+          : noData('No research file on record')}
+      </div>
+    </div>`;
+
+  body.innerHTML = html;
+}
+</script>
+</body>
+</html>

@@ -181,7 +181,7 @@ visitor_parking_ratio: [adequate / low / near-zero / unknown] — [one-line evid
 market_readiness: [tier-1 / tier-2 / tier-3]
 seo_page_opportunity: [yes / no / maybe] — [reason]
 competitor_presence: [none / light / active] — [names if active]
-timing_trigger: [one-line description of any development, policy, or PR moment worth acting on now — or "none"]
+market_moment: [one-line description of any development, policy, or PR moment worth acting on now — or "none"]
 outreach_angle: [one sentence on the strongest angle for a cold outreach email to a PM in this city right now]
 
 # CONTENT SIGNALS
@@ -283,7 +283,7 @@ After saving the city file, update `city-index.json` at the project root:
    - `market_readiness` → from frontmatter `market_readiness`
    - `seo_page_opportunity` → from frontmatter `seo_page_opportunity` (strip any trailing annotation after `—`)
    - `competitor_presence` → from frontmatter `competitor_presence` (strip any trailing annotation after `—`)
-   - `timing_trigger` → from frontmatter `timing_trigger`
+   - `market_moment` → from frontmatter `market_moment`
    - `tier0_count` → from frontmatter `tier0_count`
    - `tier1_count` → from frontmatter `tier1_count`
 4. Recalculate `status`:
