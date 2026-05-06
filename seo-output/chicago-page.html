@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Parking in Downtown Chicago Condos (2026 Guide) | SpotShare</title>
+  <meta name="description" content="Chicago parking peaks at $9.75/hr in River North — and the city eliminated parking minimums for 3/4 of Chicago in September 2025. Here's what HOA boards and property managers need to know about the guest parking problem, and how buildings across downtown Chicago are addressing it." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid #e8e8f0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: #4f46e5; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-cta {
+      background: #4f46e5;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 16px 48px;
+      font-size: 13px;
+      color: #888;
+      background: #fafafa;
+      border-bottom: 1px solid #e8e8f0;
+    }
+    .breadcrumb a { color: #4f46e5; text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 80px 48px;
+      max-width: 100%;
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(79, 70, 229, 0.3);
+      border: 1px solid rgba(79, 70, 229, 0.5);
+      color: #a5b4fc;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #818cf8; }
+    .hero-sub {
+      font-size: 20px;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+    .hero-intro {
+      font-size: 17px;
+      color: #cbd5e1;
+      line-height: 1.75;
+      border-left: 3px solid #4f46e5;
+      padding-left: 20px;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid #e8e8f0;
+    }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      color: #1a1a2e;
+    }
+    h2 .accent { color: #4f46e5; }
+
+    p {
+      font-size: 17px;
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 28px 0;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    thead { background: #f8fafc; }
+    th {
+      padding: 14px 20px;
+      text-align: left;
+      font-weight: 600;
+      color: #475569;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #374151;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    .rate-high { color: #dc2626; font-weight: 700; }
+    .rate-med { color: #d97706; font-weight: 600; }
+    td .note { font-size: 13px; color: #94a3b8; display: block; margin-top: 2px; }
+
+    .source-note {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .callout p { color: #1e40af; font-size: 16px; margin: 0; }
+    .callout strong { color: #1e3a8a; }
+
+    .callout-warning {
+      background: #fff7ed;
+      border-left-color: #f97316;
+    }
+    .callout-warning p { color: #9a3412; }
+    .callout-warning strong { color: #7c2d12; }
+
+    /* TWO-COL CARDS */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .benefit-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .benefit-card .icon { font-size: 22px; margin-bottom: 8px; }
+    .benefit-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+    .benefit-card p { font-size: 14px; color: #64748b; margin: 0; line-height: 1.5; }
+
+    /* TESTIMONIAL */
+    .testimonial {
+      background: #f8f9ff;
+      border: 1px solid #e0e4ff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 28px 0;
+      position: relative;
+    }
+    .testimonial .placeholder {
+      font-size: 13px;
+      color: #94a3b8;
+      font-style: italic;
+      border: 1px dashed #c7d2fe;
+      border-radius: 6px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    /* FAQ */
+    .faq-list { margin-top: 24px; }
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 20px 24px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #1a1a2e;
+      background: #fafafa;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q::after { content: '+'; font-size: 20px; color: #4f46e5; font-weight: 400; }
+    .faq-a {
+      padding: 0 24px 20px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+      padding: 72px 48px;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-section h2 {
+      color: #fff;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      color: #94a3b8;
+      font-size: 18px;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid #e8e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    footer a { color: #4f46e5; text-decoration: none; }
+
+    /* CITIES NAV */
+    .cities-nav {
+      background: #f8fafc;
+      padding: 40px 48px;
+      border-top: 1px solid #e8e8f0;
+    }
+    .cities-nav h3 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+    .cities-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .city-pill {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .city-pill.active { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+    .city-pill.coming-soon { color: #cbd5e1; border-color: #f1f5f9; cursor: default; }
+
+    @media (max-width: 768px) {
+      nav, .breadcrumb, .hero, .container, .cta-section, .cities-nav, footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .hero h1 { font-size: 32px; }
+      .two-col { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Spot<span>Share</span></a>
+    <div class="nav-links">
+      <a href="/cities">Cities</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/blog">Resources</a>
+      <a href="/demo" class="nav-cta">Get a Demo</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/cities">Cities</a>
+    <span>›</span>
+    Chicago
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Chicago · 2026 Guide</div>
+      <h1>Guest Parking in<br /><span>Downtown Chicago</span><br />Condos</h1>
+      <p class="hero-sub">What property managers and HOA boards need to know in 2026</p>
+      <p class="hero-intro">
+        Chicago has some of the most expensive street parking in the country — and as of September 2025, the city stopped requiring developers to build any of it in new residential buildings near transit. River North, Gold Coast, Streeterville, and the South Loop are all in the affected zone. The buildings going up now are being designed without a parking floor. The HOA boards at those buildings will be the first to feel it.
+      </p>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="container">
+
+    <!-- SECTION 1: PARKING COSTS -->
+    <section>
+      <h2>What It Costs Your Guests to Park <span class="accent">Right Now</span></h2>
+      <p>Chicago's downtown parking ranks among the most expensive in the United States. If your building doesn't offer guest parking, here's what visitors are actually paying:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Parking Type</th>
+              <th>Current Rate</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Street meters — River North / Loop (peak)</td>
+              <td class="rate-high">$7.75–$9.75/hr</td>
+              <td><span class="note">High-demand zones; varies by block and time</span></td>
+            </tr>
+            <tr>
+              <td>Street meters — standard zones</td>
+              <td class="rate-high">$2.50–$4.00/hr</td>
+              <td><span class="note">Lower-density corridors outside core downtown</span></td>
+            </tr>
+            <tr>
+              <td>Daily parking garage (downtown/River North)</td>
+              <td class="rate-high">$35–$52/day</td>
+              <td><span class="note">Range across Streeterville, Loop, and Gold Coast</span></td>
+            </tr>
+            <tr>
+              <td>Monthly parking — River North</td>
+              <td class="rate-med">$325–$425/month</td>
+              <td><span class="note">23.25% parking tax applies (effective Jan 1, 2025)</span></td>
+            </tr>
+            <tr>
+              <td>Monthly parking — Magnificent Mile</td>
+              <td class="rate-med">$395–$475/month</td>
+              <td><span class="note">Top of market; limited availability near residential high-rises</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">Source: ParkChicago Rates & Hours; CostCheckUSA — Chicago Parking Cost Guide 2026; Windy Parking — Downtown Chicago Parking 2026</p>
+
+      <div class="callout callout-warning">
+        <p><strong>For property managers:</strong> A guest visiting a River North condo for dinner and staying three hours is looking at $25–$30 at a peak street meter — before the 23.25% city parking tax added to any lot or garage. A building that can offer a guest spot is offering something the neighborhood genuinely cannot.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: REGULATORY -->
+    <section>
+      <h2>Why Newer Buildings Have <span class="accent">Less</span> Guest Parking</h2>
+      <p>Chicago's approach to parking has changed fundamentally. The question is no longer whether the city might reduce parking requirements — it already has.</p>
+
+      <p>On <strong>September 25, 2025</strong>, the Chicago City Council passed an ordinance eliminating minimum parking requirements for properties within <strong>1/4 mile of a frequent bus route or 1/2 mile of a rail station</strong>. That coverage is estimated at approximately three-quarters of the city — encompassing every major luxury condo corridor: River North, Gold Coast, Streeterville, South Loop, Lincoln Park, and Wicker Park.</p>
+
+      <div class="callout">
+        <p><strong>The math developers are doing:</strong> Building one underground parking space in Chicago costs approximately <strong>$67,500</strong>. Without a legal minimum requiring them to build parking, most developers in transit-adjacent neighborhoods will build fewer spaces, or none at all. That cost savings goes into the unit count, the amenity budget, or the developer's margin — not into guest parking for future HOA boards.</p>
+      </div>
+
+      <p>For property managers and HOA boards, this creates a permanent structural shift:</p>
+
+      <div class="two-col">
+        <div class="benefit-card">
+          <div class="icon">📉</div>
+          <h4>New buildings won't bring relief</h4>
+          <p>Every luxury condo opening in River North or Streeterville from 2026 onward may have been designed with no parking minimum. The supply problem doesn't resolve with new construction — it compounds.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">⚖️</div>
+          <h4>Illinois condo boards are also navigating new law</h4>
+          <p>A 2025 amendment to the Illinois Condominium Property Act requires all condo boards to have a formal accessible parking policy. Parking policy is officially on every board's agenda now.</p>
+        </div>
+      </div>
+
+      <p class="source-note">Sources: chicago.gov — Parking Reform ordinance (effective September 25, 2025); Birchwood Law — "Chicago Ends Parking Minimums"; Thompson Coburn — Chicago parking reform analysis; Illinois Condo and HOA Law Blog — Section 18.12 accessible parking requirements</p>
+    </section>
+
+    <!-- SECTION 3: HOW THE SHARED PARKING MODEL WORKS -->
+    <section>
+      <h2>How Buildings Are <span class="accent">Solving It</span> Without Adding Spaces</h2>
+      <p>Chicago's downtown condo buildings are built around the same structural reality as every other dense urban market: every unit has an assigned parking spot, and none of those spots are set aside for guests. On paper, that looks like a shortage. In practice, it means most of the garage is empty most of the time.</p>
+
+      <p>Residents leave for the office. They travel. They use transit. On any given weekday, a significant portion of resident-assigned spots in a River North or Gold Coast condo sit unused. The shared parking model converts that idle inventory into a managed guest amenity: residents opt in to make their spot available during windows they know they won't need it, and neighbors can book it when a guest is coming.</p>
+
+      <p>The HOA doesn't need to buy anything, build anything, or renegotiate the garage structure. The amenity is already in the building. What it needs is a system that makes the available spots bookable, handles access, and gives property management a clear view of what's being used and when.</p>
+
+      <div class="callout">
+        <p><strong>How it works in practice:</strong> A resident in a Streeterville high-rise is flying out Monday morning for a work trip. She won't need her spot until Friday. Another resident's college-age son is visiting Tuesday through Thursday. She makes her spot available through the building app; he books it for two nights. No street parking, no $100 garage bill, no complaint to management.</p>
+      </div>
+
+      <p>Several platforms are designed for this use case in residential buildings. SpotShare is one — built for HOA communities and luxury condos, handling reservations, access, and the property management workflow. The right fit depends on the building's existing systems and setup.</p>
+
+      <div class="testimonial">
+        <div class="placeholder">
+          ✏️ <strong>Placeholder — pull a real quote from a Chicago property manager or resident before publishing.</strong><br /><br />
+          Example format:<br /><br />
+          "We'd been directing guests to $45-a-day garages for years. Once we activated the shared parking program, that stopped being a conversation entirely."<br />
+          — Property Manager, [Building Name], River North
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2>Frequently Asked <span class="accent">Questions</span></h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Does my Chicago condo building have to provide guest parking?</div>
+          <div class="faq-a">
+            <p>No — and as of September 25, 2025, most new Chicago condo buildings don't have to provide any parking at all. The city's new ordinance eliminated minimum parking requirements for properties near transit, covering approximately three-quarters of Chicago. For buildings that already exist, guest parking has always been a building decision — governed by the condo declaration and HOA bylaws, not city code. There is no Illinois law requiring a building to reserve spots for guests.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How much does visitor parking cost near Chicago condos right now?</div>
+          <div class="faq-a">
+            <p>It depends on the neighborhood, but it's expensive everywhere downtown. Street meters in River North and the Loop peak at $7.75–$9.75/hour in high-demand zones. Daily parking garages in Streeterville, River North, and Gold Coast run $35–$52/day. Monthly parking in River North averages $325–$425/month. And since January 1, 2025, the city charges a 23.25% parking tax on daily lot and garage use — one of the highest in the country.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What did Chicago's September 2025 parking ordinance actually change?</div>
+          <div class="faq-a">
+            <p>The September 25, 2025 ordinance eliminated minimum parking requirements for new residential and commercial development on properties within 1/4 mile of a frequent bus route or 1/2 mile of a rail station. That covers an estimated three-quarters of Chicago — essentially the entire dense urban core. Developers are no longer required to include any parking in their buildings in those areas. Underground parking costs approximately $67,500 per space to build in Chicago, so without a mandate, most developers will build significantly less. HOA boards at new buildings coming online from 2026 onward may be dealing with a guest parking problem by design from day one.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How do HOA buildings manage guest parking without building new spaces?</div>
+          <div class="faq-a">
+            <p>The approach gaining the most traction in Chicago's luxury condo buildings is a shared resident parking model: residents who aren't using their assigned spot make it available to neighbors' guests through a building-managed platform. No construction, no capital cost to the HOA — just a board amenity vote and a building rollout. SpotShare is one platform built specifically for this model, designed for HOA communities and luxury condos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What is the new Illinois accessible parking requirement for condo boards?</div>
+          <div class="faq-a">
+            <p>A 2025 amendment to Section 18.12 of the Illinois Condominium Property Act required all Illinois condo boards to adopt a formal accessible parking policy by April 2, 2025. The policy must include a written procedure for residents to request accessible parking and a board decision timeline of no more than 45 days. Boards that haven't adopted a policy are now out of compliance. This is separate from how the board allocates guest parking, but it placed parking policy formally on the agenda of every Illinois condo association in early 2025.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What is SpotShare?</div>
+          <div class="faq-a">
+            <p>SpotShare is a guest parking infrastructure platform designed for luxury condos and HOA communities. Buildings use SpotShare to turn idle resident-assigned parking spots into a shared guest parking amenity — no new construction required. It is a building-specific amenity managed by the property, not a public parking marketplace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Want to See How It Works for Your Building?</h2>
+    <p>We can walk you through how the shared parking model works and whether it's a fit for your building's setup.</p>
+    <div class="cta-buttons">
+      <a href="/demo" class="btn-primary">Get a Demo for Your Building</a>
+      <a href="/how-it-works" class="btn-secondary">See How It Works</a>
+    </div>
+  </div>
+
+  <!-- CITIES NAV -->
+  <div class="cities-nav">
+    <div class="container" style="padding: 0;">
+      <h3>SpotShare Cities</h3>
+      <div class="cities-list">
+        <a href="/cities/san-diego" class="city-pill">San Diego</a>
+        <a href="/cities/atlanta" class="city-pill">Atlanta</a>
+        <a href="/cities/chicago" class="city-pill active">Chicago</a>
+        <a href="/cities/seattle" class="city-pill coming-soon">Seattle (coming soon)</a>
+        <a href="/cities/miami" class="city-pill coming-soon">Miami (coming soon)</a>
+        <a href="/cities/new-york" class="city-pill coming-soon">New York (coming soon)</a>
+        <a href="/cities/los-angeles" class="city-pill coming-soon">Los Angeles (coming soon)</a>
+        <a href="/cities" class="city-pill">View all cities →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 SpotShare. Guest parking infrastructure for luxury condos.</span>
+    <span>Page last updated May 2026 · <a href="/cities/chicago">spotshare.io/cities/chicago</a></span>
+  </footer>
+
+  <!-- SCHEMA MARKUP -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://spotshare.io"},
+          {"@type": "ListItem", "position": 2, "name": "Cities", "item": "https://spotshare.io/cities"},
+          {"@type": "ListItem", "position": 3, "name": "Chicago", "item": "https://spotshare.io/cities/chicago"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does my Chicago condo building have to provide guest parking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — and as of September 25, 2025, most new Chicago condo buildings don't have to provide any parking at all. The city's new ordinance eliminated minimum parking requirements for properties near transit, covering approximately three-quarters of Chicago."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does visitor parking cost near Chicago condos right now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Street meters in River North and the Loop peak at $7.75–$9.75/hour. Daily parking garages run $35–$52/day in Streeterville, River North, and Gold Coast. Monthly parking in River North averages $325–$425/month. The city's 23.25% parking tax (effective January 1, 2025) applies to daily lot and garage use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What did Chicago's September 2025 parking ordinance actually change?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The September 25, 2025 ordinance eliminated minimum parking requirements for new development within 1/4 mile of a frequent bus route or 1/2 mile of a rail station — covering approximately three-quarters of Chicago. Underground parking costs $67,500 per space to build, so without a mandate, most developers will build significantly less parking going forward."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do HOA buildings manage guest parking without building new spaces?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The shared resident parking model: residents who aren't using their assigned spot make it available to neighbors' guests through a building-managed platform. No construction, no capital cost to the HOA — just a board amenity vote and a building rollout. SpotShare is one platform built specifically for this model."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the new Illinois accessible parking requirement for condo boards?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 2025 amendment to Section 18.12 of the Illinois Condominium Property Act required all Illinois condo boards to adopt a formal accessible parking policy by April 2, 2025. The policy must include a written procedure for residents to request accessible parking with a maximum 45-day decision timeline."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is SpotShare?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SpotShare is a guest parking infrastructure platform designed for luxury condos and HOA communities. Buildings use SpotShare to turn idle resident-assigned parking spots into a shared guest parking amenity — no new construction required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>

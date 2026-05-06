@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Parking in Downtown Atlanta Condos (2026 Guide) | SpotShare</title>
+  <meta name="description" content="Atlanta parking rates hit $2.00/hr downtown — and the city is actively eliminating parking minimums for new condo developments. Here's what HOA boards and property managers need to know about the guest parking problem, and how buildings across Atlanta are addressing it." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid #e8e8f0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: #4f46e5; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-cta {
+      background: #4f46e5;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 16px 48px;
+      font-size: 13px;
+      color: #888;
+      background: #fafafa;
+      border-bottom: 1px solid #e8e8f0;
+    }
+    .breadcrumb a { color: #4f46e5; text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 80px 48px;
+      max-width: 100%;
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(79, 70, 229, 0.3);
+      border: 1px solid rgba(79, 70, 229, 0.5);
+      color: #a5b4fc;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #818cf8; }
+    .hero-sub {
+      font-size: 20px;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+    .hero-intro {
+      font-size: 17px;
+      color: #cbd5e1;
+      line-height: 1.75;
+      border-left: 3px solid #4f46e5;
+      padding-left: 20px;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid #e8e8f0;
+    }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      color: #1a1a2e;
+    }
+    h2 .accent { color: #4f46e5; }
+
+    p {
+      font-size: 17px;
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 28px 0;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    thead { background: #f8fafc; }
+    th {
+      padding: 14px 20px;
+      text-align: left;
+      font-weight: 600;
+      color: #475569;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #374151;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    .rate-high { color: #dc2626; font-weight: 700; }
+    .rate-med { color: #d97706; font-weight: 600; }
+    td .note { font-size: 13px; color: #94a3b8; display: block; margin-top: 2px; }
+
+    .source-note {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .callout p { color: #1e40af; font-size: 16px; margin: 0; }
+    .callout strong { color: #1e3a8a; }
+
+    .callout-warning {
+      background: #fff7ed;
+      border-left-color: #f97316;
+    }
+    .callout-warning p { color: #9a3412; }
+    .callout-warning strong { color: #7c2d12; }
+
+    /* TWO-COL CARDS */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .benefit-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .benefit-card .icon { font-size: 22px; margin-bottom: 8px; }
+    .benefit-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+    .benefit-card p { font-size: 14px; color: #64748b; margin: 0; line-height: 1.5; }
+
+    /* TESTIMONIAL */
+    .testimonial {
+      background: #f8f9ff;
+      border: 1px solid #e0e4ff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 28px 0;
+      position: relative;
+    }
+    .testimonial .placeholder {
+      font-size: 13px;
+      color: #94a3b8;
+      font-style: italic;
+      border: 1px dashed #c7d2fe;
+      border-radius: 6px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    /* FAQ */
+    .faq-list { margin-top: 24px; }
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 20px 24px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #1a1a2e;
+      background: #fafafa;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q::after { content: '+'; font-size: 20px; color: #4f46e5; font-weight: 400; }
+    .faq-a {
+      padding: 0 24px 20px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+      padding: 72px 48px;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-section h2 {
+      color: #fff;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      color: #94a3b8;
+      font-size: 18px;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid #e8e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    footer a { color: #4f46e5; text-decoration: none; }
+
+    /* CITIES NAV */
+    .cities-nav {
+      background: #f8fafc;
+      padding: 40px 48px;
+      border-top: 1px solid #e8e8f0;
+    }
+    .cities-nav h3 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+    .cities-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .city-pill {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .city-pill.active { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+    .city-pill.coming-soon { color: #cbd5e1; border-color: #f1f5f9; cursor: default; }
+
+    @media (max-width: 768px) {
+      nav, .breadcrumb, .hero, .container, .cta-section, .cities-nav, footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .hero h1 { font-size: 32px; }
+      .two-col { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Spot<span>Share</span></a>
+    <div class="nav-links">
+      <a href="/cities">Cities</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/blog">Resources</a>
+      <a href="/demo" class="nav-cta">Get a Demo</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/cities">Cities</a>
+    <span>›</span>
+    Atlanta
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Atlanta · 2026 Guide</div>
+      <h1>Guest Parking in<br /><span>Downtown Atlanta</span><br />Condos</h1>
+      <p class="hero-sub">What property managers and HOA boards need to know in 2026</p>
+      <p class="hero-intro">
+        Atlanta's luxury condo market is growing fast — Midtown, Buckhead, and the BeltLine corridor are adding units at a pace the city's parking infrastructure wasn't designed for. Every resident has an assigned spot. Guests rarely do. And now the city itself is removing the rules that required developers to build parking in the first place. The complaint is already common at HOA board meetings. The policy change will make it permanent.
+      </p>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="container">
+
+    <!-- SECTION 1: PARKING COSTS -->
+    <section>
+      <h2>What It Costs Your Guests to Park <span class="accent">Right Now</span></h2>
+      <p>Parking in downtown Atlanta and Midtown is neither free nor easy for visitors. Here's what guests are actually paying when they can't park at your building:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Parking Type</th>
+              <th>Current Rate</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Street meters (downtown/Midtown)</td>
+              <td class="rate-high">$2.00/hr</td>
+              <td><span class="note">2-hour limit; enforced Mon–Sat, 7am–7pm</span></td>
+            </tr>
+            <tr>
+              <td>Daily parking garage (premium downtown)</td>
+              <td class="rate-high">$15–$30/day</td>
+              <td><span class="note">Range across Midtown and downtown garages</span></td>
+            </tr>
+            <tr>
+              <td>Monthly garage parking — Midtown (average)</td>
+              <td class="rate-med">$190/month</td>
+              <td><span class="note">Range $75–$500 depending on building and location</span></td>
+            </tr>
+            <tr>
+              <td>Monthly garage parking — downtown</td>
+              <td class="rate-med">$65–$250/month</td>
+              <td><span class="note">High variance; premium spots near Peachtree at top of range</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">Source: SpotAngels — Atlanta Street Parking Guide (2026); Parkopedia — Midtown Atlanta Parking; City of Atlanta ATL Plus Mobility parking guide</p>
+
+      <div class="callout callout-warning">
+        <p><strong>For property managers:</strong> A two-hour visit to a resident's Midtown condo runs $4 at the meter — if the guest finds a spot before the 2-hour limit and doesn't need to repark. A full-day visit means $15–$30 in a garage, before tips. This is appearing in HOA complaint logs and board meeting agendas across Atlanta's denser neighborhoods.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: REGULATORY -->
+    <section>
+      <h2>Why Newer Buildings Have <span class="accent">Less</span> Guest Parking</h2>
+      <p>The assumption that newer luxury condos come with better parking doesn't hold in Atlanta's fastest-growing neighborhoods. The city has been moving toward eliminating parking requirements for new construction — and the BeltLine has already set the precedent.</p>
+
+      <p>In <strong>February 2024</strong>, the Atlanta City Council removed minimum parking requirements for new residential and commercial development in the <strong>BeltLine Overlay District</strong>. Every condo building that has broken ground in that corridor since then can be built with whatever parking ratio the developer chooses — including none. In 2025, Councilmember Jason Dozier introduced <strong>ATL Zoning 2.0</strong>, the city's first comprehensive zoning code overhaul since 1982, which would extend this to virtually all primary residential zones citywide.</p>
+
+      <div class="callout">
+        <p><strong>The policy logic:</strong> The stated goal of both the BeltLine exemption and ATL Zoning 2.0 is to lower housing production costs by removing the expense of building structured parking. For developers, that means fewer spaces per unit. For HOA boards inheriting these buildings, that means fewer spaces to allocate — including to guests.</p>
+      </div>
+
+      <p>For luxury condo buildings already operating in Midtown, Buckhead, and downtown Atlanta, this creates two converging pressures:</p>
+
+      <div class="two-col">
+        <div class="benefit-card">
+          <div class="icon">📉</div>
+          <h4>New buildings won't solve it</h4>
+          <p>Projects going up under ATL Zoning 2.0 won't bring more guest parking to the neighborhood — they're being designed with less. The BeltLine buildings already going up are proof.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">🏆</div>
+          <h4>It's now a competitive differentiator</h4>
+          <p>Buildings that manage existing parking well have a genuine amenity advantage. For residents who host family and guests, the ability to park a visitor without a $30 garage bill matters.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-warning">
+        <p><strong>On the horizon — Elyse Buckhead:</strong> Kolter Urban's upcoming 194-unit luxury tower at 102 West Paces Ferry Road (site work Q2 2026, delivery Q4 2028–Q1 2029) will be one of Atlanta's highest-profile new condo developments. Units start in the mid-$900k range. Its parking allocation will be set by developer decision, not code requirement. When the first HOA board convenes, guest parking will be on the agenda.</p>
+      </div>
+
+      <p class="source-note">Sources: Rough Draft Atlanta — "Atlanta City Council Removes Minimum Parking Requirements in BeltLine District" (February 2024); Center for Civic Innovation — "Council Moves to Eliminate Parking Minimums Citywide" (2025); Kolter Urban / SpaceInTown — Elyse Buckhead development details</p>
+    </section>
+
+    <!-- SECTION 3: HOW THE SHARED PARKING MODEL WORKS -->
+    <section>
+      <h2>How Buildings Are <span class="accent">Solving It</span> Without Adding Spaces</h2>
+      <p>The solution most Atlanta condo buildings land on isn't new construction — it's activation of what's already in the garage. Downtown and Midtown high-rises are typically built with resident-assigned parking: every unit owns a spot, and no spots are set aside for guests. That structure looks like a shortage on paper, but it contains a resource that most buildings aren't using.</p>
+
+      <p>At any given time, a meaningful share of resident-assigned spots sit empty. Owners are at work, traveling, or commuting another way. The shared parking model turns that idle inventory into a managed guest amenity: residents who know they won't need their spot opt in to make it available during those windows, and other residents can book it for an incoming guest.</p>
+
+      <p>The model doesn't require the HOA to purchase anything or build anything. The infrastructure is already in the garage. What it needs is a system to make the idle inventory bookable and to handle the building management side — access, reservations, resident permissions.</p>
+
+      <div class="callout">
+        <p><strong>How it works in practice:</strong> A resident's parents are flying in from out of town for the weekend. She checks the building app Thursday night, finds a neighbor's spot available Saturday through Sunday (the neighbor is at the lake), and reserves it in advance. Her parents arrive, park in the building, and never see a meter. The neighbor's spot gets used while it would have sat empty. No complaint logged. No board agenda item next quarter.</p>
+      </div>
+
+      <p>Several platforms are built specifically for this use case in residential buildings. SpotShare is one — it's designed for HOA communities and luxury condos and manages the reservations, access, and property management workflow. The right fit depends on the building's existing systems and management setup.</p>
+
+      <div class="testimonial">
+        <div class="placeholder">
+          ✏️ <strong>Placeholder — pull a real quote from an Atlanta property manager or resident before publishing.</strong><br /><br />
+          Example format:<br /><br />
+          "Guest parking was the number one complaint at every board meeting for two years. Three months after we launched, we stopped hearing about it."<br />
+          — Property Manager, [Building Name], Midtown Atlanta
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2>Frequently Asked <span class="accent">Questions</span></h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Does my Atlanta condo have to provide guest parking?</div>
+          <div class="faq-a">
+            <p>No — and there's no requirement that it does. Most downtown Atlanta and Midtown condos were built with resident-only assigned parking. Every space belongs to a specific unit, and none are reserved for guests. The city's BeltLine parking minimum changes (2024) and the pending ATL Zoning 2.0 legislation make it even less likely that new buildings will include dedicated guest spaces. It is a building decision, not a code requirement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How much does visitor parking cost near Atlanta condos right now?</div>
+          <div class="faq-a">
+            <p>Street meters in downtown and Midtown Atlanta run $2.00/hour, enforced Monday through Saturday from 7am to 7pm, with a 2-hour maximum. Nearby parking garages charge $15–$30/day for daily visitors. Monthly parking in Midtown averages $190/month (ranging from $75 to $500 depending on location and building). For residents hosting regular visitors — family, caregivers, recurring guests — this is a meaningful ongoing cost.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What is the ATL Zoning 2.0 and how does it affect condo parking?</div>
+          <div class="faq-a">
+            <p>ATL Zoning 2.0 is Atlanta's first comprehensive zoning code overhaul since 1982, introduced in 2025 by Councilmember Jason Dozier. Among its provisions is the elimination of off-street parking minimums in virtually all primary residential zones citywide — meaning new condo developments would no longer be required to build any minimum number of parking spaces. The BeltLine Overlay District already set this precedent in February 2024. If passed citywide, developers will set their own parking ratios based on cost and market demand — which historically means fewer spaces, not more, for dense luxury projects.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How do HOA buildings manage guest parking without building new spaces?</div>
+          <div class="faq-a">
+            <p>The most practical approach in Atlanta's dense condo buildings is a shared resident parking model: residents who aren't using their assigned spot make it available to neighbors' guests through a building-managed system. This turns idle inventory into a functional guest amenity without any construction or capital outlay from the HOA. SpotShare is one platform built specifically for this. It requires an amenity vote at the board level and a building rollout — typically a few weeks from decision to live.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Which Atlanta neighborhoods have the most acute guest parking problem?</div>
+          <div class="faq-a">
+            <p>Midtown and Buckhead have the highest concentration of luxury condo buildings with resident-only assigned parking and limited or no dedicated guest spots. The BeltLine corridor — Old Fourth Ward, Inman Park, Ponce City Market vicinity — is adding dense new residential construction under the 2024 no-minimum rules, meaning newer buildings in that corridor may have even less total parking than older ones nearby. Downtown Atlanta faces similar pressure with higher meter rates and more garage-dependent visitors.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What is SpotShare?</div>
+          <div class="faq-a">
+            <p>SpotShare is a guest parking infrastructure platform designed for luxury condos and HOA communities. Buildings use SpotShare to turn idle resident-assigned parking spots into a shared guest parking amenity — no new construction required. It is a building-specific amenity managed by the property, not a public parking marketplace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Want to See How It Works for Your Building?</h2>
+    <p>We can walk you through how the shared parking model works and whether it's a fit for your building's setup.</p>
+    <div class="cta-buttons">
+      <a href="/demo" class="btn-primary">Get a Demo for Your Building</a>
+      <a href="/how-it-works" class="btn-secondary">See How It Works</a>
+    </div>
+  </div>
+
+  <!-- CITIES NAV -->
+  <div class="cities-nav">
+    <div class="container" style="padding: 0;">
+      <h3>SpotShare Cities</h3>
+      <div class="cities-list">
+        <a href="/cities/san-diego" class="city-pill">San Diego</a>
+        <a href="/cities/atlanta" class="city-pill active">Atlanta</a>
+        <a href="/cities/chicago" class="city-pill">Chicago</a>
+        <a href="/cities/seattle" class="city-pill coming-soon">Seattle (coming soon)</a>
+        <a href="/cities/miami" class="city-pill coming-soon">Miami (coming soon)</a>
+        <a href="/cities/new-york" class="city-pill coming-soon">New York (coming soon)</a>
+        <a href="/cities/los-angeles" class="city-pill coming-soon">Los Angeles (coming soon)</a>
+        <a href="/cities" class="city-pill">View all cities →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 SpotShare. Guest parking infrastructure for luxury condos.</span>
+    <span>Page last updated May 2026 · <a href="/cities/atlanta">spotshare.io/cities/atlanta</a></span>
+  </footer>
+
+  <!-- SCHEMA MARKUP -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://spotshare.io"},
+          {"@type": "ListItem", "position": 2, "name": "Cities", "item": "https://spotshare.io/cities"},
+          {"@type": "ListItem", "position": 3, "name": "Atlanta", "item": "https://spotshare.io/cities/atlanta"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does my Atlanta condo have to provide guest parking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — and there's no requirement that it does. Most downtown Atlanta and Midtown condos were built with resident-only assigned parking. The city's BeltLine parking minimum changes (2024) and the pending ATL Zoning 2.0 legislation make it even less likely that new buildings will include dedicated guest spaces."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does visitor parking cost near Atlanta condos right now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Street meters in downtown and Midtown Atlanta run $2.00/hour, enforced Monday through Saturday from 7am to 7pm, with a 2-hour maximum. Nearby parking garages charge $15–$30/day for daily visitors. Monthly parking in Midtown averages $190/month."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the ATL Zoning 2.0 and how does it affect condo parking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ATL Zoning 2.0 is Atlanta's first comprehensive zoning code overhaul since 1982, introduced in 2025. Among its provisions is the elimination of off-street parking minimums in virtually all primary residential zones citywide. The BeltLine Overlay District already set this precedent in February 2024. If passed, new condo developments will set their own parking ratios with no floor — which historically means fewer spaces for dense luxury projects."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do HOA buildings manage guest parking without building new spaces?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The most practical approach is a shared resident parking model: residents who aren't using their assigned spot make it available to neighbors' guests through a building-managed system. SpotShare is one platform built specifically for this, designed for HOA communities and luxury condos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is SpotShare?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SpotShare is a guest parking infrastructure platform designed for luxury condos and HOA communities. Buildings use SpotShare to turn idle resident-assigned parking spots into a shared guest parking amenity — no new construction required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>

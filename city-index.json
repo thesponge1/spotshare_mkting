@@ -50,19 +50,37 @@
       "city": "Atlanta",
       "city_slug": "atlanta",
       "research": {
-        "last_run_date": "2026-05-04",
+        "last_run_date": "2026-05-06",
         "file_path": "research/atlanta-data.md",
         "market_readiness": "tier-1",
         "seo_page_opportunity": "yes",
         "competitor_presence": "active",
-        "market_moment": "Buckhead luxury condo pipeline active with new HOA boards making first amenity decisions",
+        "market_moment": "ATL Zoning 2.0 legislation actively working to eliminate all off-street parking minimums citywide — same trajectory as San Diego's March 2026 code change; BeltLine already set the precedent",
+        "market_moments": [
+          "ATL Zoning 2.0 (Councilmember Jason Dozier, 2025) proposes eliminating off-street parking minimums citywide — BeltLine Overlay District already exempt since Feb 2024; if passed, new luxury condo developers set their own parking ratios with no floor",
+          "Elyse Buckhead by Kolter Urban — 194-unit luxury tower at 102 West Paces Ferry Rd, site work Q2 2026, delivery Q4 2028–Q1 2029; new HOA board will make first amenity decisions in a building constructed under zero parking minimum rules",
+          "Community Boss/Parking Boss has a named Atlanta customer (Twynate Boyd) with a live Facebook case study — direct competitor proof-of-concept in SpotShare's target market"
+        ],
+        "competitors": [
+          { "tier": "1", "name": "Community Boss / Parking Boss", "description": "Named Atlanta customer (Twynate Boyd) confirmed via public Facebook case study at $195/month starting. Web-based pitch (no app required) targeting HOA simplicity — actively capturing Atlanta search intent SpotShare should own." },
+          { "tier": "2", "name": "ParqEx", "description": "Enterprise-grade HOA/gated community positioning with AI/LPR features; confirmed market presence in Atlanta though no named case study found. Targets the same property manager audience as SpotShare." }
+        ],
+        "tier0_count": 3,
         "tier1_count": 3,
-        "tier0_count": 3
+        "parking_cost_signal": "high — street meters $2.00/hour in downtown/Midtown with 2-hour limits (7am–7pm Mon–Sat); monthly garage $65–$280; daily rates $15–$30",
+        "availability_signal": "high — BeltLine-area condos already being built with no required parking since Feb 2024; limited dedicated guest spots in most downtown/Midtown buildings",
+        "regulatory_trend": "worsening — ATL Zoning 2.0 (active 2025 legislation) proposes eliminating off-street parking minimums citywide; BeltLine Overlay District already exempt since February 2024",
+        "hoa_friction_level": "high — documented cases of residents escalating parking complaints to Atlanta City Council (Landmark Condominiums, Piedmont Ave); Georgia #9 nationally in HOA complaints",
+        "visitor_parking_ratio": "low — new BeltLine-area condos built with no parking minimums; older Midtown/Buckhead buildings allocating minimal guest spots",
+        "new_development_pipeline": "yes — Elyse Buckhead (Kolter Urban): 194-unit luxury tower, site work Q2 2026, delivery Q4 2028–Q1 2029; units from mid-$900k",
+        "content_gap": "No first-party guide explaining why Atlanta condos are running out of guest parking and what HOA boards can do about it — the Zoning 2.0 story is being covered by local news but nobody in the property management space has claimed it",
+        "top_keywords_found": ["guest parking Atlanta condo", "visitor parking HOA Atlanta", "HOA parking restrictions Atlanta", "parking minimums eliminated Atlanta", "Buckhead luxury condo parking", "Midtown Atlanta condo parking", "guest parking app HOA", "BeltLine condo parking"],
+        "outreach_angle": "Lead with the zoning story — BeltLine condos are already going up without parking minimums and the rest of Atlanta may follow; position SpotShare as the infrastructure layer before guest parking complaints become a board crisis at Elyse Buckhead and Midtown towers"
       },
       "seo": {
         "page_built": true,
         "page_path": "seo-output/atlanta-page.html",
-        "last_built_date": "2026-05-05"
+        "last_built_date": "2026-05-06"
       },
       "status": "page-live"
     },
@@ -70,19 +88,38 @@
       "city": "Chicago",
       "city_slug": "chicago",
       "research": {
-        "last_run_date": "2026-05-04",
+        "last_run_date": "2026-05-06",
         "file_path": "research/chicago-data.md",
         "market_readiness": "tier-1",
         "seo_page_opportunity": "yes",
         "competitor_presence": "active",
-        "market_moment": "ParqEx River North case study live; Chicago congestion pricing legislation in discussion",
+        "market_moment": "Chicago eliminated parking minimums for ~3/4 of city on September 25, 2025 — any new luxury condo in a transit corridor can now be built with zero required parking",
+        "market_moments": [
+          "Chicago's September 25, 2025 parking ordinance eliminated minimums for ~3/4 of the city (within 1/4 mile frequent bus or 1/2 mile rail) — the most sweeping parking reform in any SpotShare target market; underground parking at $67,500/space means developers will opt out",
+          "ParqEx / GuestParq has 3 named Chicago condo case studies live in search: Silver Tower (River North), 340 on the Park (Randolph St), 1660 Condominium (North LaSalle) — direct competitor owning the 'condo guest parking Chicago' SERP",
+          "New luxury pipeline: 56-story, 498-unit tower at 669 N Michigan (Streeterville, targeting 2027) and riverfront development — all under zero-minimum rules for transit-adjacent sites",
+          "Illinois Condo Act Section 18.12 required all condo boards to adopt an accessible parking policy by April 2, 2025 — placed parking formally on every Illinois HOA board's agenda"
+        ],
+        "competitors": [
+          { "tier": "1", "name": "ParqEx / GuestParq", "description": "Three named Chicago case studies indexed in search: Silver Tower (River North, 39-story), 340 on the Park (Randolph St), and 1660 Condominium (North LaSalle). Silver Tower program was 'heavily used from first day' with HOA generating income immediately. Most aggressive competitor presence of any city in the SpotShare portfolio." },
+          { "tier": "watch", "name": "Community Boss / Parking Boss", "description": "No named Chicago case study found but confirmed presence in adjacent markets (Atlanta). Pricing at $195/month entry-level; web-based pitch targeting HOA simplicity." }
+        ],
+        "tier0_count": 3,
         "tier1_count": 3,
-        "tier0_count": 2
+        "parking_cost_signal": "critical — peak meters River North/Loop $7.75–$9.75/hour; garages $35–$52/day; monthly $280–$475; city parking tax raised to 23.25% effective January 1, 2025",
+        "availability_signal": "critical — parking minimums eliminated Sept 25, 2025 for ~3/4 of city; $67,500/space underground cost means most new developers will opt out; existing luxury buildings provide minimal or zero guest spots",
+        "regulatory_trend": "worsening — September 2025 ordinance eliminates parking minimums for transit-adjacent sites citywide; Illinois Condo Act now requires accessible parking policies from all boards",
+        "hoa_friction_level": "high — Illinois condo [IL] parking disputes active on r/HOA; Illinois Condo Act defines four parking dispute categories; parking is top HOA complaint category nationally",
+        "visitor_parking_ratio": "near-zero — most downtown Chicago luxury condos provide no dedicated guest spots; new builds under zero-minimum rules further reduce supply",
+        "new_development_pipeline": "yes — 56-story, 498-unit tower at 669 N Michigan (Streeterville, 2027); riverfront development (first tower 2027); all built under zero-minimum rules",
+        "content_gap": "No first-party condo or property management guide explaining what Chicago's September 2025 parking ordinance means for luxury building HOA boards — the story is covered by legal and real estate outlets but not by anyone in the property management amenity space",
+        "top_keywords_found": ["guest parking Chicago condo", "visitor parking HOA Chicago", "Chicago parking minimums eliminated", "River North condo parking", "Gold Coast condo parking", "Streeterville parking", "HOA parking app Chicago", "condo guest parking solution"],
+        "outreach_angle": "Hit property managers at new luxury builds coming online in River North and Streeterville — the September 2025 ordinance means their buildings may have been designed with no parking minimum; lead with the regulatory shift and position SpotShare as the guest parking infrastructure layer"
       },
       "seo": {
         "page_built": true,
         "page_path": "seo-output/chicago-page.html",
-        "last_built_date": "2026-05-05"
+        "last_built_date": "2026-05-06"
       },
       "status": "page-live"
     },
