@@ -432,37 +432,84 @@
     .signal-green  { color: var(--green); }
     .signal-gray   { color: var(--text-muted); font-weight: 400; font-style: italic; }
 
-    /* Intelligence cards */
-    .intel-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+    /* Research Intelligence tabs */
+    .intel-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
     }
-    @media (max-width: 520px) { .intel-grid { grid-template-columns: 1fr; } }
+    .intel-tab {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-dim);
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .intel-tab:hover:not(.active) { border-color: #6366f1; color: var(--text); }
+    .intel-tab.active { background: #6366f1; border-color: #6366f1; color: #fff; }
+    .intel-tab .tab-count {
+      display: inline-block;
+      background: rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 1px 6px;
+      font-size: 11px;
+      margin-left: 5px;
+      font-weight: 700;
+    }
+    .intel-tab:not(.active) .tab-count {
+      background: var(--border);
+      color: var(--text-muted);
+    }
+    .intel-pane { display: block; }
+    .intel-pane[hidden] { display: none; }
 
-    .intel-card {
+    .intel-finding {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 16px;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
     }
-    .intel-tier {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-    .intel-count {
-      font-size: 28px;
+    .intel-finding-source {
+      font-size: 13px;
       font-weight: 700;
       color: var(--text);
-      line-height: 1;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
-    .intel-count.no-data { font-size: 14px; color: var(--text-muted); font-style: italic; font-weight: 400; }
-    .intel-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+    .intel-finding-text {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.55;
+    }
+    .intel-finding-opportunity {
+      font-size: 12px;
+      color: #a5b4fc;
+      font-style: italic;
+      margin-top: 7px;
+      line-height: 1.45;
+    }
+    .intel-finding-link {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--accent);
+      margin-top: 6px;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .intel-finding-link:hover { text-decoration: underline; }
+    .intel-no-findings {
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 13px;
+      padding: 8px 0;
+    }
+    .intel-loading { color: var(--text-muted); font-size: 13px; padding: 8px 0; }
 
     /* Competitor presence */
     .competitor-value {
@@ -601,8 +648,9 @@
 </div>
 
 <script>
-// ── Data ─────────────────────────────────────────────────────────────────────
-const DATA = {"rotation":{"current_index":3,"last_run_date":"2026-05-04","last_city":"Chicago"},"cities":[{"city":"San Diego","city_slug":"san-diego","research":{"last_run_date":"2026-05-06","file_path":"research/sandiego-data.md","market_readiness":"tier-1","seo_page_opportunity":"yes","competitor_presence":"active","market_moment":"Parkade comparison page actively ranking against SpotShare by name","market_moments":["Parkade comparison page at parkade.com/spotshare actively ranking against SpotShare by name — calls SpotShare a \"2003-era web app\" and cites $300–500/month vs. $1/spot/month","March 11, 2026 parking code amendment took effect — new San Diego condo developments in TPAs can now be built with fewer spaces, making guest parking scarcity permanent in newer buildings","Third-party real estate blog (92101urbanliving.com) already ranking for \"guest parking downtown San Diego condo\" on SpotShare's behalf — first-party SEO gap SpotShare should own"],"competitors":[{"tier":"1","name":"Parkade","description":"Live comparison page at parkade.com/spotshare targeting SpotShare by name; calls SpotShare a \"2003-era web app\" and leads with a testimonial claiming 143 residents installed Parkade in 7 days vs. 10–12 on SpotShare."},{"tier":"1","name":"ParqEx (GuestParq)","description":"Marketing guest parking as a condo amenity to HOA PMs — \"the newest amenity to offer for property managers and residents of condominium buildings.\" Same positioning SpotShare should own; appearing in search results for visitor parking HOA queries."},{"tier":"1","name":"SimplyPermits","description":"Published a \"best HOA software for guest parking\" roundup targeting the exact search query a CAM would type when evaluating solutions. Post favors their own product; SpotShare does not appear in it."},{"tier":"2","name":"Community Boss","description":"Top-of-funnel content appearing in parking software search results alongside Parkade and SimplyPermits."},{"tier":"watch","name":"ButterflyMX","description":"15,000+ buildings. Expanding into visitor parking and vehicle access control — occupying the \"building technology amenity\" budget category that SpotShare competes for in HOA board conversations."}],"tier1_count":4,"tier0_count":2,"parking_cost_signal":"high — street meter rates $2.50/hour (doubled 2025); event pricing $10/hour across ~200 downtown blocks; Balboa Park daily $16; rates projected $3.00–3.50/hour by late 2026","availability_signal":"critical — most downtown San Diego condos provide zero assigned guest parking; residents must direct guests to expensive street or garage parking","regulatory_trend":"worsening — parking minimums eliminated for commercial properties in TPAs (2022); new municipal parking code amendment took effect March 11, 2026; city explicitly targeting reduced parking supply","hoa_friction_level":"high — vocal minority parking conflicts active in HOAs nationally; Parkade comparison page targeting SpotShare by name live in search","visitor_parking_ratio":"near-zero — SpotShare's own third-party coverage on 92101urbanliving.com cites \"zero assigned guest parking\" as the defining problem for downtown SD condos","new_development_pipeline":"yes — new condo developments in TPAs built with fewer total spaces, reducing guest parking ratios in newer buildings","content_gap":"No authoritative first-party answer to \"how do downtown San Diego condo buildings handle guest parking\" — a third-party real estate blog currently owns this SERP on SpotShare's behalf","top_keywords_found":["guest parking downtown San Diego condo","visitor parking condo","HOA parking app","best HOA parking software","condo guest parking solution","GuestParq","amenity parking"],"outreach_angle":"San Diego is SpotShare's home market — lead with local building proof points to counter Parkade's generic national pitch and the March 2026 parking code change that makes guest parking scarcity permanent in new buildings"},"seo":{"page_built":true,"page_path":"seo-output/san-diego-page.html","last_built_date":"2026-05-06"},"status":"page-live"},{"city":"Atlanta","city_slug":"atlanta","research":{"last_run_date":"2026-05-04","file_path":"research/atlanta-data.md","market_readiness":"tier-1","seo_page_opportunity":"yes","competitor_presence":"active","market_moment":"Buckhead luxury condo pipeline active with new HOA boards making first amenity decisions","tier1_count":3,"tier0_count":3},"seo":{"page_built":true,"page_path":"seo-output/atlanta-page.html","last_built_date":"2026-05-05"},"status":"page-live"},{"city":"Chicago","city_slug":"chicago","research":{"last_run_date":"2026-05-04","file_path":"research/chicago-data.md","market_readiness":"tier-1","seo_page_opportunity":"yes","competitor_presence":"active","market_moment":"ParqEx River North case study live; Chicago congestion pricing legislation in discussion","tier1_count":3,"tier0_count":2},"seo":{"page_built":true,"page_path":"seo-output/chicago-page.html","last_built_date":"2026-05-05"},"status":"page-live"},{"city":"Seattle and Bellevue","city_slug":"seattle-and-bellevue","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"St. Petersburg, FL","city_slug":"st-petersburg-fl","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"New York City","city_slug":"new-york-city","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Miami","city_slug":"miami","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"San Francisco","city_slug":"san-francisco","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Los Angeles","city_slug":"los-angeles","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Boston","city_slug":"boston","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Washington DC","city_slug":"washington-dc","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Denver","city_slug":"denver","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Austin","city_slug":"austin","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Portland","city_slug":"portland","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Philadelphia","city_slug":"philadelphia","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Houston","city_slug":"houston","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Dallas","city_slug":"dallas","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Minneapolis","city_slug":"minneapolis","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Nashville","city_slug":"nashville","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Charlotte","city_slug":"charlotte","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Tampa","city_slug":"tampa","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Fort Lauderdale","city_slug":"fort-lauderdale","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Honolulu","city_slug":"honolulu","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Las Vegas","city_slug":"las-vegas","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Phoenix and Scottsdale","city_slug":"phoenix-and-scottsdale","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Baltimore","city_slug":"baltimore","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Raleigh and Durham","city_slug":"raleigh-and-durham","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Salt Lake City","city_slug":"salt-lake-city","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"New Orleans","city_slug":"new-orleans","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"},{"city":"Pittsburgh","city_slug":"pittsburgh","research":{"last_run_date":null,"file_path":null,"market_readiness":null,"seo_page_opportunity":null,"competitor_presence":null,"market_moment":null,"tier1_count":null,"tier0_count":null},"seo":{"page_built":false,"page_path":null,"last_built_date":null},"status":"not-started"}]};
+fetch('city-index.json')
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(DATA => {
 
 const cities = DATA.cities;
 
@@ -869,47 +917,25 @@ function buildPanel(c) {
     </div>`;
 
   // ── 4. Research Intelligence ──
-  function intelCard(tier, label, count, desc) {
-    const countHtml = count != null
-      ? `<div class="intel-count">${count}</div>`
-      : `<div class="intel-count no-data">No data yet</div>`;
-    return `
-      <div class="intel-card">
-        <div class="intel-tier">${tier}</div>
-        ${countHtml}
-        <div class="intel-desc"><strong>${label}</strong><br>${desc}</div>
-      </div>`;
-  }
-
+  const intelId = `intel-${c.city_slug}`;
   html += `
     <div class="ps">
       <div class="ps-label">Research Intelligence</div>
-      <div class="intel-grid">
-        ${intelCard('Tier 0', 'Content Angles', r.tier0_count, 'Parking facts worth publishing. Feeds SEO pages.')}
-        ${intelCard('Tier 1', 'Direct Opportunities', r.tier1_count, 'Property managers, active complaints, competitor mentions. Act on these.')}
-        ${intelCard('Tier 2', 'Weak Signals', r.tier2_count ?? null, 'Social hooks and language. Useful for copy, not outreach.')}
-      </div>
+      <div id="${intelId}" class="intel-loading">Loading findings…</div>
     </div>`;
 
-  // ── 5. SEO Signals ──
-  const oppVal = r.seo_page_opportunity;
-  const oppBadge = opportunityBadge(oppVal);
-
+  // ── 5. Search Intelligence ──
   const contentGap = r.content_gap;
   const keywords = r.top_keywords_found;
 
   html += `
     <div class="ps">
-      <div class="ps-label">SEO Signals</div>
-      <div class="seo-row">
-        <div class="seo-row-label">SEO Page Opportunity</div>
-        <div class="seo-row-value">${oppBadge}</div>
-      </div>
-      <div class="ps-label" style="margin-top:8px;border:none;padding:0">Content Gap</div>
+      <div class="ps-label">Search Intelligence</div>
+      <div class="ps-label" style="border:none;padding:0;margin-bottom:4px">Content Gap</div>
       ${contentGap
         ? `<div class="content-gap-box">${contentGap}</div>`
         : `<div class="content-gap-box">${noData('What\'s being searched but not answered online — not yet captured')}</div>`}
-      <div class="ps-label" style="margin-top:8px;border:none;padding:0">Top Keywords</div>
+      <div class="ps-label" style="margin-top:12px;border:none;padding:0;margin-bottom:4px">Top Keywords</div>
       ${keywords && keywords.length
         ? `<div class="keywords-list">${keywords.map(k => `<span class="keyword-pill">${k}</span>`).join('')}</div>`
         : noData('No keywords captured yet')}
@@ -936,7 +962,167 @@ function buildPanel(c) {
     </div>`;
 
   body.innerHTML = html;
+  loadResearchIntel(intelId, r.file_path);
+
+}
+
+  }) // end .then(DATA =>
+  .catch(err => {
+    document.getElementById('stats-grid').innerHTML =
+      `<div style="color:var(--text-muted);padding:20px;grid-column:1/-1">⚠ Could not load city-index.json: ${err.message}</div>`;
+  });
+
+// ── Research Intelligence: parse + render ─────────────────────────────────────
+
+function parseTier1Block(block) {
+  const lines = block.trim().split('\n');
+  if (!lines.length) return null;
+  let source = '';
+  const srcMatch = lines[0].match(/^\*\*(.+?)\*\*/);
+  if (srcMatch) source = srcMatch[1];
+  let opportunity = '', url = '';
+  const textLines = [];
+  for (const line of lines.slice(1)) {
+    const t = line.trim();
+    if (/^Opportunity:/i.test(t)) {
+      opportunity = t.replace(/^Opportunity:\s*/i, '');
+    } else if (/^https?:\/\//i.test(t)) {
+      if (!url) url = t;
+    } else if (t) {
+      textLines.push(t);
+    }
+  }
+  if (!source && !textLines.length) return null;
+  return { source, text: textLines.join(' '), opportunity, url };
+}
+
+function parseTier0Block(block) {
+  const lines = block.trim().split('\n');
+  if (!lines.length) return null;
+  let source = '';
+  // matches "**Source:** name" or "**Source · name**"
+  const srcMatch = lines[0].match(/^\*\*(?:Source:|Source\s·)\*\*\s*(.+)/) ||
+                   lines[0].match(/^\*\*(.+?)\*\*/);
+  if (srcMatch) source = srcMatch[1];
+  let url = '';
+  const textLines = [];
+  for (const line of lines.slice(1)) {
+    const t = line.trim();
+    if (/^https?:\/\//i.test(t)) {
+      if (!url) url = t;
+    } else if (t) {
+      textLines.push(t);
+    }
+  }
+  if (!source && !textLines.length) return null;
+  return { source, text: textLines.join(' '), url };
+}
+
+function parseTier2Line(line) {
+  const raw = line.trim().replace(/^-\s*/, '');
+  const srcMatch = raw.match(/^\*\*(.+?)\*\*/);
+  const source = srcMatch ? srcMatch[1] : '';
+  const text = raw.replace(/^\*\*.+?\*\*\s*(?:—\s*)?/, '');
+  return { source, text };
+}
+
+function parseResearchMd(mdText) {
+  const tiers = { tier0: [], tier1: [], tier2: [] };
+  // Split on ## headings (keep section name)
+  const sections = mdText.split(/\n(?=## )/);
+  for (const section of sections) {
+    const heading = (section.match(/^## (.+)/) || [])[1] || '';
+    if (/TIER 1|ACT ON THESE/i.test(heading)) {
+      const body = section.replace(/^## .+\n/, '');
+      const blocks = body.split(/\n---\n/);
+      for (const b of blocks) {
+        const f = parseTier1Block(b);
+        if (f) tiers.tier1.push(f);
+      }
+    } else if (/EDUCATION|CONTENT ANGLE/i.test(heading)) {
+      const body = section.replace(/^## .+\n/, '');
+      // skip the italic/description intro paragraph before first **Source
+      const blocks = body.split(/\n---\n/);
+      for (const b of blocks) {
+        const f = parseTier0Block(b);
+        if (f) tiers.tier0.push(f);
+      }
+    } else if (/ALSO ON OUR RADAR/i.test(heading)) {
+      const lines = section.split('\n');
+      for (const line of lines) {
+        if (/^- /.test(line.trim())) {
+          tiers.tier2.push(parseTier2Line(line));
+        }
+      }
+    }
+  }
+  return tiers;
+}
+
+function renderFinding(f, showOpportunity) {
+  const oppHtml = showOpportunity && f.opportunity
+    ? `<div class="intel-finding-opportunity">Opportunity: ${f.opportunity}</div>`
+    : '';
+  const linkHtml = f.url
+    ? `<a class="intel-finding-link" href="${f.url}" target="_blank" rel="noopener">${f.url}</a>`
+    : '';
+  return `
+    <div class="intel-finding">
+      ${f.source ? `<div class="intel-finding-source">${f.source}</div>` : ''}
+      <div class="intel-finding-text">${f.text}</div>
+      ${oppHtml}
+      ${linkHtml}
+    </div>`;
+}
+
+function renderIntelTabs(tiers) {
+  const tabs = [
+    { id: 'tier1', label: 'Tier 1 — Direct Opportunities', findings: tiers.tier1, showOpp: true },
+    { id: 'tier0', label: 'Tier 0 — Content Angles',       findings: tiers.tier0, showOpp: false },
+    { id: 'tier2', label: 'Tier 2 — Weak Signals',         findings: tiers.tier2, showOpp: false },
+  ];
+
+  const tabsHtml = tabs.map((t, i) => {
+    const countBadge = t.id === 'tier1'
+      ? `<span class="tab-count">${t.findings.length}</span>`
+      : '';
+    return `<button class="intel-tab${i === 0 ? ' active' : ''}" data-tab="${t.id}">${t.label}${countBadge}</button>`;
+  }).join('');
+
+  const panesHtml = tabs.map((t, i) => {
+    const content = t.findings.length
+      ? t.findings.map(f => renderFinding(f, t.showOpp)).join('')
+      : `<div class="intel-no-findings">No findings this cycle</div>`;
+    return `<div class="intel-pane" data-pane="${t.id}"${i !== 0 ? ' hidden' : ''}>${content}</div>`;
+  }).join('');
+
+  return `<div class="intel-tabs">${tabsHtml}</div>${panesHtml}`;
+}
+
+async function loadResearchIntel(containerId, filePath) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  if (!filePath) {
+    container.innerHTML = `<div class="intel-no-findings">Run city research to populate this section</div>`;
+    return;
+  }
+  try {
+    const resp = await fetch(filePath);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const text = await resp.text();
+    const tiers = parseResearchMd(text);
+    container.innerHTML = renderIntelTabs(tiers);
+    container.querySelectorAll('.intel-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        container.querySelectorAll('.intel-tab').forEach(t => t.classList.remove('active'));
+        container.querySelectorAll('.intel-pane').forEach(p => p.hidden = true);
+        tab.classList.add('active');
+        container.querySelector(`.intel-pane[data-pane="${target}"]`).hidden = false;
+      });
+    });
+  } catch (e) {
+    container.innerHTML = `<div class="intel-no-findings">Could not load research file — ${e.message}</div>`;
+  }
 }
 </script>
-</body>
-</html>
