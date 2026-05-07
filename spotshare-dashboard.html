@@ -238,9 +238,6 @@
     .badge-researched    .badge-dot { background: var(--blue); }
     .badge-page-live     { background: var(--green-bg);  color: var(--green);  }
     .badge-page-live     .badge-dot { background: var(--green); }
-    .badge-needs-refresh { background: var(--yellow-bg); color: var(--yellow); }
-    .badge-needs-refresh .badge-dot { background: var(--yellow); }
-
     .badge-tier-1  { background: var(--green-bg);  color: var(--green); }
     .badge-tier-2  { background: var(--yellow-bg); color: var(--yellow); }
     .badge-tier-3  { background: var(--gray-bg);   color: var(--gray); }
@@ -249,6 +246,84 @@
     .badge-yes   { background: var(--green-bg);  color: var(--green); }
     .badge-maybe { background: var(--yellow-bg); color: var(--yellow); }
     .badge-no    { background: var(--gray-bg);   color: var(--gray); }
+
+    /* ── Kanban board ── */
+    .kanban-board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+    }
+    .kanban-col {
+      padding: 16px;
+      border-right: 1px solid var(--border);
+      min-height: 200px;
+    }
+    .kanban-col:last-child { border-right: none; }
+
+    .kanban-col-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .kanban-col-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .kanban-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      flex: 1;
+    }
+    .kanban-col-count {
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--gray-bg);
+      color: var(--text-muted);
+      border-radius: 10px;
+      padding: 1px 8px;
+    }
+
+    .kanban-card {
+      background: var(--bg-table-row);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.1s, border-color 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .kanban-card:last-child { margin-bottom: 0; }
+    .kanban-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .kanban-card-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .stale-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--yellow);
+      flex-shrink: 0;
+      cursor: help;
+    }
+    @media (max-width: 700px) {
+      .kanban-board { grid-template-columns: 1fr; }
+      .kanban-col { border-right: none; border-bottom: 1px solid var(--border); }
+      .kanban-col:last-child { border-bottom: none; }
+    }
 
     .check-icon {
       display: inline-flex;
@@ -609,24 +684,33 @@
     <div class="table-header">
       <h2>All Markets</h2>
       <span class="city-count" id="city-count"></span>
-      <span class="table-hint">Click any row for details</span>
+      <span class="table-hint">Click any card for details</span>
     </div>
-    <div class="table-wrapper">
-      <table id="city-table">
-        <thead>
-          <tr>
-            <th data-col="city">City <span class="sort-icon">↕</span></th>
-            <th data-col="status">Status <span class="sort-icon">↕</span></th>
-            <th data-col="readiness">Market Readiness <span class="sort-icon">↕</span></th>
-            <th data-col="opportunity">Opportunity <span class="sort-icon">↕</span></th>
-            <th data-col="competitor">Competitor Presence <span class="sort-icon">↕</span></th>
-            <th data-col="last_run">Last Research Run <span class="sort-icon">↕</span></th>
-            <th data-col="page_built">Page Built <span class="sort-icon">↕</span></th>
-            <th data-col="moment">Market Moment <span class="sort-icon">↕</span></th>
-          </tr>
-        </thead>
-        <tbody id="city-tbody"></tbody>
-      </table>
+    <div class="kanban-board">
+      <div class="kanban-col">
+        <div class="kanban-col-header">
+          <span class="kanban-col-dot" style="background:var(--gray)"></span>
+          <span class="kanban-col-title" style="color:var(--gray)">Not Started</span>
+          <span class="kanban-col-count" id="count-not-started">0</span>
+        </div>
+        <div class="kanban-cards" id="cards-not-started"></div>
+      </div>
+      <div class="kanban-col">
+        <div class="kanban-col-header">
+          <span class="kanban-col-dot" style="background:var(--blue)"></span>
+          <span class="kanban-col-title" style="color:var(--blue)">Researched</span>
+          <span class="kanban-col-count" id="count-researched">0</span>
+        </div>
+        <div class="kanban-cards" id="cards-researched"></div>
+      </div>
+      <div class="kanban-col">
+        <div class="kanban-col-header">
+          <span class="kanban-col-dot" style="background:var(--green)"></span>
+          <span class="kanban-col-title" style="color:var(--green)">Page Live</span>
+          <span class="kanban-col-count" id="count-page-live">0</span>
+        </div>
+        <div class="kanban-cards" id="cards-page-live"></div>
+      </div>
     </div>
   </div>
 
@@ -657,10 +741,9 @@ const cities = DATA.cities;
 // ── Badge helpers ─────────────────────────────────────────────────────────────
 function statusBadge(status) {
   const map = {
-    'not-started':    ['badge-not-started',   'Not Started'],
-    'researched':     ['badge-researched',     'Researched'],
-    'page-live':      ['badge-page-live',      'Page Live'],
-    'needs-refresh':  ['badge-needs-refresh',  'Needs Refresh'],
+    'not-started': ['badge-not-started', 'Not Started'],
+    'researched':  ['badge-researched',  'Researched'],
+    'page-live':   ['badge-page-live',   'Page Live'],
   };
   const [cls, label] = map[status] || ['badge-unknown', status || '—'];
   return `<span class="badge ${cls}"><span class="badge-dot"></span>${label}</span>`;
@@ -734,67 +817,40 @@ statsData.forEach(s => {
     </div>`;
 });
 
-// ── Table ─────────────────────────────────────────────────────────────────────
+// ── Kanban ────────────────────────────────────────────────────────────────────
 document.getElementById('city-count').textContent = `${total} cities`;
 
-let sortCol = 'city', sortDir = 1;
-
-const sortKey = {
-  city:        c => c.city.toLowerCase(),
-  status:      c => c.status || '',
-  readiness:   c => c.research.market_readiness || 'zzz',
-  opportunity: c => c.research.seo_page_opportunity || 'zzz',
-  competitor:  c => c.research.competitor_presence || 'zzz',
-  last_run:    c => c.research.last_run_date || '',
-  page_built:  c => c.seo.page_built ? 0 : 1,
-  moment:      c => c.research.market_moment || '',
-};
-
-function renderRows() {
-  const sorted = [...cities].sort((a, b) => {
-    const ka = sortKey[sortCol](a), kb = sortKey[sortCol](b);
-    return ka < kb ? -sortDir : ka > kb ? sortDir : 0;
-  });
-
-  const tbody = document.getElementById('city-tbody');
-  tbody.innerHTML = '';
-
-  sorted.forEach(c => {
-    const moment = c.research.market_moment || '';
-    const truncated = moment.length > 45 ? moment.slice(0, 42) + '…' : moment;
-
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td class="city-name">${c.city}</td>
-      <td>${statusBadge(c.status)}</td>
-      <td>${readinessBadge(c.research.market_readiness)}</td>
-      <td>${opportunityBadge(c.research.seo_page_opportunity)}</td>
-      <td style="color:var(--text-dim)">${c.research.competitor_presence || '—'}</td>
-      <td style="color:var(--text-dim)">${fmt(c.research.last_run_date)}</td>
-      <td style="text-align:center">${checkIcon(c.seo.page_built)}</td>
-      <td class="moment-cell${moment ? ' has-value' : ''}" title="${moment ? moment.replace(/"/g, '&quot;') : ''}">${moment ? truncated : '—'}</td>`;
-    tr.addEventListener('click', () => openPanel(c));
-    tbody.appendChild(tr);
-  });
+function lastEditedDate(c) {
+  const dates = [c.research.last_run_date, c.seo.last_built_date].filter(Boolean);
+  if (!dates.length) return null;
+  return dates.sort().pop();
 }
 
-// Sort on header click
-document.querySelectorAll('thead th[data-col]').forEach(th => {
-  th.addEventListener('click', () => {
-    const col = th.dataset.col;
-    sortDir = sortCol === col ? sortDir * -1 : 1;
-    sortCol = col;
-    document.querySelectorAll('thead th').forEach(h => {
-      h.classList.remove('sorted');
-      h.querySelector('.sort-icon').textContent = '↕';
-    });
-    th.classList.add('sorted');
-    th.querySelector('.sort-icon').textContent = sortDir === 1 ? '↑' : '↓';
-    renderRows();
+function isStale(c) {
+  const d = lastEditedDate(c);
+  if (!d) return false;
+  return (Date.now() - new Date(d + 'T00:00:00').getTime()) > 30 * 24 * 60 * 60 * 1000;
+}
+
+const KANBAN_COLS = [
+  { status: 'not-started' },
+  { status: 'researched'  },
+  { status: 'page-live'   },
+];
+
+KANBAN_COLS.forEach(col => {
+  const colCities = cities.filter(c => (c.status || 'not-started') === col.status);
+  document.getElementById(`count-${col.status}`).textContent = colCities.length;
+
+  const container = document.getElementById(`cards-${col.status}`);
+  colCities.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'kanban-card';
+    card.innerHTML = `<span class="kanban-card-name">${c.city}</span>${isStale(c) ? '<span class="stale-dot" title="Not updated in 30+ days"></span>' : ''}`;
+    card.addEventListener('click', () => openPanel(c));
+    container.appendChild(card);
   });
 });
-
-renderRows();
 
 // ── Footer ────────────────────────────────────────────────────────────────────
 const allDates = cities.map(c => c.research.last_run_date).filter(Boolean).sort();
