@@ -1,8 +1,8 @@
 {
   "rotation": {
-    "current_index": 3,
-    "last_run_date": "2026-05-04",
-    "last_city": "Chicago"
+    "current_index": 4,
+    "last_run_date": "2026-05-07",
+    "last_city": "Seattle and Bellevue"
   },
   "cities": [
     {
@@ -127,21 +127,42 @@
       "city": "Seattle and Bellevue",
       "city_slug": "seattle-and-bellevue",
       "research": {
-        "last_run_date": null,
-        "file_path": null,
-        "market_readiness": null,
-        "seo_page_opportunity": null,
-        "competitor_presence": null,
-        "market_moment": null,
-        "tier1_count": null,
-        "tier0_count": null
+        "last_run_date": "2026-05-07",
+        "file_path": "research/seattle-and-bellevue-data.md",
+        "market_readiness": "tier-1",
+        "seo_page_opportunity": "yes",
+        "competitor_presence": "active nationally, zero locally",
+        "market_moment": "Washington SB 5184 (signed May 7, 2025) is the most comprehensive state parking reform law in the US — new Seattle and Bellevue condos in transit corridors can now be built with zero required parking; The Emerald (262 units, 62 stalls) is the named proof point already live downtown",
+        "market_moments": [
+          "SB 5184 signed May 7, 2025 (effective July 27, 2025) — eliminates parking minimums for residential units under 1,200 sq ft statewide; caps city minimums at 1 space per 2 units; cities must comply by January 27, 2027; described as one of the most comprehensive state parking reform laws in the US",
+          "The Emerald (262 units, 62 stalls, downtown Seattle) — Seattle Times documented the result: half of residents parking on-street, condo brokers report the ratio 'jeopardizing sales'; parking stalls selling for up to $100,000 each; named proof point that the shortage is already here",
+          "Bosa Development's Park Row (143 units, 22-story, downtown Bellevue) — sales launched Spring 2026; HOA board making first amenity decisions now; largest high-profile active condo launch in Bellevue",
+          "Bosa Main & Bellevue (449 units, 3 phased towers) — construction starting mid-2026; largest condo project in Bellevue's pipeline; HOA infrastructure decisions being made before groundbreaking",
+          "Seattle One Seattle Comprehensive Plan adopted December 16, 2025 — 30 Neighborhood Centers upzoned; Frequent Transit Route corridors likely require zero parking; Phase 2 zone changes rolling through 2026"
+        ],
+        "competitors": [
+          { "tier": "watch", "name": "ParqEx / GuestParq", "description": "Three named Chicago case studies (Silver Tower, 340 on the Park, 1660 Condominium); no Seattle or Pacific Northwest case study found. National SERP presence via GuestParq HOA landing page." },
+          { "tier": "watch", "name": "Parkade", "description": "Named case studies in Atlanta, Chicago, LA, Columbus — no Seattle or Pacific Northwest property. Runs active anti-SpotShare comparison page at parkade.com/spotshare." },
+          { "tier": "watch", "name": "Community Boss / Parking Boss", "description": "Named Atlanta customer; no Seattle case study. Web-based pitch targeting HOA simplicity. Ranking in national HOA parking SERPs." }
+        ],
+        "tier1_count": 4,
+        "tier0_count": 3,
+        "parking_cost_signal": "high — Capitol Hill/Pike-Pine evening meters peak $8.00/hour (highest in city); Commercial Core afternoon $7.50/hour; downtown Seattle monthly garage $300–$400+/month; Bellevue monthly $169–$273/month; condo stalls selling as luxury real estate at $75K–$100K each",
+        "availability_signal": "critical — SB 5184 (effective July 27, 2025) eliminates parking minimums for qualifying residential in transit corridors; The Emerald opened with 62 stalls for 262 units (lowest ratio of any new Seattle residential tower); Bosa Park Row and Main & Bellevue launching under new low-minimum rules",
+        "regulatory_trend": "worsening — SB 5184 (Washington State, signed May 7, 2025) among most comprehensive state-level parking reform laws in US; Seattle One Seattle Comprehensive Plan adopted December 16, 2025 upzones 30 Neighborhood Centers with zero parking minimums in Frequent Transit corridors; Bellevue Parking Reform Land Use Code Amendment in public engagement February 2026, compliance deadline January 27, 2027",
+        "hoa_friction_level": "high — The Emerald's near-zero parking ratio documented as creating sales friction and street overflow (Seattle Times); West Seattle new developments creating neighborhood conflict (KING5); local brokers flagging units without parking take longer to sell; rising HOA dues compounding parking management burden",
+        "visitor_parking_ratio": "near-zero — The Emerald: 62 stalls for 262 units (1:4.2 ratio), lowest of any new Seattle residential tower; SB 5184 means new transit-corridor buildings can have zero required parking; Bellevue current code: 1 visitor stall per 20 units minimum, likely to be further reduced",
+        "new_development_pipeline": "yes — Bellevue Park Row (Bosa, 143 units, Spring 2026 sales launch); Bosa Main & Bellevue (449 units, 3 towers, construction mid-2026); Seattle Graystone (271 units, First Hill, currently selling); Spire (343 units, Belltown, open)",
+        "content_gap": "No first-party guide connecting Washington's SB 5184 to the HOA guest parking management problem — the law is covered by housing policy outlets but nobody in property management amenity space has written 'what this means for your building's guest parking'; no competitor has a named Seattle or Pacific Northwest case study",
+        "top_keywords_found": ["guest parking Seattle condo", "visitor parking HOA Seattle", "HOA parking app Seattle", "condo parking management Bellevue", "Seattle parking minimums eliminated 2025", "SB 5184 condo parking impact", "HOA parking enforcement Seattle", "guest parking solution Seattle condo board", "Bellevue parking reform 2026"],
+        "outreach_angle": "Lead with SB 5184 — Washington just passed the most sweeping state parking reform in the country and buildings under construction in Bellevue (Park Row, Main & Bellevue) and Seattle are being designed under these rules now; no competitor has touched this market; position SpotShare as the guest parking infrastructure layer before these buildings' first resident meetings"
       },
       "seo": {
-        "page_built": false,
-        "page_path": null,
-        "last_built_date": null
+        "page_built": true,
+        "page_path": "seo-output/seattle-and-bellevue-page.html",
+        "last_built_date": "2026-05-07"
       },
-      "status": "not-started"
+      "status": "page-live"
     },
     {
       "city": "St. Petersburg, FL",

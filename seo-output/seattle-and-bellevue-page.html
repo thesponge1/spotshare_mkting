@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Parking in Seattle & Bellevue Condos (2026 Guide) | SpotShare</title>
+  <meta name="description" content="Washington's SB 5184 means new Seattle and Bellevue condos can be built with zero required parking. Here's what HOA boards and property managers need to know about the guest parking problem — and how buildings are solving it without adding spaces." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid #e8e8f0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: #4f46e5; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-cta {
+      background: #4f46e5;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 16px 48px;
+      font-size: 13px;
+      color: #888;
+      background: #fafafa;
+      border-bottom: 1px solid #e8e8f0;
+    }
+    .breadcrumb a { color: #4f46e5; text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 80px 48px;
+      max-width: 100%;
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(79, 70, 229, 0.3);
+      border: 1px solid rgba(79, 70, 229, 0.5);
+      color: #a5b4fc;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #818cf8; }
+    .hero-sub {
+      font-size: 20px;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+    .hero-intro {
+      font-size: 17px;
+      color: #cbd5e1;
+      line-height: 1.75;
+      border-left: 3px solid #4f46e5;
+      padding-left: 20px;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid #e8e8f0;
+    }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      color: #1a1a2e;
+    }
+    h2 .accent { color: #4f46e5; }
+
+    p {
+      font-size: 17px;
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 28px 0;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    thead { background: #f8fafc; }
+    th {
+      padding: 14px 20px;
+      text-align: left;
+      font-weight: 600;
+      color: #475569;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #374151;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    .rate-high { color: #dc2626; font-weight: 700; }
+    .rate-med { color: #d97706; font-weight: 600; }
+    td .note { font-size: 13px; color: #94a3b8; display: block; margin-top: 2px; }
+
+    .source-note {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .callout p { color: #1e40af; font-size: 16px; margin: 0; }
+    .callout strong { color: #1e3a8a; }
+
+    .callout-warning {
+      background: #fff7ed;
+      border-left-color: #f97316;
+    }
+    .callout-warning p { color: #9a3412; }
+    .callout-warning strong { color: #7c2d12; }
+
+    /* TWO-COL CARDS */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .benefit-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .benefit-card .icon { font-size: 22px; margin-bottom: 8px; }
+    .benefit-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+    .benefit-card p { font-size: 14px; color: #64748b; margin: 0; line-height: 1.5; }
+
+    /* TESTIMONIAL */
+    .testimonial {
+      background: #f8f9ff;
+      border: 1px solid #e0e4ff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 28px 0;
+      position: relative;
+    }
+    .testimonial .placeholder {
+      font-size: 13px;
+      color: #94a3b8;
+      font-style: italic;
+      border: 1px dashed #c7d2fe;
+      border-radius: 6px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    /* FAQ */
+    .faq-list { margin-top: 24px; }
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 20px 24px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #1a1a2e;
+      background: #fafafa;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q::after { content: '+'; font-size: 20px; color: #4f46e5; font-weight: 400; }
+    .faq-a {
+      padding: 0 24px 20px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.75;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+      padding: 72px 48px;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-section h2 {
+      color: #fff;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      color: #94a3b8;
+      font-size: 18px;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid #e8e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    footer a { color: #4f46e5; text-decoration: none; }
+
+    /* CITIES NAV */
+    .cities-nav {
+      background: #f8fafc;
+      padding: 40px 48px;
+      border-top: 1px solid #e8e8f0;
+    }
+    .cities-nav h3 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+    .cities-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .city-pill {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .city-pill.active { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+    .city-pill.coming-soon { color: #cbd5e1; border-color: #f1f5f9; cursor: default; }
+
+    @media (max-width: 768px) {
+      nav, .breadcrumb, .hero, .container, .cta-section, .cities-nav, footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .hero h1 { font-size: 32px; }
+      .two-col { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Spot<span>Share</span></a>
+    <div class="nav-links">
+      <a href="/cities">Cities</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/blog">Resources</a>
+      <a href="/demo" class="nav-cta">Get a Demo</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/cities">Cities</a>
+    <span>›</span>
+    Seattle &amp; Bellevue
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Seattle &amp; Bellevue · 2026 Guide</div>
+      <h1>Guest Parking in<br /><span>Seattle &amp; Bellevue</span><br />Condos</h1>
+      <p class="hero-sub">What property managers and HOA boards need to know in 2026</p>
+      <p class="hero-intro">
+        Washington just passed the most sweeping state-level parking reform in the country. SB 5184, signed May 2025, means new condos in Seattle and Bellevue transit corridors can now be built with zero required parking. The buildings going up in Belltown, South Lake Union, and downtown Bellevue are being designed under these rules right now. The HOA boards at those buildings will be the first to feel it.
+      </p>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="container">
+
+    <!-- SECTION 1: PARKING COSTS -->
+    <section>
+      <h2>What It Costs Your Guests to Park <span class="accent">Right Now</span></h2>
+      <p>Seattle and Bellevue both run dynamic, demand-based parking pricing. SDOT updates street meter rates quarterly. Here's where things stand in 2026:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Location / Parking Type</th>
+              <th>Current Rate</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Capitol Hill / Pike-Pine (evening peak)</td>
+              <td class="rate-high">$8.00/hr</td>
+              <td><span class="note">Highest evening rate in Seattle; effective Nov 10, 2025</span></td>
+            </tr>
+            <tr>
+              <td>Commercial Core / Waterfront (afternoon)</td>
+              <td class="rate-high">$7.50/hr</td>
+              <td><span class="note">Downtown core; varies by block and time of day</span></td>
+            </tr>
+            <tr>
+              <td>First Hill / Columbia City (afternoon)</td>
+              <td class="rate-high">$6.50/hr</td>
+              <td><span class="note">Residential high-rise corridors near luxury condo stock</span></td>
+            </tr>
+            <tr>
+              <td>Monthly garage — Seattle downtown core</td>
+              <td class="rate-high">$300–$400+/mo</td>
+              <td><span class="note">Range across River North equivalent corridors</span></td>
+            </tr>
+            <tr>
+              <td>Monthly garage — South Lake Union</td>
+              <td class="rate-med">$180–$250/mo</td>
+              <td><span class="note">Growing luxury condo density; limited public supply</span></td>
+            </tr>
+            <tr>
+              <td>Monthly garage — downtown Bellevue</td>
+              <td class="rate-med">$169–$273/mo</td>
+              <td><span class="note">Average $169; indoor covered up to $273/month</span></td>
+            </tr>
+            <tr>
+              <td>Condo parking stall purchase — Seattle</td>
+              <td class="rate-high">$75K–$100K</td>
+              <td><span class="note">First Light ($90K), The Emerald (up to $100K), Graystone ($75K)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">Sources: SDOT Blog — Street Parking Rate Update November 10, 2025; SpotAngels Seattle Monthly Parking Guide 2026; SpotAngels Downtown Bellevue Monthly Parking; urbnlivn.com — First Light; The Urbanist — Seattle condo parking as luxury asset</p>
+
+      <div class="callout callout-warning">
+        <p><strong>For property managers:</strong> A guest visiting a Capitol Hill or South Lake Union condo on a Friday evening is looking at $8.00/hour on the street — if they can find a spot. A building that can offer a guest space isn't just solving a convenience problem. It's offering something the neighborhood literally cannot supply.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: REGULATORY -->
+    <section>
+      <h2>Why Newer Buildings Have <span class="accent">Less</span> Guest Parking</h2>
+      <p>Washington's approach to parking changed fundamentally in 2025. The question is no longer whether the state might reduce parking requirements — it already has, and by a lot.</p>
+
+      <p>On <strong>May 7, 2025</strong>, Governor Bob Ferguson signed <strong>SB 5184</strong>, described by housing policy analysts as "one of the most comprehensive parking reform bills enacted in any US state." Effective July 27, 2025, the law:</p>
+
+      <div class="two-col">
+        <div class="benefit-card">
+          <div class="icon">🚫</div>
+          <h4>Bans minimums for small units</h4>
+          <p>Cities cannot require any off-street parking for residential units under 1,200 sq ft — covering most urban studio and one-bedroom condos in Seattle and Bellevue.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">📐</div>
+          <h4>Caps minimums for larger buildings</h4>
+          <p>Cities with 30,000+ residents cannot require more than 1 parking space per 2 residential units — regardless of building size or neighborhood.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">🏢</div>
+          <h4>Eliminates minimums for affordable and senior housing</h4>
+          <p>No parking minimums allowed for affordable housing, senior housing, childcare facilities, or commercial uses in mixed-use buildings.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">📅</div>
+          <h4>Cities must comply by January 2027</h4>
+          <p>Seattle and Bellevue are both required to update their zoning codes to match SB 5184 by January 27, 2027. Bellevue began public engagement on its code amendment in February 2026.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>The result:</strong> Every new luxury condo breaking ground in a Seattle or Bellevue transit corridor from 2025 onward can legally be designed with far less parking than before — or none at all for qualifying unit types. The buildings delivering in 2027, 2028, and 2029 are being planned under these rules right now.</p>
+      </div>
+
+      <p>Seattle went further with its <strong>One Seattle Comprehensive Plan</strong>, adopted December 16, 2025. The plan creates 30 Neighborhood Centers with upzoned density across the city, and along Frequent Transit Routes, new zoning likely requires zero off-street parking. Seattle had already applied no-minimum rules to areas within 1/4 mile of frequent transit since 2012 — resulting in 18,000 fewer parking stalls built, saving $500M+ in developer costs. Those savings didn't go into guest parking.</p>
+
+      <p class="source-note">Sources: Washington State Legislature — SB 5184 (signed May 7, 2025, effective July 27, 2025); The Urbanist — "Rent Stabilization + Parking Reforms Become Law in Washington"; Sightline Institute — "How Washington State Won Parking Reform"; Seattle City Council — One Seattle Comprehensive Plan adopted December 16, 2025; City of Bellevue — Parking Reform Land Use Code Amendment</p>
+    </section>
+
+    <!-- SECTION 3: THE EMERALD -->
+    <section>
+      <h2>What It Looks Like When <span class="accent">It's Already Happening</span></h2>
+      <p>You don't have to wait for future buildings to see the problem. It's already live in downtown Seattle.</p>
+
+      <p><strong>The Emerald</strong> at 2nd &amp; Stewart is a 40-story, 262-unit luxury condo tower in the heart of downtown. It opened with <strong>62 parking stalls</strong> — the lowest parking ratio of any new downtown residential tower in Seattle. That's roughly one stall for every four units.</p>
+
+      <p>The Seattle Times documented what happened: approximately half of residents own cars, most are parking on the street, and condo brokers reported the lack of parking was "jeopardizing sales." The building did sell parking stalls — at up to <strong>$100,000 each</strong>. Those aren't HOA common elements. They're individual luxury assets. Residents who bought them aren't sharing them with guests.</p>
+
+      <div class="callout callout-warning">
+        <p><strong>The HOA at The Emerald</strong> is managing exactly the problem SpotShare solves: a building full of residents with cars, stalls priced out of reach for most HOA budgets, and guests who have nowhere to park. The only supply available is what residents aren't using at a given moment.</p>
+      </div>
+
+      <p>First Light (Belltown, parking at $90,000/stall), Graystone (First Hill, $75,000/stall), and Spire (343 units, Belltown) have all opened or are actively selling under the same conditions. Each new building in this market either solves the guest parking problem before the first resident complaint — or it doesn't, and the HOA board inherits it.</p>
+
+      <p class="source-note">Sources: The Seattle Times — "A tower of luxury condos with almost no parking? This experiment seems to be failing"; The Urbanist — Seattle condo parking report 2020; urbnlivn.com — First Light, Graystone, Spire Seattle listings</p>
+    </section>
+
+    <!-- SECTION 4: HOW THE SHARED PARKING MODEL WORKS -->
+    <section>
+      <h2>How Buildings Are <span class="accent">Solving It</span> Without Adding Spaces</h2>
+      <p>The shared parking model starts with a counterintuitive observation: even in buildings where parking is scarce, most of the garage is empty most of the time. Residents commute by transit. They travel for work. They go weeks without moving their car. The space exists — it's just not being made available to anyone who needs it.</p>
+
+      <p>A shared parking program converts that idle inventory into a managed guest amenity: residents opt in to make their assigned spot available during windows they know they won't need it. Neighbors book it when a guest is coming in. The HOA doesn't need to purchase stalls at $90,000 each, negotiate with the garage, or convert common space. The supply is already in the building.</p>
+
+      <div class="callout">
+        <p><strong>How it works in practice:</strong> A resident at The Graystone on First Hill is heading to a family event for the long weekend. She won't need her spot Thursday through Sunday. Her neighbor's parents are flying in Friday — and there's no guest parking in the building. She makes her spot available through the building app; they book it for two nights. No street parking, no $200 garage bill, no complaint to management on Monday morning.</p>
+      </div>
+
+      <p>What it needs is a system that makes the available spots bookable, handles garage access, and gives property management a real-time view of availability. SpotShare is built for exactly this model — designed for HOA communities and luxury condos, handling reservations, access control, and the property management workflow from a single dashboard.</p>
+
+      <div class="testimonial">
+        <div class="placeholder">
+          ✏️ <strong>Placeholder — pull a real quote from a Seattle or Bellevue property manager or resident before publishing.</strong><br /><br />
+          Example format:<br /><br />
+          "We'd been telling guests to plan on paying $40 at a garage nearby. Once we activated the shared parking program, that stopped being a conversation we had to have."<br />
+          — Property Manager, [Building Name], South Lake Union
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2>Frequently Asked <span class="accent">Questions</span></h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">What did Washington's SB 5184 actually change for Seattle and Bellevue condos?</div>
+          <div class="faq-a">
+            <p>SB 5184, signed May 7, 2025 and effective July 27, 2025, is one of the most comprehensive state-level parking reform laws in the US. It prohibits cities with 30,000+ residents from requiring more than 1 parking space per 2 residential units — and eliminates parking minimums entirely for residential units under 1,200 sq ft, affordable housing, senior housing, and commercial uses in mixed-use buildings. Seattle and Bellevue must update their zoning codes to comply by January 27, 2027. Buildings already under design or construction are being planned under these new rules.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Does my Seattle or Bellevue condo building have to provide guest parking?</div>
+          <div class="faq-a">
+            <p>There is no Washington state law requiring a condo building to reserve spots specifically for guests. Whether guest parking exists, and how it's allocated, is governed by the condo declaration and HOA bylaws. Bellevue's current code requires 1 visitor stall per 20 residential units (minimum of 1), but SB 5184 is likely to limit or eliminate that requirement as the city updates its code by January 2027. For buildings already built, guest parking has always been a building decision — not a code mandate.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How much does visitor parking cost near Seattle and Bellevue condos right now?</div>
+          <div class="faq-a">
+            <p>It varies by neighborhood and time of day, but it can be steep. Evening meters in Capitol Hill's Pike-Pine corridor peak at $8.00/hour — the highest in the city. Afternoon meters in downtown Seattle and First Hill run $6.50–$7.50/hour. Monthly parking in the Seattle downtown core averages $300–$400+/month. In downtown Bellevue, monthly garages average $169, with indoor covered spaces up to $273/month. And condo parking stalls in new Seattle high-rises have sold for $75,000–$100,000 each — making them a luxury asset, not a shared amenity.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Why do newer Seattle buildings have almost no parking?</div>
+          <div class="faq-a">
+            <p>Several reasons. Seattle has already eliminated parking minimums for areas within 1/4 mile of frequent transit since 2012 — resulting in 18,000 fewer stalls built over five years. SB 5184 (effective July 2025) now limits minimums statewide. The One Seattle Comprehensive Plan (adopted December 2025) creates 30 new Neighborhood Centers where parking requirements are further reduced. And underground parking in dense urban areas is expensive to build — developers building under no-minimum rules have a strong financial incentive to build fewer spaces. The Emerald opened downtown Seattle with 62 stalls for 262 units. More buildings are following the same model.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How do HOA boards manage guest parking when the building doesn't have dedicated guest spots?</div>
+          <div class="faq-a">
+            <p>The model gaining traction in urban luxury condos is a shared resident parking program: residents who aren't using their assigned spot during a given window make it available through a building-managed platform, and their neighbors' guests book it. No new construction, no capital cost to the HOA — just a board amenity decision and a building rollout. SpotShare is designed specifically for this model: HOA communities and luxury condos where the parking supply exists in the building but isn't being made accessible to guests.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What is SpotShare?</div>
+          <div class="faq-a">
+            <p>SpotShare is a guest parking infrastructure platform designed for luxury condos and HOA communities. Buildings use SpotShare to turn idle resident-assigned parking spots into a shared guest parking amenity — no new construction required. It handles reservations, garage access, and the property management workflow from a single platform. It is a building-specific amenity managed by the property, not a public parking marketplace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Want to See How It Works for Your Building?</h2>
+    <p>We can walk you through how the shared parking model works and whether it's a fit for your building's setup.</p>
+    <div class="cta-buttons">
+      <a href="/demo" class="btn-primary">Get a Demo for Your Building</a>
+      <a href="/how-it-works" class="btn-secondary">See How It Works</a>
+    </div>
+  </div>
+
+  <!-- CITIES NAV -->
+  <div class="cities-nav">
+    <div class="container" style="padding: 0;">
+      <h3>SpotShare Cities</h3>
+      <div class="cities-list">
+        <a href="/cities/san-diego" class="city-pill">San Diego</a>
+        <a href="/cities/atlanta" class="city-pill">Atlanta</a>
+        <a href="/cities/chicago" class="city-pill">Chicago</a>
+        <a href="/cities/seattle-and-bellevue" class="city-pill active">Seattle &amp; Bellevue</a>
+        <a href="/cities/miami" class="city-pill coming-soon">Miami (coming soon)</a>
+        <a href="/cities/new-york" class="city-pill coming-soon">New York (coming soon)</a>
+        <a href="/cities/los-angeles" class="city-pill coming-soon">Los Angeles (coming soon)</a>
+        <a href="/cities" class="city-pill">View all cities →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 SpotShare. Guest parking infrastructure for luxury condos.</span>
+    <span>Page last updated May 2026 · <a href="/cities/seattle-and-bellevue">spotshare.io/cities/seattle-and-bellevue</a></span>
+  </footer>
+
+  <!-- SCHEMA MARKUP -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://spotshare.io"},
+          {"@type": "ListItem", "position": 2, "name": "Cities", "item": "https://spotshare.io/cities"},
+          {"@type": "ListItem", "position": 3, "name": "Seattle & Bellevue", "item": "https://spotshare.io/cities/seattle-and-bellevue"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What did Washington's SB 5184 actually change for Seattle and Bellevue condos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SB 5184, signed May 7, 2025 and effective July 27, 2025, is one of the most comprehensive state-level parking reform laws in the US. It prohibits cities with 30,000+ residents from requiring more than 1 parking space per 2 residential units and eliminates minimums entirely for residential units under 1,200 sq ft, affordable housing, senior housing, and commercial uses in mixed-use buildings. Cities must comply by January 27, 2027."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does my Seattle or Bellevue condo building have to provide guest parking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There is no Washington state law requiring a condo building to reserve spots specifically for guests. Whether guest parking exists is governed by the condo declaration and HOA bylaws. Bellevue's current code requires 1 visitor stall per 20 residential units, but SB 5184 will likely limit or eliminate that requirement as the city updates its code by January 2027."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does visitor parking cost near Seattle and Bellevue condos right now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evening meters in Capitol Hill's Pike-Pine corridor peak at $8.00/hour — the highest in Seattle. Afternoon meters in downtown and First Hill run $6.50–$7.50/hour. Monthly parking in the Seattle downtown core averages $300–$400+/month. In downtown Bellevue, monthly garages average $169 with indoor covered spaces up to $273/month. Condo parking stalls in new Seattle high-rises have sold for $75,000–$100,000 each."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do newer Seattle buildings have almost no parking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Seattle has eliminated parking minimums for transit-adjacent areas since 2012. SB 5184 (effective July 2025) now limits minimums statewide. The One Seattle Comprehensive Plan (adopted December 2025) further reduces requirements in 30 new Neighborhood Centers. Developers building under no-minimum rules have strong financial incentives to build less parking — The Emerald opened with just 62 stalls for 262 units."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do HOA boards manage guest parking when the building doesn't have dedicated guest spots?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The shared resident parking model: residents who aren't using their assigned spot make it available through a building-managed platform, and their neighbors' guests book it. No new construction, no capital cost to the HOA. SpotShare is designed specifically for this model — HOA communities and luxury condos where parking exists in the building but isn't being made accessible to guests."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is SpotShare?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SpotShare is a guest parking infrastructure platform designed for luxury condos and HOA communities. Buildings use SpotShare to turn idle resident-assigned parking spots into a shared guest parking amenity — no new construction required. It handles reservations, garage access, and the property management workflow from a single platform."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>
