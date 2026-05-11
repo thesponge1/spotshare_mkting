@@ -1,8 +1,8 @@
 {
   "rotation": {
-    "current_index": 4,
-    "last_run_date": "2026-05-07",
-    "last_city": "Seattle and Bellevue"
+    "current_index": 5,
+    "last_run_date": "2026-05-11",
+    "last_city": "St. Petersburg, FL"
   },
   "cities": [
     {
@@ -168,21 +168,40 @@
       "city": "St. Petersburg, FL",
       "city_slug": "st-petersburg-fl",
       "research": {
-        "last_run_date": null,
-        "file_path": null,
-        "market_readiness": null,
-        "seo_page_opportunity": null,
-        "competitor_presence": null,
-        "market_moment": null,
-        "tier1_count": null,
-        "tier0_count": null
+        "last_run_date": "2026-05-11",
+        "file_path": "research/st-petersburg-fl-data.md",
+        "market_readiness": "tier-1",
+        "seo_page_opportunity": "yes",
+        "competitor_presence": "absent locally — zero named St. Pete or Tampa Bay deployments from any major competitor; ParkingPass has a generic Tampa page but no HOA condo case study",
+        "market_moment": "400 Central HOA board forming RIGHT NOW (TCO December 2025, 301-unit tower, move-ins underway); City Council final hearing May 14, 2026 to expand parking-optional zoning along Central Avenue; Art House (248 units, Kolter Urban) opening fall 2026; Florida HB 1203 (July 1, 2024) blunted traditional HOA parking enforcement; SB 4-D reserve funding pressure driving HOA boards to seek revenue-generating amenities",
+        "market_moments": [
+          "SunRunner TEC-Local Overlay approved September 12, 2024 (6-0 City Council vote) — eliminates all parking minimums along Central Avenue and within a quarter-mile of SunRunner BRT stops; final expansion hearing May 14, 2026; any buildings approved after that vote will have zero required parking by design",
+          "400 Central (400 Central Ave, 46 stories / 301 units) — TCO issued December 2025; move-ins underway; HOA board forming in Q1–Q2 2026; highest-priority outreach target in St. Pete",
+          "Florida HB 1203 (effective July 1, 2024) — HOAs can no longer prohibit parking of personal vehicles in lawfully designated spaces; fines capped at $100/violation with strict pre-notice requirements; traditional rule-and-fine parking enforcement model no longer viable; pushes boards toward reservation/management systems",
+          "Florida SB 4-D / SIRS reserve funding mandate (December 31, 2024 deadline) — HOA boards under severe financial pressure; special assessments documented across Florida; boards actively seeking revenue-generating amenity solutions that offset assessment burden"
+        ],
+        "competitors": [
+          { "tier": "watch", "name": "ParkingPass", "description": "Has a generic Tampa area landing page (parkingpass.com/tampa-parking-software-provider/) claiming 'hundreds of customers in Tampa Bay Area' but no named HOA condo case study, no St. Pete-specific page, and no HOA-board-targeted content. Positioned as permit-issuance infrastructure, not guest-experience/monetization." },
+          { "tier": "watch", "name": "Community Boss / Parking Boss", "description": "Has a named Florida HOA customer (Cypress Bend V) cited in HOAleader.com coverage but no named St. Pete building. Pricing starts ~$195/month. Web-based enforcement/permit focus; lacks SpotShare's reservation and monetization layer." }
+        ],
+        "tier1_count": 4,
+        "tier0_count": 3,
+        "parking_cost_signal": "moderate-high — street meters $1.00–$1.50/hour; city garages $1/hour with $6/day cap; monthly average $226–$233/month; event surge pricing $15–$30+/day near Pier District and Tropicana Field",
+        "availability_signal": "high — SunRunner TOD overlay eliminated parking minimums in Central Avenue transit corridor September 2024; final expansion hearing May 14, 2026; 400 Central (301 units) open with no managed guest system; Art House (248 units) opening fall 2026; Reflection (81 units) has near-zero guest capacity due to church parking sharing",
+        "regulatory_trend": "worsening — three successive rounds of parking minimum reductions (July 2022, September 2024, May 2026 expansion); Florida HB 1203 weakened HOA enforcement tools July 2024; SB 4-D reserve funding mandate creating financial pressure on all Florida condo HOA boards",
+        "hoa_friction_level": "high — HB 1203 caps fines at $100/violation with pre-notice requirements; SB 4-D creating HOA financial crisis statewide; STR guest vehicle overflow documented in mixed-use/STR-heavy buildings; church parking conflicts at Reflection; Florida ranked high nationally in HOA complaints",
+        "visitor_parking_ratio": "low — SunRunner overlay buildings can be designed with zero required parking; Reflection (81 units) shares spaces with church leaving near-zero guest capacity; new developments under transit-oriented overlay will structurally reduce future guest parking supply",
+        "new_development_pipeline": "yes — 400 Central (301 units, TCO Dec 2025, HOA board forming now); Art House (248 units, Kolter Urban, opening fall 2026); Waldorf Astoria Residences (163 units, sales launched, construction 2 years out); Roche Bobois Residences (165 units, construction 2026, delivery 2028); Marina Bay Residence (96 units, construction spring 2026, delivery spring 2028); Kolter 41-story tower (announced March 2026); Corey Landing St. Pete Beach (132 units, delivery 2028)",
+        "content_gap": "No first-party guide connecting St. Pete's Central Avenue parking-optional overlay expansion to the HOA guest parking management problem — the regulatory story is covered by Tampa Bay Times and Mass Transit Mag but nobody in the property management amenity space has written 'what the SunRunner overlay means for your building's guest parking'; zero competitor has a named St. Pete or Tampa Bay condo case study",
+        "top_keywords_found": ["guest parking management condo St. Petersburg FL", "HOA visitor parking app St. Pete", "condo parking permit software Florida", "downtown St. Pete condo guest parking solution", "visitor parking enforcement condo Tampa Bay", "HOA parking management software Florida", "condo parking shortage solution HOA board", "how to manage guest parking HOA Florida", "parking app for condo association St. Petersburg", "HOA parking rules Florida 2024 2025"],
+        "outreach_angle": "Lead with the May 14, 2026 regulatory moment — St. Pete is days away from a City Council vote that will make parking-optional zoning permanent along Central Avenue; the 400 Central HOA board is being formed right now; position SpotShare as the guest parking infrastructure layer before these boards make their first amenity decisions and before the city finalizes rules that make guest parking scarcity permanent in the next wave of buildings"
       },
       "seo": {
-        "page_built": false,
-        "page_path": null,
-        "last_built_date": null
+        "page_built": true,
+        "page_path": "seo-output/st-petersburg-fl-page.html",
+        "last_built_date": "2026-05-11"
       },
-      "status": "not-started"
+      "status": "page-live"
     },
     {
       "city": "New York City",
