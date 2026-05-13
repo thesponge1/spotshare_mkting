@@ -2,7 +2,7 @@
 name: spotshare-programmatic-seo
 description: When building SEO-driven city or location pages for SpotShare at scale. Use when generating new city pages, expanding to new markets, templating location content, or planning SpotShare's pSEO strategy. Applies SpotShare-specific rules on top of standard programmatic SEO principles — tone, data sourcing, CTA framing, stat handling, and what content belongs on these pages.
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # SpotShare Programmatic SEO
@@ -48,21 +48,6 @@ These override or supplement standard pSEO defaults whenever they conflict.
 - SpotShare mentioned once in body content as an example platform
 - CTA section for direct SpotShare pitch
 
-### Resident and PM Voice
-
-**The page should sound like it was written by someone who has been in these buildings.**
-
-Pages that read entirely in SpotShare's voice feel like marketing. Pages that reflect how
-residents and property managers actually talk about this problem feel like resources.
-
-Use the Language Bank (see Data Requirements) to pull exact phrases into body copy.
-The goal is not to quote sources — it is to use the language naturally, so the page
-reads the way a PM or HOA board member would think about the problem.
-
-- Prefer phrases that describe the pain over phrases that describe the solution
-- Weave language into section framing, callout boxes, and scenario copy
-- 2–3 well-placed phrases are enough — this is not a list of quotes
-
 ### CTA Section
 
 **Lead with the building, not the stat.**
@@ -71,18 +56,15 @@ reads the way a PM or HOA board member would think about the problem.
 - Bad: "[N] buildings have already solved this with SpotShare."
 - Bad: "Is your building on the list?"
 
-The second CTA button should link to `/how-it-works` or `/demo`, not to a buildings
-directory (which implies a numbered list).
+The second CTA button should link to `/how-it-works` or `/demo`, not to a buildings directory (which implies a numbered list).
 
 ### Stat Bar
 
-**Do not include a stat bar** unless every stat in it is sourced market data (parking
-rates, policy dates, etc.) with no SpotShare-specific metrics. If in doubt, leave it out.
+**Do not include a stat bar** unless every stat in it is sourced market data (parking rates, policy dates, etc.) with no SpotShare-specific metrics. If in doubt, leave it out.
 
 ### Section 3 (How Buildings Solve It)
 
-This section must explain the *shared parking model as a concept* — not as a SpotShare
-product walkthrough.
+This section must explain the *shared parking model as a concept* — not as a SpotShare product walkthrough.
 
 Required structure:
 1. Why the model works (the underlying logic of idle assigned spots)
@@ -90,21 +72,18 @@ Required structure:
 3. SpotShare mentioned once as one platform option
 4. Optional testimonial placeholder (mark clearly as placeholder)
 
-Do not include benefit cards with checkmarks (✅) that list SpotShare-specific features.
-These read as product marketing and undercut the editorial tone.
+Do not include benefit cards with checkmarks (✅) that list SpotShare-specific features. These read as product marketing and undercut the editorial tone.
 
 ### FAQ Rules
 
 - "What is SpotShare?" can be included — it's a legitimate search query
 - The answer must not include a building count or city count
 - Describe SpotShare by what it does, not by its scale
-- "How do HOA buildings manage guest parking without adding spaces?" should describe the
-  model generically before naming SpotShare
+- "How do HOA buildings manage guest parking without adding spaces?" should describe the model generically before naming SpotShare
 
 ### Meta Description
 
-Do not include building counts or "X buildings are already solving this" framing. Focus
-on the market problem and what the page helps readers understand.
+Do not include building counts or "X buildings are already solving this" framing. Focus on the market problem and what the page helps readers understand.
 
 ---
 
@@ -117,9 +96,7 @@ on the market problem and what the page helps readers understand.
 `Guest Parking in Downtown [City] Condos ([Year] Guide) | SpotShare`
 
 ### Meta Description Pattern
-`[City] parking rates [stat] — [trend]. Here's what HOA boards and property managers
-need to know about the guest parking problem, and how buildings across downtown [City]
-are addressing it.`
+`[City] parking rates [stat] — [trend]. Here's what HOA boards and property managers need to know about the guest parking problem, and how buildings across downtown [City] are addressing it.`
 
 ### Required Sections
 
@@ -147,20 +124,10 @@ Read from the YAML frontmatter block at the top of:
 | `hoa_friction_level` | Section 3 — how buildings are solving it |
 | `new_development_pipeline` | Section 2 — optional context if yes |
 | `competitor_presence` | FAQ — omit competitor names, use to inform how competitive the market is |
-| `top_keywords_found` | Keyword targeting and on-page SEO language — informs title variants, FAQ question phrasing, and section headers. These are search terms, not prose. Do not paste them directly into body copy. |
+| `top_keywords_found` | On-page language — use exact phrases residents/PMs used |
 | `content_gap` | FAQ — answer the question that isn't being answered anywhere online |
 | `seo_page_opportunity` | Go/no-go signal — only build the page if this is `yes` or `maybe` |
 | `market_moment` | Optional callout box if a policy or development story is active |
-| `language_bank` | Body copy prose — weave exact resident/PM phrases naturally into section framing, callout boxes, and scenario copy. Prefer phrases that describe pain. Minimum 2 phrases per page. These are not quotes to attribute — they are the voice of the page. |
-
-**`top_keywords_found` vs. `language_bank` — they serve different jobs:**
-- `top_keywords_found` → what people search. Use to inform keyword targeting, FAQ
-  question phrasing, and section header language.
-- `language_bank` → how people talk. Use to write body copy that sounds like it came
-  from someone inside these buildings, not from a marketing team.
-
-Never conflate them. A search term ("HOA guest parking software") is not the same as
-resident language ("I haven't been able to use my spot all week").
 
 **All market stats still require source notes.** The frontmatter fields provide framing
 signals — they do not replace sourced data. If a field says `high` for parking cost,
@@ -179,18 +146,14 @@ Always include:
 
 ## SpotShare Playbook Selection
 
-SpotShare's primary pSEO pattern is **Locations** (`[service] in [city]`), but pages
-should feel like editorial guides, not thin location directories.
+SpotShare's primary pSEO pattern is **Locations** (`[service] in [city]`), but pages should feel like editorial guides, not thin location directories.
 
 Layer in:
-- **Glossary**: "What is shared resident parking?" — zero-click content that builds
-  topical authority
-- **Personas**: Property managers vs. HOA boards vs. residents — different pain points,
-  same page
+- **Glossary**: "What is shared resident parking?" — zero-click content that builds topical authority
+- **Personas**: Property managers vs. HOA boards vs. residents — different pain points, same page
 - **Curation** (future): "Best practices for condo guest parking management in [city]"
 
-Avoid pure directory pages until there's sufficient building data to make them genuinely
-useful.
+Avoid pure directory pages until there's sufficient building data to make them genuinely useful.
 
 ---
 
@@ -206,24 +169,20 @@ In addition to standard pSEO pre-launch checklist:
 - [ ] All market data has a source note
 - [ ] FAQ "What is SpotShare?" answer omits any count of buildings or cities
 - [ ] Testimonial clearly marked as placeholder if not yet filled
-- [ ] At least 2 resident or PM phrases from the language bank appear in body copy
-- [ ] `top_keywords_found` used for keyword/header targeting only — not pasted into prose
 
 ---
 
 ## Research → Page Workflow
 
-1. Run `spotshare-city-research` skill — saves structured `.md` to
-   `research/[city-slug]-data.md`
+1. Run `spotshare-city-research` skill — saves structured `.md` to `research/[city-slug]-data.md`
 2. Read YAML frontmatter from `research/[city-slug]-data.md`
 3. Check `seo_page_opportunity` — if `no`, stop and flag. If `yes` or `maybe`, proceed.
 4. Pull signal fields from frontmatter for framing and tone
-5. Pull language bank phrases from the Language Bank section of the briefing narrative
-6. Pull exact dollar figures and sourced stats from the briefing narrative section
-7. Generate page using template, combining all three layers
-8. Tone-check against SpotShare rules before outputting final HTML
-9. Output to `seo-output/[city-slug]-page.html`
-10. Update city index (see below)
+5. Pull exact dollar figures and sourced stats from the briefing narrative section
+6. Generate page using template, combining both layers
+7. Tone-check against SpotShare rules before outputting final HTML
+8. Output to `seo-output/[city-slug]-page.html`
+9. Update city index (see below)
 
 ### Step: Update City Index
 

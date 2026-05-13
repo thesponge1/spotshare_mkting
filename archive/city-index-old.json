@@ -1,0 +1,711 @@
+{
+  "rotation": {
+    "current_index": 5,
+    "last_run_date": "2026-05-11",
+    "last_city": "St. Petersburg, FL"
+  },
+  "cities": [
+    {
+      "city": "San Diego",
+      "city_slug": "san-diego",
+      "research": {
+        "last_run_date": "2026-05-13",
+        "file_path": "research/san-diego-data.md",
+        "market_readiness": "tier-1",
+        "seo_page_opportunity": "yes",
+        "competitor_presence": "active",
+        "market_moment": "Andia by Bosa (389 luxury units, first downtown SD for-sale condo since 2019, ~2027 delivery) has opened its sales gallery — its HOA board will set guest parking policy from scratch under new TPA rules",
+        "market_moments": [
+          "Parkade comparison page at parkade.com/spotshare confirmed still live and ranking — calls SpotShare 'cutting edge in 2003' and cites $300–500/month vs. $1/spot/month; SpotShare has published no counter-narrative in its home market",
+          "Andia by Bosa (389-unit, 40-story luxury tower, 8th/9th/B/C Streets, Cortez Hill) — first for-sale luxury condo in downtown San Diego since 2019; sales gallery open 2025; construction delivery ~2027; HOA board forms at delivery with no guest parking system in place",
+          "June 2, 2025 comprehensive parking reform package approved by City Council — dynamic pricing, 7-day enforcement, extended meter hours to new neighborhoods; Ordinance O-21989 amendments effective Aug 22, 2025; 2026 LDC Update (139 amendments, 32 Downtown-specific) in final review for spring 2026 adoption",
+          "No first-party SpotShare landing page competing for 'guest parking downtown San Diego condo' SERP — third-party real estate blog (92101urbanliving.com) still capturing this traffic on SpotShare's behalf"
+        ],
+        "competitors": [
+          { "tier": "1", "name": "Parkade", "description": "Confirmed still live with comparison page at parkade.com/spotshare. Exact quotes: 'Spotshare was cutting edge in 2003.' / 'not a single HOA that's switched to Parkade has switched back to Spotshare.' New testimonial (Mariana Salfiti, La Galleria) added — building generating thousands annually with Parkade vs. SpotShare being 'only a cost center.'", "their_angle": "Modern mobile app vs. legacy 2003 web tool; revenue-generating vs. cost center; instant adoption vs. complex onboarding.", "spotshare_counter": "San Diego regulatory context (June 2025 reform package, 2026 LDC Update, TPA standards) and local building proof points are Parkade's blind spot — their generic national pitch has no local anchor in SpotShare's home market." },
+          { "tier": "1", "name": "ParqEx / GuestParq", "description": "Publishing 'ParqEx vs Parkade' comparison page and '2026 Complete Guide to Parking Management' — actively targeting PM search intent. Revenue claim: 'added over $3,500 in operating income each month.' HOA condo solution page at parqex.com/condo-hoa ranking for visitor parking queries.", "their_angle": "Amenity framing + revenue generation + enterprise access control; pitches GuestParq as a profit center for property managers.", "spotshare_counter": "SpotShare's peer-to-peer sharing model requires no hardware investment or per-transaction fees — simpler implementation path for HOAs that don't want to become parking operators." },
+          { "tier": "1", "name": "SimplyPermits", "description": "Owns 'best HOA guest parking software' SERP with a self-promotional article that excludes SpotShare entirely. Dedicated condo/HOA parking solutions page and digital permit ads active.", "their_angle": "Permit issuance and enforcement focus — targeting the compliance/control mindset.", "spotshare_counter": "SpotShare is not a permit system — it's a resident-driven sharing model. The framing difference is amenity vs. enforcement, not feature parity." },
+          { "tier": "1", "name": "Reliant Parking", "description": "Publishing 2026-dated content on HOA parking enforcement and guest permit management. San Diego presence confirmed (parkingsquad.com operates as local enforcement partner). 'Parking Enforcement in 2026: How HOAs & Apartments Reduce Costs' published recently.", "their_angle": "Enforcement + compliance framing (fines, towing, citations) rather than sharing/amenity framing.", "spotshare_counter": "SpotShare's model avoids the adversarial enforcement dynamic entirely — no towing, no fines, resident-driven coordination." },
+          { "tier": "2", "name": "Community Boss / Parking Boss", "description": "High-volume HOA parking content ('7 Ways to Get HOA Parking Under Control') ranking on page 1. 100% web-based pitch same as SpotShare — content volume is their primary weapon.", "their_angle": "Simplicity and no-app-required framing — same messaging SpotShare uses.", "spotshare_counter": "Community Boss is a permit management system; SpotShare's differentiation is the sharing/idle-spot model vs. enforcement." },
+          { "tier": "watch", "name": "ButterflyMX", "description": "Published full 'HOA & Condo Visitor Parking Management Guide' — first confirmed content explicitly targeting visitor parking management as a standalone solution. Frames visitor parking as an 'access control' problem solved with RFID hardware. Calls parking reservation systems 'too restrictive.'", "their_angle": "Hardware-first, access-control framing; competes for HOA board technology budget.", "spotshare_counter": "ButterflyMX's hardware approach requires capital investment; SpotShare's software-only model is deployable in days with no hardware." },
+          { "tier": "watch", "name": "SmartLotIQ", "description": "New entrant with HOA guest parking platform: QR-coded passes, ALPR gate control, photo-evidence violations. Pricing $149–$399/month — below SpotShare's reported range. Appearing in HOA parking software searches this cycle.", "their_angle": "Hardware + software integration at lower monthly price point.", "spotshare_counter": "SmartLotIQ requires ALPR hardware installation — higher implementation barrier for existing buildings." }
+        ],
+        "tier1_count": 4,
+        "tier0_count": 3,
+        "run_confidence": "medium — web research strong on parking cost data and regulatory context; Reddit and social layer thin this cycle; Parkade comparison page confirmed still active; new development signal (Andia) confirmed fresh",
+        "parking_cost_signal": "high — street meters $2.50/hour (doubled Jan 2025); $10/hour event zone pricing for 200+ blocks; Balboa Park $16/day; monthly garage $200–$400; rates projected $3.00–$3.50/hour by late 2026",
+        "availability_signal": "critical — downtown condo buildings report zero dedicated guest parking; third-party real estate coverage cites 'zero assigned guest parking' as defining characteristic of downtown SD condo market",
+        "regulatory_trend": "worsening — June 2025 comprehensive parking reform package; O-21989 amendments effective Aug 2025; 2026 Land Development Code Update (139 amendments) in final review; dynamic pricing approved and deploying",
+        "hoa_friction_level": "high — Parkade comparison page targeting SpotShare by name live in search; California HOA parking law conflicts active; national HOA parking friction documented",
+        "visitor_parking_ratio": "near-zero — third-party blog explicitly cites 'zero assigned guest parking' as defining problem for downtown SD condos; confirmed by condo cost guides referencing no dedicated guest spaces",
+        "new_development_pipeline": "yes — Andia by Bosa: 389-unit, 40-story luxury tower at 8th/9th/B/C Streets (Cortez Hill/East Village), sales gallery opened 2025, construction delivery ~2027; first for-sale luxury condo in downtown SD since 2019",
+        "content_gap": "No first-party authoritative answer to 'how do downtown San Diego condo buildings manage guest parking in 2026' — a third-party real estate blog owns this SERP and SpotShare has no indexed landing page to compete",
+        "top_keywords_found": ["guest parking downtown San Diego condo", "visitor parking condo HOA", "HOA parking app", "best HOA parking software", "HOA guest parking software", "property manager parking solutions", "best HOA parking app", "visitor parking management", "condo guest parking solution", "amenity parking"],
+        "outreach_angle": "San Diego is SpotShare's home market — lead with the Andia by Bosa opening and the June 2025 parking reform package as reasons why guest parking management is now a permanent line item in any new downtown condo's amenity budget, not an afterthought"
+      },
+      "seo": {
+        "page_built": true,
+        "page_path": "seo-output/san-diego-page.html",
+        "last_built_date": "2026-05-13"
+      },
+      "status": "page-live"
+    },
+    {
+      "city": "Atlanta",
+      "city_slug": "atlanta",
+      "research": {
+        "last_run_date": "2026-05-06",
+        "file_path": "research/atlanta-data.md",
+        "market_readiness": "tier-1",
+        "seo_page_opportunity": "yes",
+        "competitor_presence": "active",
+        "market_moment": "ATL Zoning 2.0 legislation actively working to eliminate all off-street parking minimums citywide — same trajectory as San Diego's March 2026 code change; BeltLine already set the precedent",
+        "market_moments": [
+          "ATL Zoning 2.0 (Councilmember Jason Dozier, 2025) proposes eliminating off-street parking minimums citywide — BeltLine Overlay District already exempt since Feb 2024; if passed, new luxury condo developers set their own parking ratios with no floor",
+          "Elyse Buckhead by Kolter Urban — 194-unit luxury tower at 102 West Paces Ferry Rd, site work Q2 2026, delivery Q4 2028–Q1 2029; new HOA board will make first amenity decisions in a building constructed under zero parking minimum rules",
+          "Community Boss/Parking Boss has a named Atlanta customer (Twynate Boyd) with a live Facebook case study — direct competitor proof-of-concept in SpotShare's target market"
+        ],
+        "competitors": [
+          { "tier": "1", "name": "Community Boss / Parking Boss", "description": "Named Atlanta customer (Twynate Boyd) confirmed via public Facebook case study at $195/month starting. Web-based pitch (no app required) targeting HOA simplicity — actively capturing Atlanta search intent SpotShare should own." },
+          { "tier": "2", "name": "ParqEx", "description": "Enterprise-grade HOA/gated community positioning with AI/LPR features; confirmed market presence in Atlanta though no named case study found. Targets the same property manager audience as SpotShare." }
+        ],
+        "tier0_count": 3,
+        "tier1_count": 3,
+        "parking_cost_signal": "high — street meters $2.00/hour in downtown/Midtown with 2-hour limits (7am–7pm Mon–Sat); monthly garage $65–$280; daily rates $15–$30",
+        "availability_signal": "high — BeltLine-area condos already being built with no required parking since Feb 2024; limited dedicated guest spots in most downtown/Midtown buildings",
+        "regulatory_trend": "worsening — ATL Zoning 2.0 (active 2025 legislation) proposes eliminating off-street parking minimums citywide; BeltLine Overlay District already exempt since February 2024",
+        "hoa_friction_level": "high — documented cases of residents escalating parking complaints to Atlanta City Council (Landmark Condominiums, Piedmont Ave); Georgia #9 nationally in HOA complaints",
+        "visitor_parking_ratio": "low — new BeltLine-area condos built with no parking minimums; older Midtown/Buckhead buildings allocating minimal guest spots",
+        "new_development_pipeline": "yes — Elyse Buckhead (Kolter Urban): 194-unit luxury tower, site work Q2 2026, delivery Q4 2028–Q1 2029; units from mid-$900k",
+        "content_gap": "No first-party guide explaining why Atlanta condos are running out of guest parking and what HOA boards can do about it — the Zoning 2.0 story is being covered by local news but nobody in the property management space has claimed it",
+        "top_keywords_found": ["guest parking Atlanta condo", "visitor parking HOA Atlanta", "HOA parking restrictions Atlanta", "parking minimums eliminated Atlanta", "Buckhead luxury condo parking", "Midtown Atlanta condo parking", "guest parking app HOA", "BeltLine condo parking"],
+        "outreach_angle": "Lead with the zoning story — BeltLine condos are already going up without parking minimums and the rest of Atlanta may follow; position SpotShare as the infrastructure layer before guest parking complaints become a board crisis at Elyse Buckhead and Midtown towers"
+      },
+      "seo": {
+        "page_built": true,
+        "page_path": "seo-output/atlanta-page.html",
+        "last_built_date": "2026-05-06"
+      },
+      "status": "page-live"
+    },
+    {
+      "city": "Chicago",
+      "city_slug": "chicago",
+      "research": {
+        "last_run_date": "2026-05-06",
+        "file_path": "research/chicago-data.md",
+        "market_readiness": "tier-1",
+        "seo_page_opportunity": "yes",
+        "competitor_presence": "active",
+        "market_moment": "Chicago eliminated parking minimums for ~3/4 of city on September 25, 2025 — any new luxury condo in a transit corridor can now be built with zero required parking",
+        "market_moments": [
+          "Chicago's September 25, 2025 parking ordinance eliminated minimums for ~3/4 of the city (within 1/4 mile frequent bus or 1/2 mile rail) — the most sweeping parking reform in any SpotShare target market; underground parking at $67,500/space means developers will opt out",
+          "ParqEx / GuestParq has 3 named Chicago condo case studies live in search: Silver Tower (River North), 340 on the Park (Randolph St), 1660 Condominium (North LaSalle) — direct competitor owning the 'condo guest parking Chicago' SERP",
+          "New luxury pipeline: 56-story, 498-unit tower at 669 N Michigan (Streeterville, targeting 2027) and riverfront development — all under zero-minimum rules for transit-adjacent sites",
+          "Illinois Condo Act Section 18.12 required all condo boards to adopt an accessible parking policy by April 2, 2025 — placed parking formally on every Illinois HOA board's agenda"
+        ],
+        "competitors": [
+          { "tier": "1", "name": "ParqEx / GuestParq", "description": "Three named Chicago case studies indexed in search: Silver Tower (River North, 39-story), 340 on the Park (Randolph St), and 1660 Condominium (North LaSalle). Silver Tower program was 'heavily used from first day' with HOA generating income immediately. Most aggressive competitor presence of any city in the SpotShare portfolio." },
+          { "tier": "watch", "name": "Community Boss / Parking Boss", "description": "No named Chicago case study found but confirmed presence in adjacent markets (Atlanta). Pricing at $195/month entry-level; web-based pitch targeting HOA simplicity." }
+        ],
+        "tier0_count": 3,
+        "tier1_count": 3,
+        "parking_cost_signal": "critical — peak meters River North/Loop $7.75–$9.75/hour; garages $35–$52/day; monthly $280–$475; city parking tax raised to 23.25% effective January 1, 2025",
+        "availability_signal": "critical — parking minimums eliminated Sept 25, 2025 for ~3/4 of city; $67,500/space underground cost means most new developers will opt out; existing luxury buildings provide minimal or zero guest spots",
+        "regulatory_trend": "worsening — September 2025 ordinance eliminates parking minimums for transit-adjacent sites citywide; Illinois Condo Act now requires accessible parking policies from all boards",
+        "hoa_friction_level": "high — Illinois condo [IL] parking disputes active on r/HOA; Illinois Condo Act defines four parking dispute categories; parking is top HOA complaint category nationally",
+        "visitor_parking_ratio": "near-zero — most downtown Chicago luxury condos provide no dedicated guest spots; new builds under zero-minimum rules further reduce supply",
+        "new_development_pipeline": "yes — 56-story, 498-unit tower at 669 N Michigan (Streeterville, 2027); riverfront development (first tower 2027); all built under zero-minimum rules",
+        "content_gap": "No first-party condo or property management guide explaining what Chicago's September 2025 parking ordinance means for luxury building HOA boards — the story is covered by legal and real estate outlets but not by anyone in the property management amenity space",
+        "top_keywords_found": ["guest parking Chicago condo", "visitor parking HOA Chicago", "Chicago parking minimums eliminated", "River North condo parking", "Gold Coast condo parking", "Streeterville parking", "HOA parking app Chicago", "condo guest parking solution"],
+        "outreach_angle": "Hit property managers at new luxury builds coming online in River North and Streeterville — the September 2025 ordinance means their buildings may have been designed with no parking minimum; lead with the regulatory shift and position SpotShare as the guest parking infrastructure layer"
+      },
+      "seo": {
+        "page_built": true,
+        "page_path": "seo-output/chicago-page.html",
+        "last_built_date": "2026-05-06"
+      },
+      "status": "page-live"
+    },
+    {
+      "city": "Seattle and Bellevue",
+      "city_slug": "seattle-and-bellevue",
+      "research": {
+        "last_run_date": "2026-05-07",
+        "file_path": "research/seattle-and-bellevue-data.md",
+        "market_readiness": "tier-1",
+        "seo_page_opportunity": "yes",
+        "competitor_presence": "active nationally, zero locally",
+        "market_moment": "Washington SB 5184 (signed May 7, 2025) is the most comprehensive state parking reform law in the US — new Seattle and Bellevue condos in transit corridors can now be built with zero required parking; The Emerald (262 units, 62 stalls) is the named proof point already live downtown",
+        "market_moments": [
+          "SB 5184 signed May 7, 2025 (effective July 27, 2025) — eliminates parking minimums for residential units under 1,200 sq ft statewide; caps city minimums at 1 space per 2 units; cities must comply by January 27, 2027; described as one of the most comprehensive state parking reform laws in the US",
+          "The Emerald (262 units, 62 stalls, downtown Seattle) — Seattle Times documented the result: half of residents parking on-street, condo brokers report the ratio 'jeopardizing sales'; parking stalls selling for up to $100,000 each; named proof point that the shortage is already here",
+          "Bosa Development's Park Row (143 units, 22-story, downtown Bellevue) — sales launched Spring 2026; HOA board making first amenity decisions now; largest high-profile active condo launch in Bellevue",
+          "Bosa Main & Bellevue (449 units, 3 phased towers) — construction starting mid-2026; largest condo project in Bellevue's pipeline; HOA infrastructure decisions being made before groundbreaking",
+          "Seattle One Seattle Comprehensive Plan adopted December 16, 2025 — 30 Neighborhood Centers upzoned; Frequent Transit Route corridors likely require zero parking; Phase 2 zone changes rolling through 2026"
+        ],
+        "competitors": [
+          { "tier": "watch", "name": "ParqEx / GuestParq", "description": "Three named Chicago case studies (Silver Tower, 340 on the Park, 1660 Condominium); no Seattle or Pacific Northwest case study found. National SERP presence via GuestParq HOA landing page." },
+          { "tier": "watch", "name": "Parkade", "description": "Named case studies in Atlanta, Chicago, LA, Columbus — no Seattle or Pacific Northwest property. Runs active anti-SpotShare comparison page at parkade.com/spotshare." },
+          { "tier": "watch", "name": "Community Boss / Parking Boss", "description": "Named Atlanta customer; no Seattle case study. Web-based pitch targeting HOA simplicity. Ranking in national HOA parking SERPs." }
+        ],
+        "tier1_count": 4,
+        "tier0_count": 3,
+        "parking_cost_signal": "high — Capitol Hill/Pike-Pine evening meters peak $8.00/hour (highest in city); Commercial Core afternoon $7.50/hour; downtown Seattle monthly garage $300–$400+/month; Bellevue monthly $169–$273/month; condo stalls selling as luxury real estate at $75K–$100K each",
+        "availability_signal": "critical — SB 5184 (effective July 27, 2025) eliminates parking minimums for qualifying residential in transit corridors; The Emerald opened with 62 stalls for 262 units (lowest ratio of any new Seattle residential tower); Bosa Park Row and Main & Bellevue launching under new low-minimum rules",
+        "regulatory_trend": "worsening — SB 5184 (Washington State, signed May 7, 2025) among most comprehensive state-level parking reform laws in US; Seattle One Seattle Comprehensive Plan adopted December 16, 2025 upzones 30 Neighborhood Centers with zero parking minimums in Frequent Transit corridors; Bellevue Parking Reform Land Use Code Amendment in public engagement February 2026, compliance deadline January 27, 2027",
+        "hoa_friction_level": "high — The Emerald's near-zero parking ratio documented as creating sales friction and street overflow (Seattle Times); West Seattle new developments creating neighborhood conflict (KING5); local brokers flagging units without parking take longer to sell; rising HOA dues compounding parking management burden",
+        "visitor_parking_ratio": "near-zero — The Emerald: 62 stalls for 262 units (1:4.2 ratio), lowest of any new Seattle residential tower; SB 5184 means new transit-corridor buildings can have zero required parking; Bellevue current code: 1 visitor stall per 20 units minimum, likely to be further reduced",
+        "new_development_pipeline": "yes — Bellevue Park Row (Bosa, 143 units, Spring 2026 sales launch); Bosa Main & Bellevue (449 units, 3 towers, construction mid-2026); Seattle Graystone (271 units, First Hill, currently selling); Spire (343 units, Belltown, open)",
+        "content_gap": "No first-party guide connecting Washington's SB 5184 to the HOA guest parking management problem — the law is covered by housing policy outlets but nobody in property management amenity space has written 'what this means for your building's guest parking'; no competitor has a named Seattle or Pacific Northwest case study",
+        "top_keywords_found": ["guest parking Seattle condo", "visitor parking HOA Seattle", "HOA parking app Seattle", "condo parking management Bellevue", "Seattle parking minimums eliminated 2025", "SB 5184 condo parking impact", "HOA parking enforcement Seattle", "guest parking solution Seattle condo board", "Bellevue parking reform 2026"],
+        "outreach_angle": "Lead with SB 5184 — Washington just passed the most sweeping state parking reform in the country and buildings under construction in Bellevue (Park Row, Main & Bellevue) and Seattle are being designed under these rules now; no competitor has touched this market; position SpotShare as the guest parking infrastructure layer before these buildings' first resident meetings"
+      },
+      "seo": {
+        "page_built": true,
+        "page_path": "seo-output/seattle-and-bellevue-page.html",
+        "last_built_date": "2026-05-07"
+      },
+      "status": "page-live"
+    },
+    {
+      "city": "St. Petersburg, FL",
+      "city_slug": "st-petersburg-fl",
+      "research": {
+        "last_run_date": "2026-05-11",
+        "file_path": "research/st-petersburg-fl-data.md",
+        "market_readiness": "tier-1",
+        "seo_page_opportunity": "yes",
+        "competitor_presence": "absent locally — zero named St. Pete or Tampa Bay deployments from any major competitor; ParkingPass has a generic Tampa page but no HOA condo case study",
+        "market_moment": "400 Central HOA board forming RIGHT NOW (TCO December 2025, 301-unit tower, move-ins underway); City Council final hearing May 14, 2026 to expand parking-optional zoning along Central Avenue; Art House (248 units, Kolter Urban) opening fall 2026; Florida HB 1203 (July 1, 2024) blunted traditional HOA parking enforcement; SB 4-D reserve funding pressure driving HOA boards to seek revenue-generating amenities",
+        "market_moments": [
+          "SunRunner TEC-Local Overlay approved September 12, 2024 (6-0 City Council vote) — eliminates all parking minimums along Central Avenue and within a quarter-mile of SunRunner BRT stops; final expansion hearing May 14, 2026; any buildings approved after that vote will have zero required parking by design",
+          "400 Central (400 Central Ave, 46 stories / 301 units) — TCO issued December 2025; move-ins underway; HOA board forming in Q1–Q2 2026; highest-priority outreach target in St. Pete",
+          "Florida HB 1203 (effective July 1, 2024) — HOAs can no longer prohibit parking of personal vehicles in lawfully designated spaces; fines capped at $100/violation with strict pre-notice requirements; traditional rule-and-fine parking enforcement model no longer viable; pushes boards toward reservation/management systems",
+          "Florida SB 4-D / SIRS reserve funding mandate (December 31, 2024 deadline) — HOA boards under severe financial pressure; special assessments documented across Florida; boards actively seeking revenue-generating amenity solutions that offset assessment burden"
+        ],
+        "competitors": [
+          { "tier": "watch", "name": "ParkingPass", "description": "Has a generic Tampa area landing page (parkingpass.com/tampa-parking-software-provider/) claiming 'hundreds of customers in Tampa Bay Area' but no named HOA condo case study, no St. Pete-specific page, and no HOA-board-targeted content. Positioned as permit-issuance infrastructure, not guest-experience/monetization." },
+          { "tier": "watch", "name": "Community Boss / Parking Boss", "description": "Has a named Florida HOA customer (Cypress Bend V) cited in HOAleader.com coverage but no named St. Pete building. Pricing starts ~$195/month. Web-based enforcement/permit focus; lacks SpotShare's reservation and monetization layer." }
+        ],
+        "tier1_count": 4,
+        "tier0_count": 3,
+        "parking_cost_signal": "moderate-high — street meters $1.00–$1.50/hour; city garages $1/hour with $6/day cap; monthly average $226–$233/month; event surge pricing $15–$30+/day near Pier District and Tropicana Field",
+        "availability_signal": "high — SunRunner TOD overlay eliminated parking minimums in Central Avenue transit corridor September 2024; final expansion hearing May 14, 2026; 400 Central (301 units) open with no managed guest system; Art House (248 units) opening fall 2026; Reflection (81 units) has near-zero guest capacity due to church parking sharing",
+        "regulatory_trend": "worsening — three successive rounds of parking minimum reductions (July 2022, September 2024, May 2026 expansion); Florida HB 1203 weakened HOA enforcement tools July 2024; SB 4-D reserve funding mandate creating financial pressure on all Florida condo HOA boards",
+        "hoa_friction_level": "high — HB 1203 caps fines at $100/violation with pre-notice requirements; SB 4-D creating HOA financial crisis statewide; STR guest vehicle overflow documented in mixed-use/STR-heavy buildings; church parking conflicts at Reflection; Florida ranked high nationally in HOA complaints",
+        "visitor_parking_ratio": "low — SunRunner overlay buildings can be designed with zero required parking; Reflection (81 units) shares spaces with church leaving near-zero guest capacity; new developments under transit-oriented overlay will structurally reduce future guest parking supply",
+        "new_development_pipeline": "yes — 400 Central (301 units, TCO Dec 2025, HOA board forming now); Art House (248 units, Kolter Urban, opening fall 2026); Waldorf Astoria Residences (163 units, sales launched, construction 2 years out); Roche Bobois Residences (165 units, construction 2026, delivery 2028); Marina Bay Residence (96 units, construction spring 2026, delivery spring 2028); Kolter 41-story tower (announced March 2026); Corey Landing St. Pete Beach (132 units, delivery 2028)",
+        "content_gap": "No first-party guide connecting St. Pete's Central Avenue parking-optional overlay expansion to the HOA guest parking management problem — the regulatory story is covered by Tampa Bay Times and Mass Transit Mag but nobody in the property management amenity space has written 'what the SunRunner overlay means for your building's guest parking'; zero competitor has a named St. Pete or Tampa Bay condo case study",
+        "top_keywords_found": ["guest parking management condo St. Petersburg FL", "HOA visitor parking app St. Pete", "condo parking permit software Florida", "downtown St. Pete condo guest parking solution", "visitor parking enforcement condo Tampa Bay", "HOA parking management software Florida", "condo parking shortage solution HOA board", "how to manage guest parking HOA Florida", "parking app for condo association St. Petersburg", "HOA parking rules Florida 2024 2025"],
+        "outreach_angle": "Lead with the May 14, 2026 regulatory moment — St. Pete is days away from a City Council vote that will make parking-optional zoning permanent along Central Avenue; the 400 Central HOA board is being formed right now; position SpotShare as the guest parking infrastructure layer before these boards make their first amenity decisions and before the city finalizes rules that make guest parking scarcity permanent in the next wave of buildings"
+      },
+      "seo": {
+        "page_built": true,
+        "page_path": "seo-output/st-petersburg-fl-page.html",
+        "last_built_date": "2026-05-11"
+      },
+      "status": "page-live"
+    },
+    {
+      "city": "New York City",
+      "city_slug": "new-york-city",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Miami",
+      "city_slug": "miami",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "San Francisco",
+      "city_slug": "san-francisco",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Los Angeles",
+      "city_slug": "los-angeles",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Boston",
+      "city_slug": "boston",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Washington DC",
+      "city_slug": "washington-dc",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Denver",
+      "city_slug": "denver",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Austin",
+      "city_slug": "austin",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Portland",
+      "city_slug": "portland",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Philadelphia",
+      "city_slug": "philadelphia",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Houston",
+      "city_slug": "houston",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Dallas",
+      "city_slug": "dallas",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Minneapolis",
+      "city_slug": "minneapolis",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Nashville",
+      "city_slug": "nashville",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Charlotte",
+      "city_slug": "charlotte",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Tampa",
+      "city_slug": "tampa",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Fort Lauderdale",
+      "city_slug": "fort-lauderdale",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Honolulu",
+      "city_slug": "honolulu",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Las Vegas",
+      "city_slug": "las-vegas",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Phoenix and Scottsdale",
+      "city_slug": "phoenix-and-scottsdale",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Baltimore",
+      "city_slug": "baltimore",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Raleigh and Durham",
+      "city_slug": "raleigh-and-durham",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Salt Lake City",
+      "city_slug": "salt-lake-city",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "New Orleans",
+      "city_slug": "new-orleans",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    },
+    {
+      "city": "Pittsburgh",
+      "city_slug": "pittsburgh",
+      "research": {
+        "last_run_date": null,
+        "file_path": null,
+        "market_readiness": null,
+        "seo_page_opportunity": null,
+        "competitor_presence": null,
+        "market_moment": null,
+        "tier1_count": null,
+        "tier0_count": null
+      },
+      "seo": {
+        "page_built": false,
+        "page_path": null,
+        "last_built_date": null
+      },
+      "status": "not-started"
+    }
+  ]
+}
