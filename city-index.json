@@ -222,7 +222,7 @@
       {
         "city": "Chicago",
         "city_slug": "chicago",
-        "status": "researched",
+        "status": "page-live",
         "research": {
           "last_run_date": "2026-05-14",
           "file_path": "research/chicago-data.md",
@@ -319,9 +319,9 @@
           "sources_unavailable": ["X/Twitter", "Reddit"]
         },
         "seo": {
-          "page_built": false,
-          "page_path": null,
-          "last_built_date": null,
+          "page_built": true,
+          "page_path": "seo-output/chicago-page.html",
+          "last_built_date": "2026-05-14",
           "needs_refresh": false
         }
       },
