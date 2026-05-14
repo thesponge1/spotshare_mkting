@@ -1,7 +1,7 @@
 {
     "rotation": {
       "current_index": 5,
-      "last_run_date": "2026-05-11",
+      "last_run_date": "2026-05-14",
       "last_city": "St. Petersburg, FL"
     },
     "cities": [
@@ -120,273 +120,405 @@
         "city_slug": "atlanta",
         "status": "page-live",
         "research": {
-          "last_run_date": "2026-05-06",
+          "last_run_date": "2026-05-14",
           "file_path": "research/atlanta-data.md",
           "market_readiness": "tier-1",
           "seo_page_opportunity": "yes",
           "competitor_presence": "active",
-          "outreach_angle": "Lead with the zoning story — BeltLine condos are already going up without parking minimums and the rest of Atlanta may follow; position SpotShare as the infrastructure layer before guest parking complaints become a board crisis at Elyse Buckhead and Midtown towers",
-          "market_moment": "ATL Zoning 2.0 legislation actively working to eliminate all off-street parking minimums citywide — same trajectory as San Diego's March 2026 code change; BeltLine already set the precedent",
+          "outreach_angle": "Lead with ATL Zoning 2.0 Draft V2 and the Elyse Buckhead groundbreaking — Atlanta is finalizing zoning rules that let luxury condo developers build with no parking minimums, and the next wave of HOA boards will make their first amenity decisions under those rules; position SpotShare as the guest parking infrastructure layer before Parkeaz and Parking Boss lock in these buildings",
+          "market_moment": "ATL Zoning 2.0 Draft V2 released January 22, 2026 with 4-zone parking structure; Elyse Buckhead Q2 2026 groundbreaking; Parkade actively targeting Atlanta SpotShare buildings with shutdown narrative",
           "market_moments": [
-            "ATL Zoning 2.0 (Councilmember Jason Dozier, 2025) proposes eliminating off-street parking minimums citywide — BeltLine Overlay District already exempt since Feb 2024; if passed, new luxury condo developers set their own parking ratios with no floor",
-            "Elyse Buckhead by Kolter Urban — 194-unit luxury tower at 102 West Paces Ferry Rd, site work Q2 2026, delivery Q4 2028–Q1 2029; new HOA board will make first amenity decisions in a building constructed under zero parking minimum rules",
-            "Community Boss/Parking Boss has a named Atlanta customer (Twynate Boyd) with a live Facebook case study — direct competitor proof-of-concept in SpotShare's target market"
+            "🚨 CRITICAL: Parkade comparison page claims SpotShare shut down June 30, 2025; narrative has propagated to mymidtownmojo.com (top Midtown Atlanta condo resource), which now calls SpotShare 'now defunct' — every Atlanta HOA board researching guest parking solutions may believe SpotShare is unavailable",
+            "ATL Zoning 2.0 Draft V2 released January 22, 2026 (Dentons alert) — 4-zone parking structure (PZ1–PZ4) with BeltLine Overlay (PZ2) already exempt since Feb 2024; Councilmember Dozier ordinance proposes eliminating minimums citywide for all non-R1-R3 zones; final adoption pending",
+            "Elyse Buckhead (Kolter Urban, 196 units, 20-story) groundbreaking Q2 2026 — HOA board forms at delivery (late 2028–early 2029) under zero-minimum rules; Kolter also planning a third Atlanta condo project (2026 groundbreaking)",
+            "Veridian Buckhead (65-unit boutique tower) in final design stages — new ICP building entering pipeline",
+            "Community Boss / Parking Boss confirmed Platform Apartments case study (324-unit near downtown Atlanta) — 20 guest spaces generating avg. $2,000/month; named PM (Stephanie Hawksley) available for counter-outreach"
           ],
           "competitors": [
             {
               "tier": "1",
               "watch_level": "tier-1",
               "name": "Community Boss / Parking Boss",
-              "description": "Named Atlanta customer (Twynate Boyd) confirmed via public Facebook case study at $195/month starting. Web-based pitch (no app required) targeting HOA simplicity — actively capturing Atlanta search intent SpotShare should own.",
-              "their_angle": "Simplicity and no-app-required framing; sub-$200/month entry price.",
-              "spotshare_counter": "Community Boss is a permit enforcement system; SpotShare's idle-spot sharing model is a fundamentally different amenity — not a rules enforcer."
+              "description": "Named Atlanta case study: Platform Apartments (324-unit, near downtown ATL). Senior PM Stephanie Hawksley. 20 guest spaces → avg. $2,000/month (some months $3,000+). Problem solved: neighboring business visitors stealing resident guest spaces. Actively ranking for Atlanta HOA parking queries.",
+              "their_angle": "Revenue generation via enforcement/permit model — positions parking as a profit center.",
+              "spotshare_counter": "Community Boss charges visitors to park; SpotShare's idle-spot sharing model lets residents coordinate access peer-to-peer with no enforcement culture or fines."
+            },
+            {
+              "tier": "1",
+              "watch_level": "tier-1",
+              "name": "Parkeaz",
+              "description": "NEW this cycle — dedicated Atlanta landing page (parkeaz.com/atlanta-parking-software) with confirmed partnerships with Lincoln Property Company and First Service Residential, two of Atlanta's largest PM firms. Positioned as PM operations tool for permit management.",
+              "their_angle": "Distribution via major Atlanta PM firms rather than direct HOA board sales.",
+              "spotshare_counter": "Parkeaz is a permit system — manages who is allowed to park; SpotShare fills the actual supply gap via idle-spot sharing."
+            },
+            {
+              "tier": "1",
+              "watch_level": "tier-1",
+              "name": "Parkade",
+              "description": "Comparison page (parkade.com/spotshare) ranking in HOA parking software queries. Claims SpotShare shut down June 30, 2025 and positions Parkade as direct replacement. This narrative has propagated to mymidtownmojo.com. '#1 Multifamily Parking Management Software' homepage position.",
+              "their_angle": "Modern smartphone app vs. legacy web tool; revenue-generating vs. cost center; explicit SpotShare replacement narrative.",
+              "spotshare_counter": "SpotShare's peer-to-peer model requires no per-transaction fees, no hardware, and no mandatory app adoption — simpler HOA board approval path than Parkade's full platform onboarding."
             },
             {
               "tier": "2",
               "watch_level": "tier-2",
-              "name": "ParqEx",
-              "description": "Enterprise-grade HOA/gated community positioning with AI/LPR features; confirmed market presence in Atlanta though no named case study found. Targets the same property manager audience as SpotShare.",
-              "their_angle": "Enterprise access control and revenue generation for larger communities.",
-              "spotshare_counter": "ParqEx requires hardware investment; SpotShare is software-only with a simpler HOA board approval path."
+              "name": "ParkingPass",
+              "description": "Dedicated Atlanta landing page (parkingpass.com/atlanta-parking-software-provider) positioning as local Atlanta provider. No named Atlanta case study. Digital permit issuance focus.",
+              "their_angle": "Digital permit infrastructure for residents and guests.",
+              "spotshare_counter": "ParkingPass is the operational layer (permits); SpotShare is the amenity layer (sharing). Different buyer mindset."
+            },
+            {
+              "tier": "watch",
+              "watch_level": "monitor",
+              "name": "SimplyPermits",
+              "description": "No Atlanta-specific page but ranking nationally for 'best HOA guest parking software' SERP — content excludes SpotShare. High content volume.",
+              "their_angle": "Permit issuance and enforcement — compliance/control framing.",
+              "spotshare_counter": "Enforcement vs. amenity — different product category."
+            },
+            {
+              "tier": "watch",
+              "watch_level": "monitor",
+              "name": "ButterflyMX",
+              "description": "HOA & Condo Visitor Parking Management Guide ranking in Atlanta condo parking searches. Hardware-first access-control framing.",
+              "their_angle": "Hardware intercom + access control — competes for HOA board technology budget.",
+              "spotshare_counter": "ButterflyMX requires hardware; SpotShare is software-only."
             }
           ],
           "tier0_count": 3,
-          "tier1_count": 3,
-          "tier2_count": 1,
-          "parking_cost_signal": "high — street meters $2.00/hour in downtown/Midtown with 2-hour limits (7am–7pm Mon–Sat); monthly garage $65–$280; daily rates $15–$30",
-          "availability_signal": "high — BeltLine-area condos already being built with no required parking since Feb 2024; limited dedicated guest spots in most downtown/Midtown buildings",
-          "regulatory_trend": "worsening — ATL Zoning 2.0 (active 2025 legislation) proposes eliminating off-street parking minimums citywide; BeltLine Overlay District already exempt since February 2024",
-          "hoa_friction_level": "high — documented cases of residents escalating parking complaints to Atlanta City Council (Landmark Condominiums, Piedmont Ave); Georgia #9 nationally in HOA complaints",
-          "visitor_parking_ratio": "low — new BeltLine-area condos built with no parking minimums; older Midtown/Buckhead buildings allocating minimal guest spots",
-          "new_development_pipeline": "yes — Elyse Buckhead (Kolter Urban): 194-unit luxury tower, site work Q2 2026, delivery Q4 2028–Q1 2029; units from mid-$900k",
-          "content_gap": "No first-party guide explaining why Atlanta condos are running out of guest parking and what HOA boards can do about it — the Zoning 2.0 story is being covered by local news but nobody in the property management space has claimed it",
-          "top_keywords_found": ["guest parking Atlanta condo", "visitor parking HOA Atlanta", "HOA parking restrictions Atlanta", "parking minimums eliminated Atlanta", "Buckhead luxury condo parking", "Midtown Atlanta condo parking", "guest parking app HOA", "BeltLine condo parking"],
+          "tier1_count": 5,
+          "tier2_count": 3,
+          "parking_cost_signal": "high — street meters $2.00/hour downtown/Midtown (7am–7pm Mon–Sat); monthly garage $65–$280; daily rates $15–$30; Buckhead concierge valet $5/24hrs",
+          "availability_signal": "high — BeltLine-area condos built since Feb 2024 with no required guest parking; Plaza Midtown has ZERO dedicated guest parking; most Midtown buildings charge for guest spots when available",
+          "regulatory_trend": "worsening — ATL Zoning 2.0 Draft V2 released January 22, 2026; Councilmember Dozier ordinance proposes eliminating off-street parking minimums citywide for all non-R1-R3 zones; BeltLine Overlay already exempt since Feb 2024",
+          "hoa_friction_level": "high — Georgia #9 nationally in HOA complaints; Midtown buildings actively dealing with business visitors stealing guest spaces (confirmed via Community Boss case study)",
+          "visitor_parking_ratio": "low — Plaza Midtown: zero guest parking; most Midtown buildings charge when available; new BeltLine-area buildings have no parking minimum floor",
+          "new_development_pipeline": "yes — Elyse Buckhead (Kolter Urban, 196 units, Q2 2026 groundbreaking); Veridian Buckhead (65 units, final design); Kolter third Atlanta project (2026 groundbreaking); Vice Holdings LLC active across Buckhead/Midtown/Brookhaven (May 2026)",
+          "content_gap": "No first-party guide connecting ATL Zoning 2.0's 4-zone parking structure to what it means for Midtown and Buckhead condo HOA boards in 2026 — regulatory story covered by law firms but not claimed by anyone in the property management amenity space",
+          "top_keywords_found": ["guest parking Atlanta condo", "visitor parking HOA Atlanta", "HOA parking restrictions Atlanta", "parking minimums eliminated Atlanta", "Buckhead luxury condo parking", "Midtown Atlanta condo parking", "guest parking app HOA", "BeltLine condo parking", "HOA guest parking software Atlanta", "visitor parking management Atlanta"],
           "language_bank": [
-            { "phrase": "no required parking", "source": "ATL Zoning 2.0 coverage", "date": "2026-05-06", "use": "pain" },
-            { "phrase": "set their own parking ratios with no floor", "source": "Atlanta city planning coverage", "date": "2026-05-06", "use": "pain" }
+            { "phrase": "NO guest parking at all", "source": "mymidtownmojo.com (Plaza Midtown)", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "guest parking availability varies significantly by building", "source": "mymidtownmojo.com", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "most Midtown buildings that have guest parking CHARGE for it", "source": "mymidtownmojo.com", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "20 guest spaces generating avg. $2,000/month in ancillary income", "source": "Community Boss/Platform Apartments case study", "date": "2026-05-14", "use": "competitive" },
+            { "phrase": "visitors from nearby businesses using free resident guest spaces", "source": "Community Boss/Platform Apartments case study", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "parking garage construction costs can equal cost of an entire new residential unit", "source": "Atlanta Agent Magazine/ATL Zoning 2.0", "date": "2025-11", "use": "educational" }
           ],
           "social_angles": [
-            { "angle": "Atlanta is about to let every new condo developer decide how much parking to build. Spoiler: they'll build less.", "format": "stat drop", "platform": "LinkedIn", "source": "ATL Zoning 2.0 legislation" }
+            { "angle": "A 324-unit Atlanta building turned 20 parking spots into $2,000/month. That's their competition. Here's the math.", "format": "stat drop", "platform": "LinkedIn", "source": "Community Boss Platform Apartments case study" },
+            { "angle": "Atlanta is about to let every new condo developer decide how much parking to build. Spoiler: they'll build less.", "format": "stat drop", "platform": "LinkedIn", "source": "ATL Zoning 2.0 / ATL Agent Magazine" },
+            { "angle": "The most-read Midtown Atlanta condo guide says one building has ZERO guest parking. 'It varies significantly by building.' That's the problem SpotShare solves.", "format": "quote card", "platform": "LinkedIn", "source": "mymidtownmojo.com" }
           ],
-          "run_confidence": "medium — regulatory signals strong; social and Reddit layer thin; no named SpotShare buildings in Atlanta yet",
-          "thin_queries": ["community association manager CAM parking"],
-          "sources_unavailable": ["X/Twitter"]
+          "run_confidence": "medium — web intelligence strong on regulatory, competitor, and development pipeline; Reddit/social absent this cycle; SpotShare shutdown claim (Parkade + mymidtownmojo) requires user verification before counter-narrative can be deployed",
+          "thin_queries": ["9"],
+          "sources_unavailable": ["X/Twitter", "Reddit"]
         },
         "seo": {
           "page_built": true,
           "page_path": "seo-output/atlanta-page.html",
-          "last_built_date": "2026-05-06",
+          "last_built_date": "2026-05-14",
           "needs_refresh": false
         }
       },
       {
         "city": "Chicago",
         "city_slug": "chicago",
-        "status": "page-live",
+        "status": "researched",
         "research": {
-          "last_run_date": "2026-05-06",
+          "last_run_date": "2026-05-14",
           "file_path": "research/chicago-data.md",
           "market_readiness": "tier-1",
           "seo_page_opportunity": "yes",
           "competitor_presence": "active",
-          "outreach_angle": "Hit property managers at new luxury builds coming online in River North and Streeterville — the September 2025 ordinance means their buildings may have been designed with no parking minimum; lead with the regulatory shift and position SpotShare as the guest parking infrastructure layer",
-          "market_moment": "Chicago eliminated parking minimums for ~3/4 of city on September 25, 2025 — any new luxury condo in a transit corridor can now be built with zero required parking",
+          "outreach_angle": "Lead with the Illinois Condo Act — every Chicago condo board was legally required to adopt a written accessible parking policy by April 2, 2025; boards that complied now have parking formally on their governance agenda; position SpotShare as the guest parking infrastructure layer that helps boards act on that documented policy",
+          "market_moment": "ParqEx now owns 4 named Chicago condo case studies — the most aggressive competitor presence in any SpotShare target city; Illinois Condo Act Section 18.12 deadline (April 2025) has passed — parking is now formally documented in every compliant Chicago condo board's governance record",
           "market_moments": [
-            "Chicago's September 25, 2025 parking ordinance eliminated minimums for ~3/4 of the city (within 1/4 mile frequent bus or 1/2 mile rail) — the most sweeping parking reform in any SpotShare target market; underground parking at $67,500/space means developers will opt out",
-            "ParqEx / GuestParq has 3 named Chicago condo case studies live in search: Silver Tower (River North), 340 on the Park (Randolph St), 1660 Condominium (North LaSalle) — direct competitor owning the 'condo guest parking Chicago' SERP",
-            "New luxury pipeline: 56-story, 498-unit tower at 669 N Michigan (Streeterville, targeting 2027) and riverfront development — all under zero-minimum rules for transit-adjacent sites",
-            "Illinois Condo Act Section 18.12 required all condo boards to adopt an accessible parking policy by April 2, 2025 — placed parking formally on every Illinois HOA board's agenda"
+            "ParqEx / GuestParq now has 4 named Chicago case studies: Silver Tower (39-story, River North), 340 on the Park (64-story, 340 E Randolph), 1660 Condominium (N LaSalle), and Sheridan Plaza — owns the 'condo guest parking Chicago' SERP with proof; SpotShare needs one named Chicago building to compete",
+            "Illinois Condo Act Section 18.12 deadline (April 2, 2025) has passed — every Chicago condo board was legally required to adopt a written accessible parking policy; non-compliant boards face civil action risk; compliant boards now have parking formally documented in governance records",
+            "Ordinance O2025-0015577 (effective September 25, 2025) eliminated parking minimums for 74% of Chicago — most sweeping parking reform in any SpotShare target market; underground parking costs $67,500/space so developers will opt out",
+            "669 N Michigan Avenue (AMLI Residential, 56-story, 498 units, Streeterville) — proposed September 2025, still needs Plan Commission + City Council approval; AMLI already operates in South Loop and River North — live outreach targets now",
+            "SmartLotIQ confirmed as new HOA parking market entrant with ALPR + QR + gate hardware; $149–$399/month pricing; no Chicago case study yet"
           ],
           "competitors": [
             {
               "tier": "1",
               "watch_level": "tier-1",
               "name": "ParqEx / GuestParq",
-              "description": "Three named Chicago case studies indexed in search: Silver Tower (River North, 39-story), 340 on the Park (Randolph St), and 1660 Condominium (North LaSalle). Silver Tower program was 'heavily used from first day' with HOA generating income immediately. Most aggressive competitor presence of any city in the SpotShare portfolio.",
-              "their_angle": "Revenue generation and named local case studies — they own the 'condo guest parking Chicago' SERP with proof.",
-              "spotshare_counter": "SpotShare needs one named Chicago building. Until then, lead with the regulatory story and the idle-spot model that doesn't require per-transaction fees."
+              "description": "Four named Chicago case studies: Silver Tower (39-story River North), 340 on the Park (64-story, 340 E Randolph), 1660 Condominium (N LaSalle), Sheridan Plaza. Silver Tower: 'Complaints about lack of parking have essentially ended'; 'heavily used from day one'; HOA generating income immediately. 1660: Marketplace feature allows listing designated spaces for rent during vacancy periods.",
+              "their_angle": "Revenue generation + named Chicago case studies — own the 'condo guest parking Chicago' SERP with local proof.",
+              "spotshare_counter": "SpotShare's peer-to-peer model has no per-transaction fees or separate marketplace layer — simpler board approval path and economics."
+            },
+            {
+              "tier": "1",
+              "watch_level": "tier-1",
+              "name": "Parkade",
+              "description": "SpotShare Alternative page (parkade.com/spotshare) actively ranking nationally. '#1 Multifamily Parking Management Software' homepage. No Chicago-specific page confirmed but captures HOA evaluation traffic nationally.",
+              "their_angle": "Modern app, revenue generation, explicit SpotShare replacement.",
+              "spotshare_counter": "No per-transaction fees; simpler HOA board approval path than Parkade's full platform onboarding."
+            },
+            {
+              "tier": "2",
+              "watch_level": "tier-2",
+              "name": "Community Boss / Parking Boss",
+              "description": "National HOA parking content on page 1; Capterra 2026 listing confirmed. No named Chicago case study. Atlanta Platform Apartments is their strongest US proof point.",
+              "their_angle": "Simplicity + no-app-required entry-level pitch; enforcement focus.",
+              "spotshare_counter": "Enforcement/permit management vs. SpotShare's sharing/amenity model — different product category."
+            },
+            {
+              "tier": "2",
+              "watch_level": "tier-2",
+              "name": "ParkingPass",
+              "description": "Dedicated Chicago landing page (parkingpass.com/chicago-parking-software-provider) confirmed. Digital permit issuance, automated violation alerts, HOA system integration. No named Chicago case study.",
+              "their_angle": "Chicago-branded permit operations infrastructure.",
+              "spotshare_counter": "Permit management layer vs. SpotShare's sharing layer — different buyer decision."
             },
             {
               "tier": "watch",
               "watch_level": "monitor",
-              "name": "Community Boss / Parking Boss",
-              "description": "No named Chicago case study found but confirmed presence in adjacent markets (Atlanta). Pricing at $195/month entry-level; web-based pitch targeting HOA simplicity.",
-              "their_angle": "Low-cost entry point for HOAs that want basic permit management.",
-              "spotshare_counter": "Community Boss is enforcement-focused; SpotShare's sharing model is a different product category."
+              "name": "SmartLotIQ",
+              "description": "New entrant — ALPR + QR-coded passes + gate control hardware. $149/mo (50 spots), $299/mo Starter, $399/mo Pro. Appearing in 'HOA guest parking software' SERPs. No Chicago case study found.",
+              "their_angle": "Hardware-first physical enforcement at gate level.",
+              "spotshare_counter": "Requires ALPR hardware + gate integration — significant construction disruption for established buildings. SpotShare deploys in days with no hardware."
+            },
+            {
+              "tier": "watch",
+              "watch_level": "monitor",
+              "name": "Reliant Parking",
+              "description": "Published 'Parking Enforcement in 2026: Smarter, More Affordable Compliance.' No Chicago-specific presence confirmed.",
+              "their_angle": "Strategic technology-driven enforcement.",
+              "spotshare_counter": "SpotShare avoids adversarial enforcement entirely — resident-driven coordination."
             }
           ],
           "tier0_count": 3,
-          "tier1_count": 3,
-          "tier2_count": 1,
-          "parking_cost_signal": "critical — peak meters River North/Loop $7.75–$9.75/hour; garages $35–$52/day; monthly $280–$475; city parking tax raised to 23.25% effective January 1, 2025",
-          "availability_signal": "critical — parking minimums eliminated Sept 25, 2025 for ~3/4 of city; $67,500/space underground cost means most new developers will opt out; existing luxury buildings provide minimal or zero guest spots",
-          "regulatory_trend": "worsening — September 2025 ordinance eliminates parking minimums for transit-adjacent sites citywide; Illinois Condo Act now requires accessible parking policies from all boards",
-          "hoa_friction_level": "high — Illinois condo parking disputes active on r/HOA; Illinois Condo Act defines four parking dispute categories; parking is top HOA complaint category nationally",
-          "visitor_parking_ratio": "near-zero — most downtown Chicago luxury condos provide no dedicated guest spots; new builds under zero-minimum rules further reduce supply",
-          "new_development_pipeline": "yes — 56-story, 498-unit tower at 669 N Michigan (Streeterville, 2027); riverfront development (first tower 2027); all built under zero-minimum rules",
-          "content_gap": "No first-party condo or property management guide explaining what Chicago's September 2025 parking ordinance means for luxury building HOA boards — the story is covered by legal and real estate outlets but not by anyone in the property management amenity space",
-          "top_keywords_found": ["guest parking Chicago condo", "visitor parking HOA Chicago", "Chicago parking minimums eliminated", "River North condo parking", "Gold Coast condo parking", "Streeterville parking", "HOA parking app Chicago", "condo guest parking solution"],
+          "tier1_count": 5,
+          "tier2_count": 3,
+          "parking_cost_signal": "critical — peak meters River North/Loop $7.75–$9.75/hour; garages $35–$52/day; monthly $280–$475; city parking tax 23.25% (Jan 2025); residential guest permits $35/permit in 2026 (up from $30), max 45/month",
+          "availability_signal": "critical — O2025-0015577 eliminates minimums for 74% of city (effective Sept 25, 2025); $67,500/space underground means developers opt out; existing luxury buildings minimal/zero guest spots",
+          "regulatory_trend": "worsening — September 2025 ordinance most sweeping in any SpotShare market; Illinois Condo Act Section 18.12 (effective Jan 1, 2025) put parking on every Illinois condo board's governance record; April 2025 policy adoption deadline has passed",
+          "hoa_friction_level": "high — parking described as 'one of the most common areas of complaint' in Chicago condo PM (ICC Property Management); CooperatorNews covers parking disputes as recurring theme; Section 18.12 compliance creates legal exposure for non-compliant boards",
+          "visitor_parking_ratio": "near-zero — most downtown Chicago luxury condos provide no dedicated guest spots; older buildings (1960s–1990s) had garages but no guest-specific allocation; new builds under zero-minimum rules further reduce supply",
+          "new_development_pipeline": "yes — 669 N Michigan (AMLI Residential, 56-story, 498 units, proposed Sept 2025, needs approvals); The 78 (Related Midwest, South Loop, 62-acre, construction began 2024, first tower 2027); Tribune Tower supertall (113-story, 560+ units, planning)",
+          "content_gap": "No first-party condo or property management guide explaining what the April 2025 Illinois Condo Act Section 18.12 deadline means for Chicago HOA boards' parking governance — HOA law firms covered it but nobody in the property management amenity space has claimed it",
+          "top_keywords_found": ["guest parking Chicago condo", "visitor parking HOA Chicago", "Chicago parking minimums eliminated", "River North condo parking", "Gold Coast condo parking", "Streeterville parking", "HOA parking app Chicago", "condo guest parking solution", "Illinois Condo Act parking", "visitor parking management Chicago"],
           "language_bank": [
-            { "phrase": "heavily used from first day", "source": "ParqEx Silver Tower case study", "date": "2026-05-06", "use": "competitive" },
-            { "phrase": "parking formally on every Illinois HOA board's agenda", "source": "Illinois Condo Act Section 18.12 coverage", "date": "2026-05-06", "use": "pain" },
-            { "phrase": "$67,500 per underground space", "source": "Chicago parking reform coverage", "date": "2026-05-06", "use": "pain" }
+            { "phrase": "complaints about lack of parking have essentially ended", "source": "ParqEx Silver Tower case study", "date": "2026-05-14", "use": "competitive" },
+            { "phrase": "heavily used from day one", "source": "ParqEx Silver Tower case study", "date": "2026-05-14", "use": "competitive" },
+            { "phrase": "HOA began receiving additional income immediately", "source": "ParqEx Silver Tower case study", "date": "2026-05-14", "use": "competitive" },
+            { "phrase": "hard to find when you need it, and when you do find it, it's usually very expensive", "source": "CooperatorNews Chicagoland", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "no spaces anywhere", "source": "CooperatorNews Chicagoland (article title)", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "one of the most difficult aspects of managing a condo building", "source": "ButterflyMX (Chicago visitor parking context)", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "$35 per guest parking permit", "source": "City of Chicago residential guest parking permit program", "date": "2026", "use": "pain" },
+            { "phrase": "$67,500 per underground parking space", "source": "Chicago parking ordinance coverage", "date": "2025", "use": "pain" }
           ],
           "social_angles": [
-            { "angle": "Chicago just made it legal to build a 500-unit condo with zero parking. Developers are already doing it.", "format": "stat drop", "platform": "LinkedIn", "source": "September 2025 ordinance" }
+            { "angle": "Chicago just made it legal to build a 500-unit condo with zero parking. One developer already proposed it on Michigan Avenue.", "format": "stat drop", "platform": "LinkedIn", "source": "O2025-0015577 + 669 N Michigan proposal" },
+            { "angle": "Every Illinois condo board was legally required to adopt a written parking policy by April 2025. The ones that didn't are at legal risk. The ones that did are now asking: what's the actual system?", "format": "education hook", "platform": "LinkedIn", "source": "Illinois Condo Act Section 18.12" },
+            { "angle": "Guest parking in downtown Chicago: 'hard to find when you need it, and when you do find it, it's usually very expensive.' That's from the city's condo trade press.", "format": "quote card", "platform": "LinkedIn", "source": "CooperatorNews Chicagoland" }
           ],
-          "run_confidence": "medium — regulatory and competitive signals strong; ParqEx case studies confirmed; Reddit layer thin; no named SpotShare buildings in Chicago",
-          "thin_queries": ["community association manager CAM parking"],
-          "sources_unavailable": ["X/Twitter"]
+          "run_confidence": "medium-high — competitor signals very strong (4 ParqEx Chicago case studies confirmed); regulatory context confirmed and updated; pipeline buildings confirmed; Reddit and social absent",
+          "thin_queries": ["3", "8", "9"],
+          "sources_unavailable": ["X/Twitter", "Reddit"]
         },
         "seo": {
-          "page_built": true,
-          "page_path": "seo-output/chicago-page.html",
-          "last_built_date": "2026-05-06",
+          "page_built": false,
+          "page_path": null,
+          "last_built_date": null,
           "needs_refresh": false
         }
       },
       {
         "city": "Seattle and Bellevue",
         "city_slug": "seattle-and-bellevue",
-        "status": "page-live",
+        "status": "researched",
         "research": {
-          "last_run_date": "2026-05-07",
+          "last_run_date": "2026-05-14",
           "file_path": "research/seattle-and-bellevue-data.md",
           "market_readiness": "tier-1",
           "seo_page_opportunity": "yes",
-          "competitor_presence": "active nationally, zero locally",
-          "outreach_angle": "Lead with SB 5184 — Washington just passed the most sweeping state parking reform in the country and buildings under construction in Bellevue (Park Row, Main & Bellevue) and Seattle are being designed under these rules now; no competitor has touched this market; position SpotShare as the guest parking infrastructure layer before these buildings' first resident meetings",
-          "market_moment": "Washington SB 5184 (signed May 7, 2025) is the most comprehensive state parking reform law in the US — new Seattle and Bellevue condos in transit corridors can now be built with zero required parking; The Emerald (262 units, 62 stalls) is the named proof point already live downtown",
+          "competitor_presence": "absent locally",
+          "outreach_angle": "Lead with SB 5184 and Bosa Park Row's April 2026 sales launch — HOA board is forming now on Bellevue's most prominent luxury condo launch; no competitor has a named PNW proof point; position SpotShare as the guest parking infrastructure layer before Parkade or ParqEx establishes a foothold in the Pacific Northwest",
+          "market_moment": "Bosa Park Row sales launched April 2026 (143 units, downtown Bellevue, HOA board forming); Bellevue actively considering dropping ALL parking minimums citywide (Urbanist Jan 2026); SB 5184 one year in — confirmed producing results; Graystone parking at $75,000/stall",
           "market_moments": [
-            "SB 5184 signed May 7, 2025 (effective July 27, 2025) — eliminates parking minimums for residential units under 1,200 sq ft statewide; caps city minimums at 1 space per 2 units; cities must comply by January 27, 2027; described as one of the most comprehensive state parking reform laws in the US",
-            "The Emerald (262 units, 62 stalls, downtown Seattle) — Seattle Times documented the result: half of residents parking on-street, condo brokers report the ratio 'jeopardizing sales'; parking stalls selling for up to $100,000 each; named proof point that the shortage is already here",
-            "Bosa Development's Park Row (143 units, 22-story, downtown Bellevue) — sales launched Spring 2026; HOA board making first amenity decisions now; largest high-profile active condo launch in Bellevue",
-            "Bosa Main & Bellevue (449 units, 3 phased towers) — construction starting mid-2026; largest condo project in Bellevue's pipeline; HOA infrastructure decisions being made before groundbreaking",
-            "Seattle One Seattle Comprehensive Plan adopted December 16, 2025 — 30 Neighborhood Centers upzoned; Frequent Transit Route corridors likely require zero parking; Phase 2 zone changes rolling through 2026"
+            "Bosa Park Row (143 units, 201 Bellevue Way NE) — sales launched April 2026; 217 stalls on 3 underground levels; concierge + valet parking as managed amenity; HOA board forming as early buyers close; most prominent active luxury condo launch in Bellevue",
+            "Bosa Main & Bellevue (449 units, 3 towers) — SEPA filings target mid-2026 for Phase I start (147-unit north tower); largest condo pipeline project in Bellevue; HOA infrastructure decisions being made now",
+            "SB 5184 one-year mark (May 7, 2026): Sightline Institute confirms law is working; WA Dept. of Commerce finalizing implementation guidance June 2026; cities 50,000+ must comply by January 27, 2027; Bellevue considering going beyond compliance to drop all minimums",
+            "Bellevue considering paid street parking (FOX 13) — if implemented, pushes additional pressure onto condo visitor parking; compounds Bellevue LUC 1-visitor-stall-per-20-units minimum",
+            "Parkade testimonial on SpotShare comparison page: 'Only 10–12 residents really used SpotShare, despite costing our building thousands of dollars/year. In 7 days, 143 residents have installed Parkade' — active narrative in market that SpotShare has low adoption"
           ],
           "competitors": [
             {
-              "tier": "watch",
-              "watch_level": "monitor",
-              "name": "ParqEx / GuestParq",
-              "description": "Three named Chicago case studies (Silver Tower, 340 on the Park, 1660 Condominium); no Seattle or Pacific Northwest case study found. National SERP presence via GuestParq HOA landing page.",
-              "their_angle": "National brand with named case studies in other cities — no local proof point yet.",
-              "spotshare_counter": "SpotShare has the opportunity to be the first named solution in the Pacific Northwest market before ParqEx establishes a foothold."
+              "tier": "1",
+              "watch_level": "tier-1",
+              "name": "Parkade",
+              "description": "SpotShare comparison page (parkade.com/spotshare) now includes a named testimonial claiming SpotShare had only 10–12 active users vs. 143 Parkade installs in 7 days in the same building. No confirmed Pacific Northwest clients but this testimonial is being served nationally. Active condo page at parkade.com/condos.",
+              "their_angle": "App adoption as success metric; modern vs. legacy; explicit SpotShare replacement.",
+              "spotshare_counter": "HOA boards measure success by complaint reduction and board satisfaction — not app download counts. SpotShare's model has no per-transaction fees and simpler governance economics."
             },
             {
               "tier": "watch",
               "watch_level": "monitor",
-              "name": "Parkade",
-              "description": "Named case studies in Atlanta, Chicago, LA, Columbus — no Seattle or Pacific Northwest property. Runs active anti-SpotShare comparison page at parkade.com/spotshare.",
-              "their_angle": "National brand momentum; anti-SpotShare comparison page ranking in search.",
-              "spotshare_counter": "No Seattle presence — SpotShare can establish first-mover positioning in the PNW before Parkade arrives."
+              "name": "ParqEx / GuestParq",
+              "description": "Four named Chicago case studies; published 2026 Complete Guide to Parking Management. No Seattle or Pacific Northwest case study confirmed. Runs comparison pages vs. Parkade and Community Boss.",
+              "their_angle": "Revenue generation + AI/LPR enterprise features + named case studies in other markets.",
+              "spotshare_counter": "SpotShare is first-mover in PNW — ParqEx has no named local building."
             },
             {
               "tier": "watch",
               "watch_level": "monitor",
               "name": "Community Boss / Parking Boss",
-              "description": "Named Atlanta customer; no Seattle case study. Web-based pitch targeting HOA simplicity. Ranking in national HOA parking SERPs.",
-              "their_angle": "Low-cost simplicity play for HOAs that want basic enforcement.",
-              "spotshare_counter": "Community Boss is enforcement-focused; SpotShare's sharing model is a fundamentally different amenity category."
+              "description": "No Pacific Northwest presence confirmed. National content ranking. Partners with patrol companies for enforcement.",
+              "their_angle": "Simplicity + enforcement partnership model.",
+              "spotshare_counter": "Community Boss is enforcement-focused; SpotShare is the amenity model."
+            },
+            {
+              "tier": "watch",
+              "watch_level": "monitor",
+              "name": "Reliant Parking",
+              "description": "No Seattle, Bellevue, or Washington State presence confirmed. Republic Parking Northwest (separate company) dominates physical parking operations locally — potential brand confusion in search.",
+              "their_angle": "Enforcement + compliance framing.",
+              "spotshare_counter": "SpotShare avoids enforcement entirely."
             }
           ],
           "tier0_count": 3,
-          "tier1_count": 4,
-          "tier2_count": 2,
-          "parking_cost_signal": "high — Capitol Hill/Pike-Pine evening meters peak $8.00/hour; Commercial Core afternoon $7.50/hour; downtown Seattle monthly garage $300–$400+/month; Bellevue monthly $169–$273/month; condo stalls selling at $75K–$100K each",
-          "availability_signal": "critical — SB 5184 (effective July 27, 2025) eliminates parking minimums for qualifying residential in transit corridors; The Emerald opened with 62 stalls for 262 units (lowest ratio of any new Seattle residential tower); Bosa Park Row and Main & Bellevue launching under new low-minimum rules",
-          "regulatory_trend": "worsening — SB 5184 (Washington State, signed May 7, 2025) among most comprehensive state-level parking reform laws in US; Seattle One Seattle Comprehensive Plan adopted December 16, 2025 upzones 30 Neighborhood Centers; Bellevue Parking Reform Land Use Code Amendment compliance deadline January 27, 2027",
-          "hoa_friction_level": "high — The Emerald's near-zero parking ratio documented as creating sales friction and street overflow (Seattle Times); West Seattle new developments creating neighborhood conflict; local brokers flagging units without parking take longer to sell",
-          "visitor_parking_ratio": "near-zero — The Emerald: 62 stalls for 262 units (1:4.2 ratio); SB 5184 means new transit-corridor buildings can have zero required parking; Bellevue current code: 1 visitor stall per 20 units minimum, likely to be further reduced",
-          "new_development_pipeline": "yes — Bellevue Park Row (Bosa, 143 units, Spring 2026 sales launch); Bosa Main & Bellevue (449 units, 3 towers, construction mid-2026); Seattle Graystone (271 units, First Hill, currently selling); Spire (343 units, Belltown, open)",
-          "content_gap": "No first-party guide connecting Washington's SB 5184 to the HOA guest parking management problem — no competitor has a named Seattle or Pacific Northwest case study",
-          "top_keywords_found": ["guest parking Seattle condo", "visitor parking HOA Seattle", "HOA parking app Seattle", "condo parking management Bellevue", "Seattle parking minimums eliminated 2025", "SB 5184 condo parking impact", "HOA parking enforcement Seattle", "guest parking solution Seattle condo board", "Bellevue parking reform 2026"],
+          "tier1_count": 5,
+          "tier2_count": 3,
+          "parking_cost_signal": "high — Capitol Hill/Pike-Pine meters peak $8.00/hour; Commercial Core $7.50/hour; Seattle monthly garage $300–$400+; Bellevue monthly $169–$273; Graystone parking stalls $75,000 each (available for select homes only); Seattle RPZ guest permits $95/address",
+          "availability_signal": "critical — SB 5184 caps parking at 0.5 stalls/unit for multifamily in transit corridors; Bellevue LUC visitor standard 1 stall per 20 units minimum; The Emerald 62 stalls for 262 units; Graystone stalls $75K; Bosa Park Row 217 stalls for 143 units (managed via valet)",
+          "regulatory_trend": "worsening — SB 5184 (effective July 27, 2025) confirmed producing results at one-year mark; Bellevue considering dropping all minimums (Urbanist Jan 2026); One Seattle Centers & Corridors legislation Jan 2026; Bellevue compliance deadline Jan 27, 2027",
+          "hoa_friction_level": "high — Graystone selling parking at $75K/stall; The Emerald documented sales friction from low parking ratio; Bellevue street parking going paid would increase pressure on condo visitor spots",
+          "visitor_parking_ratio": "near-zero — Bellevue LUC: 1 visitor stall per 20 units minimum; The Emerald: 1:4.2 ratio; future builds under SB 5184 can have zero guest-specific requirement; Seattle RPZ limits street guest permits to 50/year",
+          "new_development_pipeline": "yes — Bosa Park Row (143 units, sales April 2026, valet managed); Bosa Main & Bellevue (449 units, SEPA target mid-2026); Graystone (271 units, First Hill, selling now, $75K/stall); Spire (343 units, Belltown, open)",
+          "content_gap": "No first-party guide connecting Washington's SB 5184 one-year results and Bellevue's potential full parking minimum elimination to what HOA boards at Park Row and Main & Bellevue should do — no competitor has a named Seattle or Pacific Northwest case study",
+          "top_keywords_found": ["guest parking Seattle condo", "visitor parking HOA Seattle", "HOA parking app Seattle", "condo parking management Bellevue", "Seattle parking minimums eliminated 2025", "SB 5184 condo parking impact", "HOA parking enforcement Seattle", "guest parking solution Seattle condo board", "Bellevue parking reform 2026", "luxury condo parking Bellevue"],
           "language_bank": [
+            { "phrase": "only 10–12 residents really used SpotShare, despite costing our building thousands of dollars/year", "source": "Parkade SpotShare comparison page testimonial", "date": "2026-05-14", "use": "competitive — needs counter-narrative" },
+            { "phrase": "$75,000 per parking stall", "source": "Graystone Seattle (First Hill, 271 units)", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "available for select homes only", "source": "Graystone parking description", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "Washington state's parking reform is already working", "source": "Sightline Institute", "date": "2026-05-07", "use": "educational" },
+            { "phrase": "1 visitor stall per 20 units", "source": "Bellevue Land Use Code 20.25A.080", "date": "2026-05-14", "use": "pain" },
             { "phrase": "jeopardizing sales", "source": "Seattle Times — The Emerald condo brokers", "date": "2026-05-07", "use": "pain" },
             { "phrase": "half of residents parking on-street", "source": "Seattle Times — The Emerald", "date": "2026-05-07", "use": "pain" },
-            { "phrase": "parking stalls selling as luxury real estate", "source": "Seattle market coverage", "date": "2026-05-07", "use": "pain" },
-            { "phrase": "HOA infrastructure decisions being made before groundbreaking", "source": "Bosa Main & Bellevue coverage", "date": "2026-05-07", "use": "opportunity" }
+            { "phrase": "HOA infrastructure decisions being made before groundbreaking", "source": "Bosa Main & Bellevue pipeline context", "date": "2026-05-14", "use": "opportunity" }
           ],
           "social_angles": [
-            { "angle": "A condo in Seattle is selling parking stalls for $100,000 each. The building next door has none. This is what happens when you eliminate parking minimums.", "format": "stat drop", "platform": "LinkedIn", "source": "Seattle Times — The Emerald" },
-            { "angle": "Washington just passed the most sweeping state parking reform in the US. New buildings going up right now may have zero required parking.", "format": "stat drop", "platform": "LinkedIn", "source": "SB 5184" }
+            { "angle": "A parking stall in a Seattle luxury condo is $75,000. The building next door has seven visitor spots for 143 units. This is what parking reform looks like in practice.", "format": "stat drop", "platform": "LinkedIn", "source": "Graystone + Bellevue LUC 20.25A.080" },
+            { "angle": "One year after Washington passed the most sweeping state parking reform in the US, new Bellevue condos are selling fast and their guest parking rules are still being written. Now is the window.", "format": "timing hook", "platform": "LinkedIn", "source": "SB 5184 one-year / Bosa Park Row April 2026 launch" },
+            { "angle": "Parkade's testimonial against SpotShare: 'Only 10–12 residents used it.' The reframe: HOA boards don't measure parking success by app downloads.", "format": "reframe", "platform": "LinkedIn", "source": "Parkade comparison page" }
           ],
-          "run_confidence": "high — SB 5184 regulatory signal very strong; named prospect buildings confirmed; no competitor presence locally validated; Reddit and social thin but not needed given strength of web signals",
-          "thin_queries": ["community association manager CAM parking"],
-          "sources_unavailable": ["X/Twitter"]
+          "run_confidence": "high — SB 5184 one-year results confirmed; Bosa Park Row April 2026 launch confirmed; Graystone $75K/stall is new high-signal data point; competitor absence in PNW re-confirmed; Parkade testimonial against SpotShare confirmed",
+          "thin_queries": ["9"],
+          "sources_unavailable": ["X/Twitter", "Reddit"]
         },
         "seo": {
-          "page_built": true,
-          "page_path": "seo-output/seattle-and-bellevue-page.html",
-          "last_built_date": "2026-05-07",
+          "page_built": false,
+          "page_path": null,
+          "last_built_date": null,
           "needs_refresh": false
         }
       },
       {
         "city": "St. Petersburg, FL",
         "city_slug": "st-petersburg-fl",
-        "status": "page-live",
+        "status": "researched",
         "research": {
-          "last_run_date": "2026-05-11",
+          "last_run_date": "2026-05-14",
           "file_path": "research/st-petersburg-fl-data.md",
           "market_readiness": "tier-1",
           "seo_page_opportunity": "yes",
-          "competitor_presence": "absent locally — zero named St. Pete or Tampa Bay deployments from any major competitor; ParkingPass has a generic Tampa page but no HOA condo case study",
-          "outreach_angle": "Lead with the May 14, 2026 regulatory moment — St. Pete is days away from a City Council vote that will make parking-optional zoning permanent along Central Avenue; the 400 Central HOA board is being formed right now; position SpotShare as the guest parking infrastructure layer before these boards make their first amenity decisions",
-          "market_moment": "400 Central HOA board forming RIGHT NOW (TCO December 2025, 301-unit tower, move-ins underway); City Council final hearing May 14, 2026 to expand parking-optional zoning along Central Avenue",
+          "competitor_presence": "absent locally — zero named St. Pete or Tampa Bay deployments from any major competitor; ParkingPass has a generic Tampa page; Community Boss has Florida case study (Cypress Bend V, Pompano Beach) but no St. Pete building",
+          "outreach_angle": "Lead with the SunRunner vote outcome — if passed today (May 14, 2026), St. Pete just made parking-optional zoning permanent along Central Avenue; Art House HOA board is already formed (move-ins March 2026); Kolter 41-story tower at Hilton Bayfront site is the largest new pipeline addition; position SpotShare as the guest parking infrastructure layer before these boards make their first amenity decisions",
+          "market_moment": "SunRunner TEC-Local Overlay expansion second and final vote TODAY (May 14, 2026); Art House open March 2026 (HOA board formed); Kolter bought Hilton Bayfront for $96M (March 2026) planning 41-story tower; Waldorf Astoria groundbreaking Q1–Q2 2026",
           "market_moments": [
-            "SunRunner TEC-Local Overlay approved September 12, 2024 (6-0 City Council vote) — eliminates all parking minimums along Central Avenue and within a quarter-mile of SunRunner BRT stops; final expansion hearing May 14, 2026; any buildings approved after that vote will have zero required parking by design",
-            "400 Central (400 Central Ave, 46 stories / 301 units) — TCO issued December 2025; move-ins underway; HOA board forming in Q1–Q2 2026; highest-priority outreach target in St. Pete",
-            "Florida HB 1203 (effective July 1, 2024) — HOAs can no longer prohibit parking of personal vehicles in lawfully designated spaces; fines capped at $100/violation with strict pre-notice requirements; traditional rule-and-fine parking enforcement model no longer viable",
-            "Florida SB 4-D / SIRS reserve funding mandate (December 31, 2024 deadline) — HOA boards under severe financial pressure; special assessments documented across Florida; boards actively seeking revenue-generating amenity solutions"
+            "SunRunner TEC-Local Overlay expansion second and final vote TODAY (May 14, 2026) — first reading passed 6-0; if approved, all properties along Central Ave and within ¼ mile of SunRunner stations can be built parking-free; Axios Tampa Bay (May 12) and Tampa Bay Times (Apr 16) confirmed vote scheduled today",
+            "Art House St. Pete (248 units, Kolter Urban, 235 1st Ave N) — move-in ready March 2026, 90% sold out, HOA board formed; opened six months ahead of projected fall 2026 date",
+            "Kolter Urban purchased Hilton Bayfront St. Petersburg hotel for $96M (March 2026) — planning 41-story condo tower between Hilton and Northern Trust building on 1st Street S (408 ft); FAA study underway; largest new pipeline addition this cycle",
+            "Waldorf Astoria Residences (163 units, 50 stories) — $100M+ sold, $27M record penthouse, groundbreaking Q1–Q2 2026, delivery ~2030; fastest-selling condo on Florida's West Coast",
+            "Florida SIRS full reserve funding required as of January 1, 2026 — boards not in compliance are in violation NOW; reserve costs creating board-level financial pressure and appetite for revenue-generating amenities"
           ],
           "competitors": [
             {
-              "tier": "watch",
-              "watch_level": "monitor",
+              "tier": "1",
+              "watch_level": "tier-1",
+              "name": "Parkade",
+              "description": "SpotShare Alternative page (parkade.com/spotshare) actively ranking nationally. No St. Pete or Florida-specific presence. Explicit SpotShare replacement narrative with testimonial claiming SpotShare had only 10-12 active users.",
+              "their_angle": "Modern app, revenue-generating, explicit SpotShare replacement.",
+              "spotshare_counter": "No per-transaction fees; simpler board approval path; SpotShare's model doesn't require residents to download a new app."
+            },
+            {
+              "tier": "2",
+              "watch_level": "tier-2",
+              "name": "Community Boss / Parking Boss",
+              "description": "Named Florida case study: Cypress Bend V (Pompano Beach) — 'How We Helped a Florida HOA Fix Their Resident Parking and Catch Illegal Renters.' Smart Decals + guest registration enforcement model. No St. Pete building confirmed.",
+              "their_angle": "Enforcement + compliance — catches rule violators, not just manages guest access.",
+              "spotshare_counter": "SpotShare's sharing model avoids adversarial enforcement entirely — no Smart Decals, no towing, no 'catching' residents. Amenity vs. enforcement framing."
+            },
+            {
+              "tier": "2",
+              "watch_level": "tier-2",
               "name": "ParkingPass",
-              "description": "Has a generic Tampa area landing page claiming 'hundreds of customers in Tampa Bay Area' but no named HOA condo case study, no St. Pete-specific page, and no HOA-board-targeted content. Positioned as permit-issuance infrastructure, not guest-experience/monetization.",
-              "their_angle": "Permit issuance infrastructure for multifamily — broad regional claim, no local proof.",
-              "spotshare_counter": "SpotShare can be the first named condo guest parking solution in St. Pete with zero competitive resistance locally."
+              "description": "Generic Tampa area page (parkingpass.com/tampa-parking-software-provider) with regional claim. No named St. Pete condo case study. Digital permit issuance focus.",
+              "their_angle": "Regional brand claim without local proof.",
+              "spotshare_counter": "A named St. Pete building would beat a generic Tampa Bay page on every local search."
             },
             {
               "tier": "watch",
               "watch_level": "monitor",
-              "name": "Community Boss / Parking Boss",
-              "description": "Has a named Florida HOA customer (Cypress Bend V) cited in HOAleader.com coverage but no named St. Pete building. Pricing starts ~$195/month. Web-based enforcement/permit focus; lacks SpotShare's reservation and monetization layer.",
-              "their_angle": "Low-cost Florida HOA presence via enforcement/permit model.",
-              "spotshare_counter": "No St. Pete case study; SpotShare's sharing model is a different product category than Community Boss's enforcement focus."
+              "name": "ParqEx / GuestParq",
+              "description": "$3,500+/month operating income claim. Comparison pages vs. Parkade and Community Boss published. No St. Pete or Florida case study found.",
+              "their_angle": "Revenue generation + enterprise access control.",
+              "spotshare_counter": "SpotShare's peer-to-peer model is simpler — no per-transaction fee layer, no hardware."
+            },
+            {
+              "tier": "watch",
+              "watch_level": "monitor",
+              "name": "SmartLotIQ",
+              "description": "New entrant — ALPR + QR passes + gate control. $149–$399/month. No Florida presence confirmed.",
+              "their_angle": "Hardware-first enforcement at gate level.",
+              "spotshare_counter": "Requires construction disruption for hardware installation."
+            },
+            {
+              "tier": "watch",
+              "watch_level": "monitor",
+              "name": "Proptia",
+              "description": "New find — integrates parking enforcement with visitor access for HOAs and apartments. No Florida presence confirmed.",
+              "their_angle": "Combined parking + visitor access control platform.",
+              "spotshare_counter": "SpotShare doesn't require visitor credentialing — residents manage guest access peer-to-peer."
             }
           ],
           "tier0_count": 3,
-          "tier1_count": 4,
-          "tier2_count": 2,
-          "parking_cost_signal": "moderate-high — street meters $1.00–$1.50/hour; city garages $1/hour with $6/day cap; monthly average $226–$233/month; event surge pricing $15–$30+/day near Pier District and Tropicana Field",
-          "availability_signal": "high — SunRunner TOD overlay eliminated parking minimums in Central Avenue transit corridor September 2024; 400 Central (301 units) open with no managed guest system; Art House (248 units) opening fall 2026",
-          "regulatory_trend": "worsening — three successive rounds of parking minimum reductions (July 2022, September 2024, May 2026 expansion); Florida HB 1203 weakened HOA enforcement tools July 2024; SB 4-D reserve funding mandate creating financial pressure on all Florida condo HOA boards",
-          "hoa_friction_level": "high — HB 1203 caps fines at $100/violation with pre-notice requirements; SB 4-D creating HOA financial crisis statewide; STR guest vehicle overflow documented in mixed-use/STR-heavy buildings",
-          "visitor_parking_ratio": "low — SunRunner overlay buildings can be designed with zero required parking; Reflection (81 units) shares spaces with church leaving near-zero guest capacity",
-          "new_development_pipeline": "yes — 400 Central (301 units, TCO Dec 2025, HOA board forming now); Art House (248 units, Kolter Urban, opening fall 2026); Waldorf Astoria Residences (163 units, sales launched); Roche Bobois Residences (165 units, construction 2026, delivery 2028); Marina Bay Residence (96 units, spring 2026); Kolter 41-story tower (announced March 2026); Corey Landing St. Pete Beach (132 units, delivery 2028)",
-          "content_gap": "No first-party guide connecting St. Pete's Central Avenue parking-optional overlay expansion to the HOA guest parking management problem — zero competitor has a named St. Pete or Tampa Bay condo case study",
-          "top_keywords_found": ["guest parking management condo St. Petersburg FL", "HOA visitor parking app St. Pete", "condo parking permit software Florida", "downtown St. Pete condo guest parking solution", "visitor parking enforcement condo Tampa Bay", "HOA parking management software Florida", "condo parking shortage solution HOA board", "how to manage guest parking HOA Florida", "parking app for condo association St. Petersburg", "HOA parking rules Florida 2024 2025"],
+          "tier1_count": 5,
+          "tier2_count": 3,
+          "parking_cost_signal": "moderate-high — street meters $1.00–$1.50/hour; city garages $1/hour with $6/day cap; monthly $226–$233; event surge $15–$30+/day; paid street parking program under consideration downtown",
+          "availability_signal": "high — SunRunner overlay expansion vote today; Art House open with no managed guest system confirmed; 400 Central (301 units) move-ins underway with 900 total parking spaces (resident + guest combined, no managed system confirmed)",
+          "regulatory_trend": "worsening — SunRunner overlay second and final vote today; HB 1203 (July 2024) caps fines and limits enforcement; SIRS full funding required January 1, 2026 (deadline passed, boards in violation face consequences)",
+          "hoa_friction_level": "high — HB 1203 caps fines at $100/violation with pre-notice requirements; SIRS reserve mandate creating board financial pressure; Reflection St. Pete has zero garage guest parking (street only)",
+          "visitor_parking_ratio": "low-to-mixed — 400 Central has 900 spaces for 301 units but no managed guest system; Reflection has zero garage guest parking; SunRunner overlay buildings can be designed with zero required parking",
+          "new_development_pipeline": "yes — 400 Central (301 units, open, 900 parking spaces, FSR as PM); Art House St. Pete (248 units, open March 2026, 90% sold, HOA board formed); Waldorf Astoria Residences (163 units, groundbreaking Q1–Q2 2026, delivery ~2030); Roche Bobois Tower (164 units, construction 2026, delivery 2028); Kolter 41-story tower (Hilton Bayfront site, planning 2026); Marina Bay Residence DENIED (removed from pipeline)",
+          "content_gap": "No first-party guide connecting today's SunRunner overlay expansion vote to what it means for HOA boards at Art House, Waldorf Astoria, and the Kolter 41-story tower — zero competitor has a named St. Pete condo case study; SpotShare can own this SERP from scratch",
+          "top_keywords_found": ["guest parking management condo St. Petersburg FL", "HOA visitor parking app St. Pete", "condo parking permit software Florida", "downtown St. Pete condo guest parking solution", "visitor parking enforcement condo Tampa Bay", "HOA parking management software Florida", "condo parking shortage solution HOA board", "how to manage guest parking HOA Florida", "parking app for condo association St. Petersburg", "HOA parking rules Florida 2025 2026"],
           "language_bank": [
-            { "phrase": "HOA board forming right now", "source": "400 Central TCO/move-in coverage", "date": "2026-05-11", "use": "opportunity" },
-            { "phrase": "fines capped at $100 with strict pre-notice requirements", "source": "Florida HB 1203", "date": "2026-05-11", "use": "pain" },
-            { "phrase": "boards actively seeking revenue-generating amenity solutions", "source": "Florida SB 4-D coverage", "date": "2026-05-11", "use": "opportunity" },
-            { "phrase": "zero assigned guest parking by design", "source": "SunRunner overlay analysis", "date": "2026-05-11", "use": "pain" }
+            { "phrase": "parking may be optional for developers on St. Petersburg's Central Avenue", "source": "Tampa Bay Times headline", "date": "2026-04-16", "use": "educational" },
+            { "phrase": "HOAs cannot prohibit homeowners from parking personal vehicles in their own driveways", "source": "Florida HB 1203, CondoControl", "date": "2026", "use": "pain" },
+            { "phrase": "how we helped a Florida HOA fix their resident parking and catch illegal renters", "source": "Community Boss / Cypress Bend V case study title", "date": "2026-05-14", "use": "competitive — tone to avoid" },
+            { "phrase": "fastest-selling condo on Florida's West Coast", "source": "Waldorf Astoria Residences marketing", "date": "2026-05-14", "use": "opportunity" },
+            { "phrase": "$27 million penthouse", "source": "Waldorf Astoria record sale", "date": "2026-05-14", "use": "opportunity" },
+            { "phrase": "boards cannot waive reserves", "source": "Florida SIRS mandate", "date": "2026-01-01", "use": "pain" },
+            { "phrase": "HOA board forming right now", "source": "400 Central TCO/move-in coverage", "date": "2026-05-14", "use": "opportunity" },
+            { "phrase": "fines capped at $100 with strict pre-notice requirements", "source": "Florida HB 1203", "date": "2026-05-14", "use": "pain" },
+            { "phrase": "zero assigned guest parking by design", "source": "SunRunner overlay analysis", "date": "2026-05-14", "use": "pain" }
           ],
           "social_angles": [
-            { "angle": "Florida just made it basically impossible for HOAs to fine residents over parking. So how do you manage it now?", "format": "question hook", "platform": "LinkedIn", "source": "Florida HB 1203" },
-            { "angle": "A 301-unit luxury tower just opened in St. Pete. The HOA board is forming this month. They have no guest parking system.", "format": "stat drop", "platform": "LinkedIn", "source": "400 Central TCO" }
+            { "angle": "St. Pete City Council is voting TODAY on making parking-optional zoning permanent along Central Avenue. Buildings approved after today can have zero required parking. HOA boards will handle the rest.", "format": "timing hook", "platform": "LinkedIn", "source": "Axios Tampa Bay May 12, 2026" },
+            { "angle": "A St. Pete penthouse just sold for $27 million. The building doesn't exist yet. The HOA board doesn't exist yet. The guest parking policy doesn't exist yet. Now is when decisions like that get made.", "format": "stat drop", "platform": "LinkedIn", "source": "Waldorf Astoria $27M record sale" },
+            { "angle": "Florida just made it basically impossible for HOAs to fine residents over parking. So how do you manage it now?", "format": "question hook", "platform": "LinkedIn", "source": "Florida HB 1203" }
           ],
-          "run_confidence": "high — regulatory signals very strong; 400 Central timing confirmed; named pipeline buildings verified; competitor absence locally confirmed; Reddit and social thin but web intelligence sufficient",
-          "thin_queries": ["community association manager CAM parking"],
-          "sources_unavailable": ["X/Twitter"]
+          "run_confidence": "high — SunRunner vote timing confirmed (today); Art House and 400 Central confirmed open; Waldorf Astoria milestones confirmed; Kolter 41-story tower major new addition; competitor absence locally re-confirmed; Marina Bay Residence removed (denied)",
+          "thin_queries": ["3", "8", "9"],
+          "sources_unavailable": ["X/Twitter", "Reddit"]
         },
         "seo": {
-          "page_built": true,
-          "page_path": "seo-output/st-petersburg-fl-page.html",
-          "last_built_date": "2026-05-11",
+          "page_built": false,
+          "page_path": null,
+          "last_built_date": null,
           "needs_refresh": false
         }
       },

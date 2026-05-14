@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpotShare Ops</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0b0d14;
+      --s1:        #12151f;
+      --s2:        #181c28;
+      --s3:        #1e2336;
+      --border:    rgba(255,255,255,0.07);
+      --border2:   rgba(255,255,255,0.12);
+      --accent:    #2dd4bf;
+      --accent2:   #818cf8;
+      --txt:       #e2e8f0;
+      --muted:     #94a3b8;
+      --dim:       #4e5872;
+      --live:      #34d399;
+      --warn:      #fbbf24;
+      --danger:    #f87171;
+      --t1:        #f87171;
+      --t2:        #fbbf24;
+      --tw:        #818cf8;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--txt);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* ── HEADER ─────────────────────────────────────────── */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,13,20,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      height: 56px;
+    }
+
+    .logo {
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .logo span { color: var(--muted); font-weight: 400; }
+
+    nav {
+      display: flex;
+      gap: 4px;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: color 0.15s, background 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .tab-btn:hover { color: var(--txt); background: var(--s2); }
+    .tab-btn.active {
+      color: var(--accent);
+      background: rgba(45,212,191,0.1);
+    }
+
+    /* ── TODAY BANNER ────────────────────────────────────── */
+    #today-banner {
+      background: linear-gradient(135deg, #0f1420 0%, #131929 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .banner-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .banner-block {}
+    .banner-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 6px;
+    }
+    .banner-date {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--txt);
+      letter-spacing: -0.02em;
+    }
+    .banner-quote {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .banner-run-city {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .banner-run-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    .no-run {
+      font-size: 0.875rem;
+      color: var(--dim);
+    }
+
+    /* ── MAIN CONTENT ────────────────────────────────────── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── SECTION TITLES ──────────────────────────────────── */
+    .section-title {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── CARDS ───────────────────────────────────────────── */
+    .card {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+
+    .card-compact {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+
+    .card-inner {
+      background: var(--s2);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+
+    /* ── BADGES ──────────────────────────────────────────── */
+    .badge {
+      display: inline-block;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      vertical-align: middle;
+    }
+    .badge-live    { background: rgba(52,211,153,0.15); color: var(--live); }
+    .badge-tier1   { background: rgba(248,113,113,0.15); color: var(--t1); }
+    .badge-tier2   { background: rgba(251,191,36,0.15); color: var(--t2); }
+    .badge-watch   { background: rgba(129,140,248,0.15); color: var(--tw); }
+    .badge-high    { background: rgba(248,113,113,0.12); color: var(--t1); }
+    .badge-medium  { background: rgba(251,191,36,0.12); color: var(--t2); }
+    .badge-active  { background: rgba(248,113,113,0.12); color: var(--t1); }
+    .badge-absent  { background: rgba(52,211,153,0.12); color: var(--live); }
+    .badge-partial { background: rgba(251,191,36,0.12); color: var(--t2); }
+    .badge-pipeline { background: rgba(79,84,120,0.3); color: var(--dim); }
+
+    /* ── URGENT CARD ─────────────────────────────────────── */
+    .urgent-card {
+      background: rgba(251,191,36,0.06);
+      border: 1px solid rgba(251,191,36,0.25);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .urgent-card .city-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warn);
+      margin-bottom: 6px;
+    }
+    .urgent-card .flag-text {
+      font-size: 0.875rem;
+      color: var(--txt);
+      line-height: 1.5;
+    }
+    .urgent-indicator {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: var(--warn);
+      border-radius: 50%;
+      margin-right: 8px;
+      box-shadow: 0 0 6px var(--warn);
+      animation: pulse-warn 2s ease-in-out infinite;
+    }
+    @keyframes pulse-warn {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── COPY BUTTON ─────────────────────────────────────── */
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      background: rgba(45,212,191,0.08);
+      border: 1px solid rgba(45,212,191,0.2);
+      border-radius: 6px;
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      margin-top: 10px;
+    }
+    .copy-btn:hover { background: rgba(45,212,191,0.15); border-color: rgba(45,212,191,0.4); }
+    .copy-btn.copied { color: var(--live); background: rgba(52,211,153,0.08); border-color: rgba(52,211,153,0.2); }
+
+    /* ── SOCIAL ANGLE CARD ───────────────────────────────── */
+    .social-card {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+    .social-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .social-platform {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent2);
+    }
+    .social-format {
+      font-size: 0.6875rem;
+      color: var(--dim);
+    }
+    .social-text {
+      font-size: 0.9375rem;
+      color: var(--txt);
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    /* ── OUTREACH GRID ───────────────────────────────────── */
+    .outreach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 12px;
+    }
+    .outreach-item {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .outreach-city {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .outreach-text {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── LIVE CITY CARD ──────────────────────────────────── */
+    .city-card {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+    .city-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .city-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--txt);
+      letter-spacing: -0.02em;
+    }
+    .city-meta-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .city-meta-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      min-width: 90px;
+    }
+    .city-meta-val {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .outreach-block {
+      background: rgba(45,212,191,0.05);
+      border: 1px solid rgba(45,212,191,0.15);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+    .outreach-block-label {
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .outreach-block-text {
+      font-size: 0.9rem;
+      color: var(--txt);
+      line-height: 1.55;
+    }
+
+    .moment-block {
+      background: var(--s2);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      font-size: 0.875rem;
+      color: var(--txt);
+      line-height: 1.55;
+      border-left: 3px solid var(--accent2);
+    }
+
+    /* ── EXPANDABLE ──────────────────────────────────────── */
+    .expand-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--dim);
+      cursor: pointer;
+      user-select: none;
+      padding: 4px 0;
+      border: none;
+      background: none;
+      font-family: inherit;
+      transition: color 0.15s;
+    }
+    .expand-toggle:hover { color: var(--muted); }
+    .expand-toggle .chevron {
+      display: inline-block;
+      transition: transform 0.2s;
+      font-size: 0.625rem;
+    }
+    .expand-toggle.open .chevron { transform: rotate(90deg); }
+
+    .expandable-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .expandable-content.open { display: block; }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .keyword-pill {
+      background: var(--s3);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .moment-item {
+      background: var(--s2);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .phrase-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .phrase-item:last-child { border-bottom: none; }
+    .phrase-text {
+      font-style: italic;
+      color: var(--txt);
+      flex: 1;
+    }
+    .phrase-use {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--dim);
+      min-width: 70px;
+      text-align: right;
+    }
+    .phrase-use.pain { color: var(--danger); }
+    .phrase-use.competitive { color: var(--warn); }
+    .phrase-use.opportunity { color: var(--live); }
+
+    /* ── COMPETITOR PRESENCE BADGE ───────────────────────── */
+    .comp-presence {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .comp-presence.active { color: var(--danger); }
+    .comp-presence.absent { color: var(--live); }
+
+    /* ── PIPELINE TAB ────────────────────────────────────── */
+    .pipeline-header {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .pipeline-header strong { color: var(--txt); }
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .pipeline-item {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .pipeline-city-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    /* ── COMPETITORS TAB ─────────────────────────────────── */
+    .competitor-card {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-bottom: 16px;
+    }
+    .comp-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .comp-name {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--txt);
+    }
+    .comp-cities {
+      font-size: 0.75rem;
+      color: var(--dim);
+      margin-top: 4px;
+    }
+
+    .comp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 680px) {
+      .comp-row { grid-template-columns: 1fr; }
+      .banner-inner { grid-template-columns: 1fr; }
+      .outreach-grid { grid-template-columns: 1fr; }
+      .pipeline-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    }
+
+    .comp-angle-block {
+      background: rgba(248,113,113,0.05);
+      border: 1px solid rgba(248,113,113,0.12);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .comp-counter-block {
+      background: rgba(45,212,191,0.05);
+      border: 1px solid rgba(45,212,191,0.12);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .comp-block-label {
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 6px;
+    }
+    .comp-angle-block .comp-block-label { color: rgba(248,113,113,0.7); }
+    .comp-counter-block .comp-block-label { color: rgba(45,212,191,0.7); }
+    .comp-block-text {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    /* ── DIVIDER ─────────────────────────────────────────── */
+    .section-gap { margin-bottom: 36px; }
+
+    /* ── ERROR STATE ─────────────────────────────────────── */
+    #error-state {
+      display: none;
+      text-align: center;
+      padding: 80px 24px;
+    }
+    #error-state h2 { color: var(--danger); margin-bottom: 12px; }
+    #error-state p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── CONFIDENCE DOT ──────────────────────────────────── */
+    .conf-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .conf-high   { background: var(--live); }
+    .conf-medium { background: var(--warn); }
+    .conf-low    { background: var(--danger); }
+
+    /* ── LIVE DOT ────────────────────────────────────────── */
+    .live-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: var(--live);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--live);
+      animation: pulse-live 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse-live {
+      0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--live); }
+      50% { opacity: 0.6; box-shadow: 0 0 2px var(--live); }
+    }
+
+    /* ── SCROLLBAR ───────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--s3); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header id="site-header">
+  <div class="header-inner">
+    <div class="logo">SpotShare <span>/ Ops</span></div>
+    <nav id="tab-nav">
+      <button class="tab-btn active" data-tab="today">Today</button>
+      <button class="tab-btn" data-tab="live">Live Cities</button>
+      <button class="tab-btn" data-tab="pipeline">Pipeline</button>
+      <button class="tab-btn" data-tab="competitors">Competitors</button>
+    </nav>
+  </div>
+</header>
+
+<!-- TODAY BANNER -->
+<div id="today-banner">
+  <div class="banner-inner">
+    <div class="banner-block">
+      <div class="banner-label">Today</div>
+      <div class="banner-date" id="banner-date">—</div>
+    </div>
+    <div class="banner-block">
+      <div class="banner-label">Daily brief</div>
+      <div class="banner-quote" id="banner-quote">—</div>
+    </div>
+    <div class="banner-block">
+      <div class="banner-label">SEO run</div>
+      <div id="banner-run">
+        <div class="no-run">Loading...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div id="error-state">
+    <h2>Could not load city data</h2>
+    <p>Make sure <code>city-index.json</code> is in the same directory and you're serving this file (not opening directly from disk).</p>
+  </div>
+
+  <!-- TODAY TAB -->
+  <div class="tab-panel active" id="tab-today">
+    <div class="section-gap">
+      <div class="section-title">Today's SEO run</div>
+      <div id="today-run-detail" class="card">
+        <div class="muted">Loading...</div>
+      </div>
+    </div>
+
+    <div class="section-gap">
+      <div class="section-title">Urgent flags</div>
+      <div id="urgent-flags"></div>
+    </div>
+
+    <div class="section-gap">
+      <div class="section-title">Social angles — ready to copy</div>
+      <div id="social-angles-today"></div>
+    </div>
+
+    <div class="section-gap">
+      <div class="section-title">Quick outreach angles — all live cities</div>
+      <div class="outreach-grid" id="outreach-quick"></div>
+    </div>
+  </div>
+
+  <!-- LIVE CITIES TAB -->
+  <div class="tab-panel" id="tab-live">
+    <div id="live-cities-container"></div>
+  </div>
+
+  <!-- PIPELINE TAB -->
+  <div class="tab-panel" id="tab-pipeline">
+    <p class="pipeline-header" id="pipeline-header">Loading...</p>
+    <div class="pipeline-grid" id="pipeline-grid"></div>
+  </div>
+
+  <!-- COMPETITORS TAB (hardcoded) -->
+  <div class="tab-panel" id="tab-competitors">
+    <div id="competitors-container"></div>
+  </div>
+</main>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// QUOTES — rotate by day of year (consistent within day)
+// ─────────────────────────────────────────────────────────────
+const QUOTES = [
+  "A parking spot in San Francisco costs more than a college degree. Your HOA board has five of them sitting empty.",
+  "The best time to install guest parking software was before the HOA meeting. The second best time is before the next one.",
+  "You didn't start a company to argue about visitor passes.",
+  "Somewhere right now, a condo board member is typing a strongly-worded email about a parking spot. You could fix this.",
+  "Parking minimums: the government's way of saying 'we also didn't think this through.'",
+  "The visitor parking sign says 2 hours. The resident in spot 4B says otherwise.",
+  "Your building has more parking disputes than you have customers. That's the opportunity.",
+  "Every great parking solution started with someone else's HOA crisis.",
+  "Disrupting parking management is a real sentence adults say at work now.",
+  "A $100,000 parking stall in Seattle. A $0 system for the guest spots next to it. We see the gap.",
+  "HOA board meeting agenda item #7: parking. Again.",
+  "The condo board doesn't need software. They need a scapegoat. Offer them the software anyway.",
+  "Today's forecast: 100% chance of parking complaints at the HOA meeting.",
+  "Zero parking minimums means infinite excuses for an HOA not to have a system.",
+  "Building a startup is like parallel parking in front of a crowd — confidence is 90% of it.",
+  "Somewhere a property manager just sent their 47th parking violation notice this month. There's a better way.",
+  "The most valuable real estate in downtown Chicago isn't the condo. It's the parking stall below it.",
+  "The guest parking list is full. The whiteboard solution is not scaling.",
+  "'We manage guest parking via text chain.' — Every property manager before SpotShare.",
+  "You can't monetize chaos. But you can organize it, and then monetize it.",
+];
+
+// ─────────────────────────────────────────────────────────────
+// COMPETITORS REGISTRY (hardcoded — does not depend on JSON)
+// ─────────────────────────────────────────────────────────────
+const COMPETITORS = [
+  {
+    name: "Parkade",
+    tier: "tier1",
+    tierLabel: "Tier 1",
+    angle: "Modern mobile app vs. legacy 2003 web tool; revenue-generating vs. cost center; instant adoption vs. complex onboarding. Runs an active comparison page at parkade.com/spotshare calling SpotShare 'cutting edge in 2003.'",
+    counter: "Local regulatory context is Parkade's blind spot — their generic national pitch has no local anchor. San Diego reform package, Chicago's September 2025 ordinance, WA SB 5184 — none of it lives in Parkade's narrative. Lead with market specificity they can't match.",
+    cities: ["San Diego", "Seattle and Bellevue"],
+  },
+  {
+    name: "ParqEx / GuestParq",
+    tier: "tier1",
+    tierLabel: "Tier 1",
+    angle: "Amenity framing + revenue generation + enterprise access control. Pitches GuestParq as a profit center for property managers. Has 3 named Chicago case studies (Silver Tower, 340 on the Park, 1660 Condominium) actively ranking in search.",
+    counter: "SpotShare's peer-to-peer sharing model requires no hardware investment and no per-transaction fees — simpler implementation path for HOAs that don't want to become parking operators. SpotShare needs one named building per market to compete directly.",
+    cities: ["San Diego", "Atlanta", "Chicago", "Seattle and Bellevue"],
+  },
+  {
+    name: "SimplyPermits",
+    tier: "tier1",
+    tierLabel: "Tier 1",
+    angle: "Permit issuance and enforcement focus — targeting the compliance/control mindset. Owns 'best HOA guest parking software' SERP with self-promotional content that excludes SpotShare entirely.",
+    counter: "SpotShare is not a permit system — it's a resident-driven sharing model. The framing difference is amenity vs. enforcement, not feature parity. Don't compete on their terms.",
+    cities: ["San Diego"],
+  },
+  {
+    name: "Reliant Parking",
+    tier: "tier1",
+    tierLabel: "Tier 1",
+    angle: "Enforcement + compliance framing — fines, towing, citations. Publishing 2026-dated HOA parking enforcement content. San Diego enforcement partner (parkingsquad.com) operating locally.",
+    counter: "SpotShare's model avoids the adversarial enforcement dynamic entirely — no towing, no fines, resident-driven coordination. After Florida HB 1203 capped HOA fines at $100, enforcement-first vendors are selling a weakened product.",
+    cities: ["San Diego"],
+  },
+  {
+    name: "Community Boss / Parking Boss",
+    tier: "tier2",
+    tierLabel: "Tier 2",
+    angle: "Simplicity and no-app-required framing — same messaging SpotShare uses. Sub-$200/month entry price ($195). Has named customers in Atlanta (Twynate Boyd) and Florida (Cypress Bend V). High-volume HOA parking content ranking on page 1.",
+    counter: "Community Boss is a permit management system; SpotShare's differentiation is the sharing/idle-spot model vs. enforcement. Different product categories wearing similar clothes — don't let them define the comparison.",
+    cities: ["San Diego", "Atlanta", "Chicago", "Seattle and Bellevue", "St. Petersburg, FL"],
+  },
+  {
+    name: "ButterflyMX",
+    tier: "watch",
+    tierLabel: "Watch",
+    angle: "Hardware-first, access-control framing. Published a full HOA & Condo Visitor Parking Management Guide framing visitor parking as an access control problem solved with RFID hardware. Calls reservation systems 'too restrictive.'",
+    counter: "ButterflyMX's hardware approach requires capital investment and installation. SpotShare's software-only model is deployable in days with no hardware, no procurement cycle, and no capital ask to an HOA board.",
+    cities: ["San Diego"],
+  },
+  {
+    name: "SmartLotIQ",
+    tier: "watch",
+    tierLabel: "Watch",
+    angle: "New entrant with HOA guest parking platform: QR-coded passes, ALPR gate control, photo-evidence violations. Pricing $149–$399/month — undercutting on price. Appearing in HOA parking software searches.",
+    counter: "SmartLotIQ requires ALPR hardware installation — higher implementation barrier for existing buildings. Their price point signals a race to the bottom on enforcement tools, not an amenity play.",
+    cities: ["San Diego"],
+  },
+  {
+    name: "ParkingPass",
+    tier: "watch",
+    tierLabel: "Watch",
+    angle: "Permit issuance infrastructure for multifamily. Claims 'hundreds of customers in Tampa Bay Area' but has no named HOA condo case study, no St. Pete-specific page, and no HOA-board-targeted content.",
+    counter: "SpotShare can be the first named condo guest parking solution in St. Pete with zero competitive resistance locally — ParkingPass has broad claims and no local proof.",
+    cities: ["St. Petersburg, FL"],
+  },
+];
+
+// ─────────────────────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────────────────────
+function dayOfYear(date) {
+  const start = new Date(date.getFullYear(), 0, 0);
+  const diff = date - start + (start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000;
+  return Math.floor(diff / (1000 * 60 * 60 * 24));
+}
+
+function formatDate(d) {
+  return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function isoToday() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function parseISODate(str) {
+  if (!str) return null;
+  const [y, m, d] = str.split('-').map(Number);
+  return new Date(y, m-1, d);
+}
+
+function daysAgo(isoStr) {
+  if (!isoStr) return null;
+  const d = parseISODate(isoStr);
+  const today = new Date(); today.setHours(0,0,0,0);
+  return Math.round((today - d) / (1000 * 60 * 60 * 24));
+}
+
+function esc(str) {
+  if (!str) return '';
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function confClass(rc) {
+  if (!rc) return '';
+  if (rc.startsWith('high')) return 'conf-high';
+  if (rc.startsWith('medium')) return 'conf-medium';
+  return 'conf-low';
+}
+
+function compPresenceBadge(presence) {
+  if (!presence) return '<span class="badge badge-pipeline">Unknown</span>';
+  const p = presence.toLowerCase();
+  if (p.includes('absent') || p.includes('zero local')) return '<span class="badge badge-absent">Absent locally</span>';
+  if (p.includes('active nationally') || p.includes('zero locally')) return '<span class="badge badge-medium">Active nationally / Gap locally</span>';
+  if (p.includes('active')) return '<span class="badge badge-active">Active</span>';
+  return `<span class="badge badge-watch">${esc(presence)}</span>`;
+}
+
+function readinessBadge(mr) {
+  if (!mr) return '';
+  const label = mr.replace('tier-','T');
+  return `<span class="badge badge-live">${esc(label)}</span>`;
+}
+
+function tierBadgeClass(tier) {
+  if (tier === 'tier1') return 'badge-tier1';
+  if (tier === 'tier2') return 'badge-tier2';
+  return 'badge-watch';
+}
+
+// Parse dates like "May 14, 2026" or "May 2026" from text
+function extractDatesFromText(text) {
+  const months = { january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11 };
+  const found = [];
+  // Match "Month DD, YYYY"
+  const re = /\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2}),?\s+(20\d\d)\b/gi;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    const month = months[m[1].toLowerCase()];
+    const day = parseInt(m[2]);
+    const year = parseInt(m[3]);
+    found.push(new Date(year, month, day));
+  }
+  return found;
+}
+
+const URGENT_KEYWORDS = ['today', 'right now', 'forming now', 'this week', 'this month', 'days away', 'underway', 'forming', 'right now'];
+
+function isUrgentText(text) {
+  const lower = text.toLowerCase();
+  for (const kw of URGENT_KEYWORDS) {
+    if (lower.includes(kw)) return true;
+  }
+  const today = new Date(); today.setHours(0,0,0,0);
+  const dates = extractDatesFromText(text);
+  for (const d of dates) {
+    const diff = Math.round((d - today) / (1000 * 60 * 60 * 24));
+    if (diff >= -1 && diff <= 7) return true;
+  }
+  return false;
+}
+
+function copyToClipboard(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.textContent = '✓ Copied';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+    }, 2000);
+  });
+}
+
+function toggleExpand(btn) {
+  btn.classList.toggle('open');
+  const target = document.getElementById(btn.dataset.target);
+  if (target) target.classList.toggle('open');
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER: TODAY TAB
+// ─────────────────────────────────────────────────────────────
+function renderToday(data) {
+  const today = isoToday();
+  const rot = data.rotation;
+  const liveCities = data.cities.filter(c => c.status === 'page-live');
+
+  // Today's run info
+  const todayRunEl = document.getElementById('today-run-detail');
+  let todayCity = null;
+  let todayCities = [];
+
+  // Check if any city was run today
+  todayCities = liveCities.filter(c => c.research.last_run_date === today);
+  if (rot.last_run_date === today) {
+    todayCity = data.cities.find(c => c.city === rot.last_city);
+  }
+
+  if (todayCities.length > 0) {
+    todayRunEl.innerHTML = todayCities.map(c => `
+      <div style="margin-bottom:${todayCities.length>1?'16px':'0'}">
+        <div style="font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:8px">${esc(c.city)}</div>
+        <div style="font-size:0.875rem;color:var(--txt);line-height:1.55">${esc(c.research.market_moment)}</div>
+        <div style="font-size:0.75rem;color:var(--dim);margin-top:8px">Run today · ${esc(c.research.run_confidence||'')}</div>
+      </div>
+    `).join('');
+  } else if (todayCity) {
+    todayRunEl.innerHTML = `
+      <div style="font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:8px">${esc(todayCity.city)}</div>
+      <div style="font-size:0.875rem;color:var(--txt);line-height:1.55">${esc(todayCity.research.market_moment)}</div>
+      <div style="font-size:0.75rem;color:var(--dim);margin-top:8px">Run today · ${esc(todayCity.research.run_confidence||'')}</div>
+    `;
+  } else {
+    // Show most recent
+    const recent = rot.last_city;
+    const recentCity = data.cities.find(c => c.city === recent);
+    const daysBack = daysAgo(rot.last_run_date);
+    todayRunEl.innerHTML = `
+      <div style="font-size:0.75rem;color:var(--warn);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">No run today — showing last run</div>
+      <div style="font-size:1.1rem;font-weight:700;color:var(--txt);margin-bottom:8px">${esc(recent)}</div>
+      ${recentCity ? `<div style="font-size:0.875rem;color:var(--muted);line-height:1.55">${esc(recentCity.research.market_moment)}</div>` : ''}
+      <div style="font-size:0.75rem;color:var(--dim);margin-top:8px">${daysBack !== null ? `${daysBack} day${daysBack===1?'':'s'} ago` : ''} · ${esc(rot.last_run_date||'')}</div>
+    `;
+  }
+
+  // Urgent flags
+  const urgentEl = document.getElementById('urgent-flags');
+  const flags = [];
+  for (const city of liveCities) {
+    const r = city.research;
+    // Check main market_moment
+    if (r.market_moment && isUrgentText(r.market_moment)) {
+      flags.push({ city: city.city, text: r.market_moment });
+    }
+    // Check market_moments array
+    for (const mm of (r.market_moments || [])) {
+      if (isUrgentText(mm) && !flags.find(f => f.city === city.city && f.text === mm)) {
+        flags.push({ city: city.city, text: mm });
+      }
+    }
+    // Check outreach_angle
+    if (r.outreach_angle && isUrgentText(r.outreach_angle)) {
+      if (!flags.find(f => f.city === city.city && f.text === r.outreach_angle)) {
+        flags.push({ city: city.city, text: r.outreach_angle });
+      }
+    }
+  }
+
+  if (flags.length === 0) {
+    urgentEl.innerHTML = '<div style="color:var(--dim);font-size:0.875rem;padding:16px 0">No urgent flags today.</div>';
+  } else {
+    urgentEl.innerHTML = flags.map(f => `
+      <div class="urgent-card">
+        <div class="city-label"><span class="urgent-indicator"></span>${esc(f.city)}</div>
+        <div class="flag-text">${esc(f.text)}</div>
+      </div>
+    `).join('');
+  }
+
+  // Social angles — from recently run cities (last 14 days), pick up to 2 unique
+  const socialEl = document.getElementById('social-angles-today');
+  const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - 14);
+  const recentAngles = [];
+  for (const city of liveCities) {
+    const runDate = parseISODate(city.research.last_run_date);
+    if (runDate && runDate >= cutoff) {
+      for (const sa of (city.research.social_angles || [])) {
+        if (recentAngles.length < 3) {
+          recentAngles.push({ city: city.city, ...sa });
+        }
+      }
+    }
+  }
+
+  if (recentAngles.length === 0) {
+    socialEl.innerHTML = '<div style="color:var(--dim);font-size:0.875rem;padding:16px 0">No recent social angles available.</div>';
+  } else {
+    const copyIcon = `<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+    socialEl.innerHTML = recentAngles.map((sa, i) => `
+      <div class="social-card">
+        <div class="social-meta">
+          <span class="social-platform">${esc(sa.platform)}</span>
+          <span style="color:var(--dim);font-size:0.6875rem">·</span>
+          <span class="social-format">${esc(sa.format)}</span>
+          <span style="color:var(--dim);font-size:0.6875rem">· ${esc(sa.city)}</span>
+        </div>
+        <div class="social-text">${esc(sa.angle)}</div>
+        <button class="copy-btn" onclick="copyToClipboard(${JSON.stringify(sa.angle)}, this)">${copyIcon} Copy</button>
+      </div>
+    `).join('');
+  }
+
+  // Quick outreach angles
+  const outreachEl = document.getElementById('outreach-quick');
+  outreachEl.innerHTML = liveCities.map(c => `
+    <div class="outreach-item">
+      <div class="outreach-city">${esc(c.city)}</div>
+      <div class="outreach-text">${esc(c.research.outreach_angle)}</div>
+    </div>
+  `).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER: LIVE CITIES TAB
+// ─────────────────────────────────────────────────────────────
+function renderLiveCities(data) {
+  const container = document.getElementById('live-cities-container');
+  const liveCities = data.cities.filter(c => c.status === 'page-live');
+
+  container.innerHTML = liveCities.map((city, idx) => {
+    const r = city.research;
+    const daysBack = daysAgo(r.last_run_date);
+    const runLabel = daysBack === 0 ? 'Today' : daysBack === 1 ? 'Yesterday' : `${daysBack}d ago`;
+    const confDot = r.run_confidence ? `<span class="conf-dot ${confClass(r.run_confidence)}"></span>` : '';
+
+    const kwId = `kw-${idx}`;
+    const mmId = `mm-${idx}`;
+    const lbId = `lb-${idx}`;
+
+    const keywords = (r.top_keywords_found || []).map(k =>
+      `<span class="keyword-pill">${esc(k)}</span>`
+    ).join('');
+
+    const moments = (r.market_moments || []).map(m =>
+      `<div class="moment-item">${esc(m)}</div>`
+    ).join('');
+
+    const phrases = (r.language_bank || []).map(p =>
+      `<div class="phrase-item">
+        <span class="phrase-text">"${esc(p.phrase)}"</span>
+        <span class="phrase-use ${p.use||''}">${esc(p.use)}</span>
+      </div>`
+    ).join('');
+
+    return `
+      <div class="city-card">
+        <div class="city-card-header">
+          <span class="live-dot"></span>
+          <span class="city-name">${esc(city.city)}</span>
+          ${readinessBadge(r.market_readiness)}
+          <span style="margin-left:auto;font-size:0.75rem;color:var(--dim)">${confDot}${esc(r.run_confidence ? r.run_confidence.split('—')[0].trim() : '')} · ${runLabel}</span>
+        </div>
+
+        <div class="outreach-block">
+          <div class="outreach-block-label">Outreach angle</div>
+          <div class="outreach-block-text">${esc(r.outreach_angle)}</div>
+        </div>
+
+        <div class="moment-block">${esc(r.market_moment)}</div>
+
+        <div class="city-meta-row" style="margin-bottom:16px;gap:20px;flex-wrap:wrap">
+          <div>
+            <div class="banner-label" style="margin-bottom:2px">Competitor presence</div>
+            <div>${compPresenceBadge(r.competitor_presence)}</div>
+          </div>
+          <div>
+            <div class="banner-label" style="margin-bottom:2px">Last run</div>
+            <div style="font-size:0.8125rem;color:var(--muted)">${esc(r.last_run_date)} (${runLabel})</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:4px">
+          ${keywords ? `
+          <button class="expand-toggle" data-target="${kwId}" onclick="toggleExpand(this)">
+            <span class="chevron">▶</span> Top keywords (${(r.top_keywords_found||[]).length})
+          </button>
+          <div class="expandable-content" id="${kwId}">
+            <div class="keyword-list">${keywords}</div>
+          </div>` : ''}
+
+          ${moments ? `
+          <button class="expand-toggle" data-target="${mmId}" onclick="toggleExpand(this)" style="margin-top:4px">
+            <span class="chevron">▶</span> All market moments (${(r.market_moments||[]).length})
+          </button>
+          <div class="expandable-content" id="${mmId}">${moments}</div>` : ''}
+
+          ${phrases ? `
+          <button class="expand-toggle" data-target="${lbId}" onclick="toggleExpand(this)" style="margin-top:4px">
+            <span class="chevron">▶</span> Language bank (${(r.language_bank||[]).length} phrases)
+          </button>
+          <div class="expandable-content" id="${lbId}">${phrases}</div>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER: PIPELINE TAB
+// ─────────────────────────────────────────────────────────────
+function renderPipeline(data) {
+  const cities = data.cities.filter(c => c.status === 'not-started');
+  const header = document.getElementById('pipeline-header');
+  const grid = document.getElementById('pipeline-grid');
+
+  header.innerHTML = `<strong>${cities.length} cities</strong> queued for research — no data yet.`;
+
+  grid.innerHTML = cities.map(c => `
+    <div class="pipeline-item">
+      <span class="pipeline-city-name">${esc(c.city)}</span>
+      <span class="badge badge-pipeline">Not started</span>
+    </div>
+  `).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER: COMPETITORS TAB (hardcoded, doesn't use JSON)
+// ─────────────────────────────────────────────────────────────
+function renderCompetitors() {
+  const container = document.getElementById('competitors-container');
+  container.innerHTML = COMPETITORS.map(c => `
+    <div class="competitor-card">
+      <div class="comp-header">
+        <span class="comp-name">${esc(c.name)}</span>
+        <span class="badge ${tierBadgeClass(c.tier)}">${esc(c.tierLabel)}</span>
+      </div>
+      <div class="comp-cities">Active in: ${c.cities.map(esc).join(' · ')}</div>
+      <div class="comp-row">
+        <div class="comp-angle-block">
+          <div class="comp-block-label">Their angle</div>
+          <div class="comp-block-text">${esc(c.angle)}</div>
+        </div>
+        <div class="comp-counter-block">
+          <div class="comp-block-label">SpotShare counter</div>
+          <div class="comp-block-text">${esc(c.counter)}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER: BANNER
+// ─────────────────────────────────────────────────────────────
+function renderBanner(data) {
+  const now = new Date();
+  const today = isoToday();
+  const rot = data.rotation;
+
+  // Date
+  document.getElementById('banner-date').textContent = formatDate(now);
+
+  // Quote — rotate by day of year
+  const doy = dayOfYear(now);
+  const quote = QUOTES[doy % QUOTES.length];
+  document.getElementById('banner-quote').textContent = `"${quote}"`;
+
+  // SEO run
+  const runEl = document.getElementById('banner-run');
+  const todayCities = data.cities.filter(c =>
+    c.status === 'page-live' && c.research.last_run_date === today
+  );
+
+  if (todayCities.length > 0) {
+    runEl.innerHTML = todayCities.map(c => `
+      <div class="banner-run-city">${esc(c.city)}</div>
+      <div class="banner-run-meta">${esc(c.research.market_moment ? c.research.market_moment.slice(0,80)+'…' : '')}</div>
+    `).join('');
+  } else if (rot.last_run_date === today) {
+    runEl.innerHTML = `
+      <div class="banner-run-city">${esc(rot.last_city)}</div>
+      <div class="banner-run-meta">Run today</div>
+    `;
+  } else {
+    const daysBack = daysAgo(rot.last_run_date);
+    runEl.innerHTML = `
+      <div style="color:var(--dim);font-size:0.8125rem">No run today</div>
+      <div class="banner-run-meta">Last: ${esc(rot.last_city)} · ${daysBack}d ago</div>
+    `;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// TAB SWITCHING
+// ─────────────────────────────────────────────────────────────
+const TAB_STORAGE_KEY = 'spotshare_ops_tab';
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === `tab-${tabId}`));
+  localStorage.setItem(TAB_STORAGE_KEY, tabId);
+}
+
+document.getElementById('tab-nav').addEventListener('click', e => {
+  const btn = e.target.closest('.tab-btn');
+  if (btn) switchTab(btn.dataset.tab);
+});
+
+// ─────────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────────
+
+// Competitors tab doesn't need JSON
+renderCompetitors();
+
+// Restore saved tab
+const savedTab = localStorage.getItem(TAB_STORAGE_KEY);
+if (savedTab) switchTab(savedTab);
+
+// Fetch data
+fetch('./city-index.json')
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  })
+  .then(data => {
+    renderBanner(data);
+    renderToday(data);
+    renderLiveCities(data);
+    renderPipeline(data);
+  })
+  .catch(err => {
+    console.error('Failed to load city-index.json:', err);
+    document.getElementById('error-state').style.display = 'block';
+    document.getElementById('banner-run').innerHTML = '<div class="no-run" style="color:var(--danger)">Load failed</div>';
+    // Still show the date and quote
+    const now = new Date();
+    document.getElementById('banner-date').textContent = formatDate(now);
+    const doy = dayOfYear(now);
+    document.getElementById('banner-quote').textContent = `"${QUOTES[doy % QUOTES.length]}"`;
+  });
+</script>
+</body>
+</html>
