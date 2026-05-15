@@ -328,7 +328,7 @@
       {
         "city": "Seattle and Bellevue",
         "city_slug": "seattle-and-bellevue",
-        "status": "researched",
+        "status": "page-live",
         "research": {
           "last_run_date": "2026-05-14",
           "file_path": "research/seattle-and-bellevue-data.md",
@@ -409,16 +409,16 @@
           "sources_unavailable": ["X/Twitter", "Reddit"]
         },
         "seo": {
-          "page_built": false,
-          "page_path": null,
-          "last_built_date": null,
+          "page_built": true,
+          "page_path": "seo-output/seattle-and-bellevue-page.html",
+          "last_built_date": "2026-05-14",
           "needs_refresh": false
         }
       },
       {
         "city": "St. Petersburg, FL",
         "city_slug": "st-petersburg-fl",
-        "status": "researched",
+        "status": "page-live",
         "research": {
           "last_run_date": "2026-05-14",
           "file_path": "research/st-petersburg-fl-data.md",
@@ -516,9 +516,9 @@
           "sources_unavailable": ["X/Twitter", "Reddit"]
         },
         "seo": {
-          "page_built": false,
-          "page_path": null,
-          "last_built_date": null,
+          "page_built": true,
+          "page_path": "seo-output/st-petersburg-fl-page.html",
+          "last_built_date": "2026-05-14",
           "needs_refresh": false
         }
       },

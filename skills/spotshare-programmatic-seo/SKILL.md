@@ -703,11 +703,11 @@ In addition to standard pSEO pre-launch checklist:
 7. Generate page using template, combining all three layers
 8. Tone-check against SpotShare rules before outputting final HTML
 9. Output to `seo-output/[city-slug]-page.html`
-10. Update city index (see below)
+10. Update city index **and dashboard** (see below) — this step is required, not optional
 
-### Step: Update City Index
+### Step: Update City Index and Dashboard
 
-After saving the page file, update `city-index.json` at the project root:
+After saving the page file, update `city-index.json` at the project root. **This is the step that makes the city appear in `dashboard.html`** — the dashboard reads from `city-index.json` at runtime; a city with `status` other than `"page-live"` will not appear in any dashboard view.
 
 1. Read `city-index.json`
 2. Find the entry where `city_slug` matches the city just built
@@ -717,6 +717,9 @@ After saving the page file, update `city-index.json` at the project root:
    - `last_built_date` → today's date (`YYYY-MM-DD`)
 4. Set `status` → `"page-live"`
 5. Write `city-index.json` back
+6. Verify: open `dashboard.html` (served, not from disk) and confirm the new city appears in the city list and SEO tab
+
+**Do not consider the page complete until `city-index.json` is updated.** A page file in `seo-output/` with no matching `page-live` entry in the index is invisible to the dashboard and any tooling that reads from it.
 
 ---
 
