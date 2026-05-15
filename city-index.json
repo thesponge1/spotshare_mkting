@@ -10,7 +10,7 @@
         "city_slug": "san-diego",
         "status": "page-live",
         "research": {
-          "last_run_date": "2026-05-13",
+          "last_run_date": "2026-05-15",
           "file_path": "research/san-diego-data.md",
           "market_readiness": "tier-1",
           "seo_page_opportunity": "yes",
@@ -79,11 +79,19 @@
               "description": "New entrant with HOA guest parking platform: QR-coded passes, ALPR gate control, photo-evidence violations. Pricing $149–$399/month — below SpotShare's reported range. Appearing in HOA parking software searches this cycle.",
               "their_angle": "Hardware + software integration at lower monthly price point.",
               "spotshare_counter": "SmartLotIQ requires ALPR hardware installation — higher implementation barrier for existing buildings."
+            },
+            {
+              "tier": "watch",
+              "watch_level": "monitor",
+              "name": "R2Park",
+              "description": "New entrant surfaced this cycle (registar2park.com). 'Modern digital parking management system for property managers, residents, and visitors.' Also has TikTok Shop presence. First appearance in search results for 'property manager parking solutions.'",
+              "their_angle": "Visitor/guest registration framing — similar pitch to SpotShare surface-level but positioned as a registration/tracking layer.",
+              "spotshare_counter": "SpotShare's peer-to-peer sharing model activates idle resident spots — R2Park appears to be registration/tracking only, not sharing infrastructure."
             }
           ],
           "tier0_count": 3,
-          "tier1_count": 4,
-          "tier2_count": 2,
+          "tier1_count": 5,
+          "tier2_count": 4,
           "parking_cost_signal": "high — street meters $2.50/hour (doubled Jan 2025); $10/hour event zone pricing for 200+ blocks; Balboa Park $16/day; monthly garage $200–$400; rates projected $3.00–$3.50/hour by late 2026",
           "availability_signal": "critical — downtown condo buildings report zero dedicated guest parking; third-party real estate coverage cites 'zero assigned guest parking' as defining characteristic of downtown SD condo market",
           "regulatory_trend": "worsening — June 2025 comprehensive parking reform package; O-21989 amendments effective Aug 2025; 2026 Land Development Code Update (139 amendments) in final review; dynamic pricing approved and deploying",
@@ -104,9 +112,9 @@
             { "angle": "Property manager skit: two residents assigned the same parking spot", "format": "humor skit", "platform": "TikTok", "source": "TikTok @qmzptspgrsj 2026-05-09, 47K views" },
             { "angle": "In Boston a parking spot costs more than a condo. In your building it's just sitting empty.", "format": "stat drop", "platform": "LinkedIn", "source": "WCVB resurfaced" }
           ],
-          "run_confidence": "medium — web research strong on parking cost data and regulatory context; Reddit and social layer thin this cycle; Parkade comparison page confirmed still active; new development signal (Andia) confirmed fresh",
-          "thin_queries": ["condo parking pain"],
-          "sources_unavailable": ["X/Twitter"]
+          "run_confidence": "medium-high — social layer now partially live (TikTok and Reddit active for early queries); YouTube hit 402 quota errors after parallel runs; SD-specific social queries returned no on-target results; web research strong",
+          "thin_queries": ["3", "7", "8", "9"],
+          "sources_unavailable": ["YouTube (ScrapeCreators 402 quota)", "X/Twitter (not configured)", "ParkVault (not surfaced in TikTok this cycle)"]
         },
         "seo": {
           "page_built": true,

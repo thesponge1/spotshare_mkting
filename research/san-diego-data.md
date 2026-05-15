@@ -1,44 +1,44 @@
 ---
 city: San Diego
-run_date: 2026-05-13
+run_date: 2026-05-15
 city_slug: san-diego
 
 # PARKING PRESSURE SIGNALS
 parking_cost_signal: high — street meters $2.50/hour (doubled Jan 2025); $10/hour event zone pricing for 200+ blocks; Balboa Park $16/day; monthly garage $200–$400; rates projected $3.00–3.50/hour by late 2026
 availability_signal: critical — downtown condo buildings report zero dedicated guest parking; older buildings "don't have enough parking for all units"; residents without assigned spots pay $200–$300/month for off-site parking
 regulatory_trend: worsening — June 2025 comprehensive parking reform package approved by City Council; 2026 Land Development Code Update (139 amendments) in final review; Ordinance O-21989 amendments to parking effective August 22, 2025 outside Coastal Zone; TPA parking minimum eliminations ongoing
-hoa_friction_level: high — Parkade comparison page targeting SpotShare by name still live and ranking; California HOA parking law conflicts active; national vocal-minority HOA parking friction documented
+hoa_friction_level: high — Parkade comparison page targeting SpotShare by name still live and ranking; California HOA parking law conflicts active; r/fuckHOA surfacing "is your HOA getting more ridiculous on parking restrictions?" as active community conversation
 new_development_pipeline: yes — Andia by Bosa: 389-unit, 40-story luxury tower at 8th/9th/B/C Streets (Cortez Hill/East Village), sales gallery opened 2025, construction underway with ~2027 delivery
 visitor_parking_ratio: near-zero — third-party real estate blog (92101urbanliving.com) explicitly cites "zero assigned guest parking" as defining problem for downtown SD condos; confirmed by condo cost guides referencing no dedicated guest spaces
 
 # SPOTSHARE MARKET SIGNALS
 market_readiness: tier-1
 seo_page_opportunity: yes — active search demand confirmed; "guest parking downtown San Diego condo" currently owned by a third-party blog; first-party SpotShare page would directly compete for this SERP
-competitor_presence: active — Parkade (comparison page live), ParqEx/GuestParq (HOA amenity pitch), SimplyPermits (best-of roundup), Community Boss (top-of-funnel content), SmartLotIQ (new entrant), Reliant Parking (HOA enforcement focus)
+competitor_presence: active — Parkade (comparison page live), ParqEx/GuestParq (HOA amenity pitch), SimplyPermits (best-of roundup), Community Boss (top-of-funnel content), SmartLotIQ (new entrant), Reliant Parking (HOA enforcement focus), R2Park (new entrant this cycle)
 market_moment: Andia by Bosa (389 luxury units, ~2027 delivery) is the first downtown SD for-sale luxury condo since 2019 — its HOA board will set guest parking policy from scratch under new TPA rules with no legacy system to inherit
 
 outreach_angle: San Diego is SpotShare's home market — lead with the Andia by Bosa opening and the June 2025 parking reform package as reasons why guest parking management is now a permanent line item in any new downtown condo's amenity budget, not an afterthought
 
 # CONTENT SIGNALS
 tier0_count: 3
-tier1_count: 4
-tier2_count: 3
+tier1_count: 5
+tier2_count: 4
 pr_opportunity: yes
 top_keywords_found: guest parking downtown San Diego condo, visitor parking condo HOA, HOA parking app, best HOA parking software, HOA guest parking software, property manager parking solutions, best HOA parking app, visitor parking management, condo guest parking solution, amenity parking
 content_gap: No first-party authoritative answer to "how do downtown San Diego condo buildings manage guest parking in 2026" — a third-party real estate blog owns this SERP and SpotShare has no indexed landing page to compete
 
 # RUN HEALTH
 queries_run: 9 of 9
-thin_queries: 3, 8 — queries 3 (CAM parking) and 8 (SD-specific guest/visitor parking) returned mostly generic HOA rules content rather than on-target San Diego PM conversations
-sources_unavailable: Reddit (no direct San Diego HOA parking threads surfaced in last 30 days), X/Twitter (not accessed)
-run_confidence: medium — web research strong on parking cost data and regulatory context; Reddit and social layer thin this cycle; Parkade comparison page confirmed still active; new development signal (Andia) confirmed fresh
+thin_queries: 3, 7, 8, 9 — query 3 (CAM parking) returned mostly noise; queries 7–9 hit ScrapeCreators rate limits after parallel runs, falling back to web-only
+sources_unavailable: YouTube (ScrapeCreators 402 quota errors), X/Twitter (not configured), ParkVault (not surfaced in TikTok this cycle despite being watch-listed)
+run_confidence: medium-high — social layer now partially accessible (TikTok and Reddit live for Q1/Q2/Q4); YouTube quota errors kicked in after early parallel queries; SD-specific queries (Q8, Q9) returned no on-target social results; web research remains strong
 ---
 
-# SpotShare City Brief: San Diego — 2026-05-13
+# SpotShare City Brief: San Diego — 2026-05-15
 
 Here's what's moving in San Diego this cycle.
 
-> **Engine note:** Full web research run (9 of 9 queries). Reddit surfaced no active San Diego-specific HOA parking threads in the last 30 days. Parking cost data, regulatory signals, competitor activity, and development pipeline all verified fresh. Parkade comparison page confirmed still live and indexed. One new development signal captured (Andia by Bosa).
+> **Engine note:** Full 9-query run with TikTok and Reddit now live (ScrapeCreators key active). TikTok returned HOA/condo parking creators and viral content. YouTube hit quota errors (402) after early queries — install yt-dlp to unlock. Reddit surfaced general HOA parking friction content; no SD-specific HOA parking threads in the last 30 days. Web research unchanged from prior cycle. New competitor surfaced: R2Park.
 
 ---
 
@@ -97,7 +97,7 @@ https://rethinkdowntown.com/downtown-san-diego-parking-costs-2025-complete-rate-
 ---
 
 **Web · communityboss.com / parqex.com / simplypermits.com / reliantparking.com — Competitor content volume**
-All four competitors are producing high-volume content targeting the exact search queries that a San Diego CAM would run when evaluating guest parking solutions. Community Boss: "7 Ways to Get HOA Parking Under Control" and "How to Easily Set Up Guest Parking Passes For Your HOA Community" both rank on page 1. SimplyPermits: self-titled "Best HOA Software for Guest Parking" roundup ranks for the exact buying-intent query — SpotShare not mentioned. Reliant Parking: publishing 2026-dated content about HOA enforcement and guest permits. ParqEx: live "ParqEx vs Parkade" comparison page and HOA solution page both ranking. SmartLotIQ is a new entrant with $149–$399/month pricing, QR-coded passes, ALPR gate control, actively appearing in HOA parking software searches.
+All four competitors are producing high-volume content targeting the exact search queries that a San Diego CAM would run when evaluating guest parking solutions. Community Boss: "7 Ways to Get HOA Parking Under Control" and "How to Easily Set Up Guest Parking Passes For Your HOA Community" both rank on page 1. SimplyPermits: self-titled "Best HOA Software for Guest Parking" roundup ranks for the exact buying-intent query — SpotShare not mentioned. Reliant Parking: publishing 2026-dated content about HOA enforcement and guest permits; Manager Portal page actively promoting permit-level controls. ParqEx: live "ParqEx vs Parkade" comparison page and HOA solution page both ranking. SmartLotIQ is a new entrant with $149–$399/month pricing, QR-coded passes, ALPR gate control, actively appearing in HOA parking software searches.
 
 Opportunity: SpotShare needs to appear in these roundup conversations. Direct outreach to SimplyPermits, Vinteum, and Condocontrol.com article authors who publish "best of" lists — SpotShare should be in these comparisons. Also: SmartLotIQ is a new entrant worth monitoring; their pricing ($149–$399/month) positions them below SpotShare in the market.
 
@@ -109,6 +109,15 @@ ButterflyMX — a hardware-first building access company with 15,000+ buildings 
 Opportunity: ButterflyMX is actively competing for the "building technology amenity" budget slot that SpotShare competes for in HOA board conversations. Their visitor parking guide will rank for CAM searches and frames the solution as hardware, not software. SpotShare should publish an editorial response framing software-first shared parking as the guest experience upgrade that hardware alone cannot provide.
 
 https://butterflymx.com/blog/condo-visitor-parking-management/
+
+---
+
+**Web · awaio.com — "6 Best Parking Management Software for Offices & Facilities"**
+Awaio published a "6 best parking management software" roundup that lists Parkade by name — describing it as "parking management software for property managers to manage apartment buildings, hotels, and condos." SpotShare is not mentioned. This is a buying-intent roundup actively ranking in search results for the software evaluation queries SpotShare should own.
+
+Opportunity: Direct outreach to awaio.com author to add SpotShare to this roundup. Same play for any similar "best of" article that features Parkade but omits SpotShare — the content gap is wide and the outreach ask is low-friction (a one-sentence pitch with SpotShare's differentiation angle is all that's needed).
+
+https://awaio.com/best-parking-management-software/
 
 ---
 
@@ -142,15 +151,15 @@ https://butterflymx.com/blog/condo-visitor-parking-management/
 - SpotShare's counter: SpotShare's differentiation vs. Community Boss is the sharing/idle-spot model vs. a permit management system. They solve different problems.
 - Watch level: Tier 2
 
-**SmartLotIQ** *(New entrant this cycle)*
-- What they're doing: Launching an HOA-focused guest parking platform with QR-coded passes, ALPR (automatic license plate recognition) gate control, and photo-evidence violation tracking. Pricing: $149/month (Small, up to 50 spots), $299/month (Starter), $399/month (Pro with AI plate scanning). Appearing in HOA parking software searches alongside established competitors.
+**SmartLotIQ** *(New entrant, prior cycle)*
+- What they're doing: Launching an HOA-focused guest parking platform with QR-coded passes, ALPR (automatic license plate recognition) gate control, and photo-evidence violation tracking. Pricing: $149/month (Small, up to 50 spots), $299/month (Starter), $399/month (Pro with AI plate scanning). Still appearing in HOA parking software searches.
 - Their language: "A complete guest parking management platform for homeowners associations and condo communities."
 - Their angle vs. SpotShare: Hardware + software integration (ALPR, gate control) at a lower monthly price point than SpotShare's reported $300–500/month range.
 - SpotShare's counter: SmartLotIQ requires hardware installation (ALPR readers, gate integrations) — a higher implementation barrier for existing buildings. SpotShare's software-only approach has faster deployment.
-- Watch level: Monitor → upgrade to Tier 2 on next cycle if still appearing in search results.
+- Watch level: Tier 2
 
 **Reliant Parking**
-- What they're doing: Publishing 2026-dated content specifically about HOA parking enforcement, guest permit management, and cost reduction. San Diego-confirmed presence (parkingsquad.com operates as a local enforcement partner). Active in HOA community and multifamily markets. "Parking Enforcement in 2026: How HOAs & Apartments Reduce Costs with Smarter Technology" published recently.
+- What they're doing: Publishing 2026-dated content specifically about HOA parking enforcement, guest permit management, and cost reduction. San Diego-confirmed presence (parkingsquad.com operates as a local enforcement partner). Active Manager Portal page promoting full permit lifecycle management — "every permit, physical or digital, issued, monitored, and managed from one place."
 - Their language: "Unifies permit management, space enforcement, and resident communication into one intelligent platform built specifically for multifamily communities, HOAs, and student housing properties."
 - Their angle vs. SpotShare: Enforcement + compliance framing (fines, towing, citations) rather than sharing/amenity framing.
 - SpotShare's counter: SpotShare's model avoids the adversarial enforcement dynamic entirely — no towing, no fines, resident-driven coordination instead.
@@ -163,9 +172,16 @@ https://butterflymx.com/blog/condo-visitor-parking-management/
 - SpotShare's counter: ButterflyMX's hardware approach requires capital investment and infrastructure changes. SpotShare's software-only model is deployable in days with no hardware.
 - Watch level: Monitor → escalate; content is now indexed and competing for CAM searches.
 
+**R2Park** *(New entrant this cycle)*
+- What they're doing: Surfaced this cycle via web search for "property manager parking solutions." R2Park (registar2park.com) describes itself as "a modern digital parking management system that helps property managers, residents, and visitors handle parking registration in a simple, structured, and transparent way." Also has a TikTok Shop presence (shop.tiktok.com) for "r2 park com guest parking," indicating active digital distribution efforts.
+- Their language: "modern digital parking management system" / "parking registration in a simple, structured, and transparent way"
+- Their angle vs. SpotShare: Visitor/guest registration framing — similar surface-level pitch to SpotShare but positioned as a "registration system" rather than a sharing platform.
+- SpotShare's counter: SpotShare's peer-to-peer sharing model activates idle resident spots — R2Park appears to be a registration/tracking layer only, not a sharing infrastructure. Different problem frames.
+- Watch level: Monitor → assess on next cycle for HOA-specific messaging and market traction.
+
 ---
 
-## LANGUAGE BANK — San Diego / 2026-05-13
+## LANGUAGE BANK — San Diego / 2026-05-15
 
 Raw phrases pulled verbatim from sources this cycle. No analysis — just the quotes, sourced.
 
@@ -189,6 +205,14 @@ Raw phrases pulled verbatim from sources this cycle. No analysis — just the qu
 
 "Parking disputes are among the most common challenges in condo, co-op and HOA communities." — ButterflyMX, condo visitor parking guide
 
+"Are downtown area condo dwellers known for being entitled a-holes?" / "I live near the high rises in downtown and can confirm they do the same by me too. dickheads." — r/sandiego, May 2026
+
+"Is your HOA getting more ridiculous on parking restrictions these days?" / "Most of these issues start with people (your neighbors) complaining." — r/fuckHOA, April 2026
+
+"You've been warned three times for using visitor parking overnight." / "How was I supposed to know that visitor parking is for visitors only?" — @tbbxfsc, TikTok PM humor skit, May 2026
+
+"Visitor registration feels like admin, but it is one of the simplest ways a building protects itself." — @360stratainsights, TikTok condo realities series, May 2026
+
 "Not a separate permit system — a resident-driven sharing model." — (SpotShare positioning opportunity, not yet claimed in public content)
 
 ---
@@ -205,9 +229,15 @@ Raw phrases pulled verbatim from sources this cycle. No analysis — just the qu
 
 - **HOA parking meme potential: "Me trying to tell my guests where to park when my building has zero guest spaces"** — Format: humor/meme — Platform: Instagram / TikTok — Source: "zero assigned guest parking" language from 92101urbanliving.com
 
+- **TikTok reactive: @tbbxfsc's PM visitor parking skit (2K views) is the exact tone and format SpotShare could do — leasing office gets call about visitor parking abuse, awkward back-and-forth.** — Format: humor skit / PM POV — Platform: TikTok — Source: @tbbxfsc, May 12 2026 — Angle: SpotShare version ends with "...or just get SpotShare"
+
+- **TikTok creator watch: @thehoa.i (15K+ views on HOA condo board parking discussion) is the right audience. Not a pitch target — a content inspiration source.** — Format: creator watch — Platform: TikTok — Source: @thehoa.i
+
 ---
 
 ## ALSO ON OUR RADAR
+
+- **TikTok HOA creator ecosystem now confirmed active:** @thehoa.i (condo/HOA board content, 15K+ views this cycle), @360stratainsights (100 Days of Condo Living Reality series), @tbbxfsc (property management humor skits) — all active in the past 30 days. None mention SpotShare. Monitor for engagement opportunities and content inspiration.
 
 - **California HOA vs. ADU law (CalMatters / inewsource, April 2026)** — A Carlsbad HOA triumphed over state ADU law in court. California HOA vs. state housing legislation conflicts are active in San Diego specifically. Social content language: HOA boards are fighting state mandates on one hand while managing resident parking complaints on the other — "proactive amenity management" is the only win a board can actually control.
 
@@ -216,5 +246,7 @@ Raw phrases pulled verbatim from sources this cycle. No analysis — just the qu
 - **Dynamic pricing rollout** — San Diego has approved but not yet fully deployed dynamic parking pricing. When it launches, meter rates in high-demand areas could spike further — a new content hook for the 2026 guide page update.
 
 - **2026 Land Development Code Update (139 amendments, spring 2026 adoption)** — If the Downtown-specific amendments pass, any new condo project in the downtown core will be built under updated TPA parking standards. Monitor the May–June 2026 City Council calendar for final vote dates.
+
+- **ParkVault** — Listed as TikTok-active in our competitor watch list but did not surface in TikTok searches this cycle. Either recent posting has slowed or search terms didn't match their content. Flag for manual TikTok search on next cycle.
 
 ---

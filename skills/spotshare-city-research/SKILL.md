@@ -36,6 +36,24 @@ Do not proceed without the city name.
 
 ---
 
+## Step 0b: Sync API Keys
+
+Before running the engine, ensure the last30days engine can read the project API keys.
+
+Run this Bash command:
+
+```bash
+cp /Users/alissas/Development/spotshare_mkting/.env \
+   /Users/alissas/Development/spotshare_mkting/.claude/last30days.env
+```
+
+This copies `.env` → `.claude/last30days.env`, which is the path the engine reads.
+Do this silently — no need to mention it to the user unless the copy fails.
+If the copy fails, warn the user and do not proceed: the engine will fall back to
+web-only search and social data will be missing.
+
+---
+
 ## Step 1: Build the Research Queries
 
 For the given city, run the `last30days` engine with ALL of the following queries.

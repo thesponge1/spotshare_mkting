@@ -110,7 +110,9 @@
       align-items: start;
     }
 
-    .banner-block {}
+    .banner-block {
+      /* intentionally unstyled — inherits body */
+    }
     .banner-label {
       font-size: 0.6875rem;
       font-weight: 600;
@@ -629,9 +631,442 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--s3); border-radius: 3px; }
+
+    /* ── CITY DETAIL DRAWER ──────────────────────────────── */
+    .city-card { cursor: pointer; transition: border-color 0.15s; }
+    .city-card:hover { border-color: var(--border2); }
+
+    #city-drawer-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 200;
+      backdrop-filter: blur(2px);
+    }
+    #city-drawer-overlay.open { display: block; }
+
+    #city-drawer {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      width: min(600px, 100vw);
+      background: var(--s1);
+      border-left: 1px solid var(--border2);
+      z-index: 201;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+      padding: 0 0 48px;
+    }
+    #city-drawer.open { transform: translateX(0); }
+
+    .drawer-header {
+      position: sticky;
+      top: 0;
+      background: rgba(18,21,31,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 10;
+    }
+    .drawer-close {
+      margin-left: auto;
+      background: none;
+      border: 1px solid var(--border2);
+      color: var(--muted);
+      border-radius: 6px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .drawer-close:hover { color: var(--txt); border-color: var(--muted); }
+
+    .drawer-section {
+      padding: 24px 28px 0;
+    }
+    .drawer-section-title {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+      margin-bottom: 14px;
+    }
+    .drawer-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 28px 0;
+    }
+
+    .signal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .signal-item {
+      background: var(--s2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .signal-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--dim);
+      margin-bottom: 5px;
+    }
+    .signal-value {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .signal-item.full-width { grid-column: 1 / -1; }
+
+    .competitor-row {
+      background: var(--s2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .competitor-row-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .comp-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--txt);
+    }
+    .comp-detail-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+    .comp-their { color: var(--danger); }
+    .comp-ours  { color: var(--live); }
+    .comp-detail-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+    .comp-detail-text:last-child { margin-bottom: 0; }
+
+    .social-angle-row {
+      background: var(--s2);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .social-angle-meta {
+      font-size: 0.7rem;
+      color: var(--dim);
+      margin-top: 4px;
+    }
+
+    .content-gap-block {
+      background: rgba(45,212,191,0.06);
+      border: 1px solid rgba(45,212,191,0.18);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── SOCIAL TAB ──────────────────────────────────────── */
+
+    /* Creator grid */
+    .creator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .creator-card {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .creator-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .creator-handle {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--txt);
+      letter-spacing: -0.01em;
+    }
+    .creator-platform-badge {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .creator-platform-tiktok {
+      background: rgba(129,140,248,0.15);
+      color: var(--tw);
+    }
+    .creator-platform-reddit {
+      background: rgba(248,113,113,0.12);
+      color: var(--t1);
+    }
+    .creator-platform-other {
+      background: rgba(79,84,120,0.3);
+      color: var(--dim);
+    }
+    .creator-stats {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .creator-desc {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .creator-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .creator-city-tag {
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(45,212,191,0.08);
+      border: 1px solid rgba(45,212,191,0.15);
+      border-radius: 4px;
+      padding: 2px 7px;
+    }
+    .creator-audience-tag {
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dim);
+      background: var(--s3);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      padding: 2px 7px;
+    }
+
+    /* Language bank filter bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .filter-btn {
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--s2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: color 0.15s, background 0.15s, border-color 0.15s;
+    }
+    .filter-btn:hover { color: var(--txt); border-color: var(--border2); }
+    .filter-btn.active {
+      color: var(--accent);
+      background: rgba(45,212,191,0.08);
+      border-color: rgba(45,212,191,0.25);
+    }
+
+    /* Language bank quote cards */
+    .lang-card {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+    }
+    .lang-card[data-hidden="true"] { display: none; }
+    .lang-quote {
+      font-size: 0.9375rem;
+      font-style: italic;
+      color: var(--txt);
+      line-height: 1.6;
+      border-left: 3px solid var(--border2);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+    .lang-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .lang-source {
+      font-size: 0.6875rem;
+      color: var(--dim);
+    }
+    .lang-use-tag {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .lang-use-pain       { background: rgba(248,113,113,0.12); color: var(--t1); }
+    .lang-use-competitive { background: rgba(251,191,36,0.12); color: var(--t2); }
+    .lang-use-opportunity { background: rgba(52,211,153,0.12); color: var(--live); }
+    .lang-use-educational { background: rgba(129,140,248,0.12); color: var(--tw); }
+    .lang-use-default     { background: rgba(79,84,120,0.3); color: var(--dim); }
+
+    /* Social content angle cards */
+    .angle-card {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 10px;
+    }
+    .angle-text {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--txt);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .angle-footer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .angle-format-badge {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--s3);
+      border: 1px solid var(--border2);
+      color: var(--muted);
+    }
+    .angle-platform-badge {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(129,140,248,0.12);
+      color: var(--tw);
+    }
+    .angle-city-tag {
+      font-size: 0.5625rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(45,212,191,0.08);
+      border: 1px solid rgba(45,212,191,0.15);
+      border-radius: 4px;
+      padding: 2px 7px;
+    }
+    .angle-source {
+      font-size: 0.6875rem;
+      color: var(--dim);
+      margin-left: auto;
+    }
+
+    /* Platform status grid */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .platform-item {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .platform-status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .platform-status-green  { background: var(--live); box-shadow: 0 0 6px var(--live); }
+    .platform-status-yellow { background: var(--warn); box-shadow: 0 0 5px var(--warn); }
+    .platform-status-dark   { background: var(--dim); }
+    .platform-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--txt);
+    }
+    .platform-note {
+      font-size: 0.7rem;
+      color: var(--dim);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+    .platform-info { flex: 1; }
+    .platform-note-block {
+      background: rgba(251,191,36,0.05);
+      border: 1px solid rgba(251,191,36,0.15);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+    .platform-note-block code {
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+      font-size: 0.75rem;
+      color: var(--warn);
+      background: rgba(251,191,36,0.1);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
+
+<!-- CITY DETAIL DRAWER -->
+<div id="city-drawer-overlay" onclick="closeCityDrawer()"></div>
+<aside id="city-drawer"></aside>
 
 <!-- STICKY HEADER -->
 <header id="site-header">
@@ -642,6 +1077,7 @@
       <button class="tab-btn" data-tab="live">Live Cities</button>
       <button class="tab-btn" data-tab="pipeline">Pipeline</button>
       <button class="tab-btn" data-tab="competitors">Competitors</button>
+      <button class="tab-btn" data-tab="social">Social</button>
     </nav>
   </div>
 </header>
@@ -712,6 +1148,45 @@
   <!-- COMPETITORS TAB (hardcoded) -->
   <div class="tab-panel" id="tab-competitors">
     <div id="competitors-container"></div>
+  </div>
+
+  <!-- SOCIAL TAB -->
+  <div class="tab-panel" id="tab-social">
+
+    <!-- 1. Creator Watch -->
+    <div class="section-gap">
+      <div class="section-title">Creator watch</div>
+      <div class="creator-grid" id="creator-grid"></div>
+    </div>
+
+    <!-- 2. Language Bank -->
+    <div class="section-gap">
+      <div class="section-title">Language bank</div>
+      <div class="filter-bar" id="lang-filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="use:pain">Pain</button>
+        <button class="filter-btn" data-filter="use:competitive">Competitive</button>
+        <button class="filter-btn" data-filter="use:opportunity">Opportunity</button>
+        <button class="filter-btn" data-filter="platform:tiktok">TikTok</button>
+        <button class="filter-btn" data-filter="platform:reddit">Reddit</button>
+        <button class="filter-btn" data-filter="platform:web">Web</button>
+      </div>
+      <div id="lang-bank-list"></div>
+    </div>
+
+    <!-- 3. Social Content Angles -->
+    <div class="section-gap">
+      <div class="section-title">Social content angles</div>
+      <div id="social-angles-list"></div>
+    </div>
+
+    <!-- 4. Platform Status -->
+    <div class="section-gap">
+      <div class="section-title">Platform status</div>
+      <div class="platform-grid" id="platform-status-grid"></div>
+      <div id="platform-notes"></div>
+    </div>
+
   </div>
 </main>
 
@@ -803,12 +1278,58 @@ const COMPETITORS = [
     cities: ["San Diego"],
   },
   {
+    name: "R2Park",
+    tier: "watch",
+    tierLabel: "Watch",
+    angle: "New entrant surfaced May 2026 (registar2park.com). 'Modern digital parking management system for property managers, residents, and visitors.' Has TikTok Shop presence. First appearance in 'property manager parking solutions' search results.",
+    counter: "R2Park appears to be a registration/tracking layer only — not a sharing infrastructure. SpotShare's peer-to-peer model activates idle resident spots; R2Park manages who's parked where. Different problem frames.",
+    cities: ["San Diego"],
+  },
+  {
     name: "ParkingPass",
     tier: "watch",
     tierLabel: "Watch",
     angle: "Permit issuance infrastructure for multifamily. Claims 'hundreds of customers in Tampa Bay Area' but has no named HOA condo case study, no St. Pete-specific page, and no HOA-board-targeted content.",
     counter: "SpotShare can be the first named condo guest parking solution in St. Pete with zero competitive resistance locally — ParkingPass has broad claims and no local proof.",
     cities: ["St. Petersburg, FL"],
+  },
+];
+
+// ─────────────────────────────────────────────────────────────
+// SOCIAL CREATORS REGISTRY (hardcoded — seeded from SD May 2026)
+// ─────────────────────────────────────────────────────────────
+const SOCIAL_CREATORS = [
+  {
+    handle: "@thejazzygroup",
+    platform: "TikTok",
+    stats: "353,545 views / 27,471 likes",
+    description: "HOA pros & cons going viral; amenities framed as a selling point",
+    audience: "Resident",
+    city: "San Diego",
+  },
+  {
+    handle: "@thehoa.i",
+    platform: "TikTok",
+    stats: "15,555 views / 151 likes",
+    description: "HOA condo board meeting humor; parking discussions going viral",
+    audience: "HOA Board",
+    city: "San Diego",
+  },
+  {
+    handle: "@tbbxfsc",
+    platform: "TikTok",
+    stats: "2,054 views / 50 likes",
+    description: "Property management leasing office skits; visitor parking abuse scenarios",
+    audience: "Property Manager",
+    city: "San Diego",
+  },
+  {
+    handle: "@360stratainsights",
+    platform: "TikTok",
+    stats: "42 views / 1 like",
+    description: "100 Days of Condo Living Reality series; visitor registration and guest access",
+    audience: "HOA Board / Resident",
+    city: "San Diego",
   },
 ];
 
@@ -1081,7 +1602,7 @@ function renderLiveCities(data) {
     ).join('');
 
     return `
-      <div class="city-card">
+      <div class="city-card" onclick="openCityDrawer('${esc(city.city_slug)}')">
         <div class="city-card-header">
           <span class="live-dot"></span>
           <span class="city-name">${esc(city.city)}</span>
@@ -1109,7 +1630,7 @@ function renderLiveCities(data) {
 
         <div style="display:flex;flex-direction:column;gap:4px">
           ${keywords ? `
-          <button class="expand-toggle" data-target="${kwId}" onclick="toggleExpand(this)">
+          <button class="expand-toggle" data-target="${kwId}" onclick="event.stopPropagation();toggleExpand(this)">
             <span class="chevron">▶</span> Top keywords (${(r.top_keywords_found||[]).length})
           </button>
           <div class="expandable-content" id="${kwId}">
@@ -1117,13 +1638,13 @@ function renderLiveCities(data) {
           </div>` : ''}
 
           ${moments ? `
-          <button class="expand-toggle" data-target="${mmId}" onclick="toggleExpand(this)" style="margin-top:4px">
+          <button class="expand-toggle" data-target="${mmId}" onclick="event.stopPropagation();toggleExpand(this)" style="margin-top:4px">
             <span class="chevron">▶</span> All market moments (${(r.market_moments||[]).length})
           </button>
           <div class="expandable-content" id="${mmId}">${moments}</div>` : ''}
 
           ${phrases ? `
-          <button class="expand-toggle" data-target="${lbId}" onclick="toggleExpand(this)" style="margin-top:4px">
+          <button class="expand-toggle" data-target="${lbId}" onclick="event.stopPropagation();toggleExpand(this)" style="margin-top:4px">
             <span class="chevron">▶</span> Language bank (${(r.language_bank||[]).length} phrases)
           </button>
           <div class="expandable-content" id="${lbId}">${phrases}</div>` : ''}
@@ -1175,6 +1696,223 @@ function renderCompetitors() {
       </div>
     </div>
   `).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER: SOCIAL TAB
+// ─────────────────────────────────────────────────────────────
+function renderSocial(data) {
+  const liveCities = data.cities.filter(c => c.status === 'page-live');
+
+  // ── 1. Creator Watch ──────────────────────────────────────
+  const creatorGrid = document.getElementById('creator-grid');
+  creatorGrid.innerHTML = SOCIAL_CREATORS.map(c => {
+    const platClass = c.platform.toLowerCase() === 'tiktok' ? 'creator-platform-tiktok'
+                    : c.platform.toLowerCase() === 'reddit' ? 'creator-platform-reddit'
+                    : 'creator-platform-other';
+    return `
+      <div class="creator-card">
+        <div class="creator-card-header">
+          <div class="creator-handle">${esc(c.handle)}</div>
+          <div class="creator-platform-badge ${platClass}">${esc(c.platform)}</div>
+        </div>
+        <div class="creator-stats">${esc(c.stats)}</div>
+        <div class="creator-desc">${esc(c.description)}</div>
+        <div class="creator-footer">
+          <span class="creator-city-tag">${esc(c.city)}</span>
+          <span class="creator-audience-tag">${esc(c.audience)}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // ── 2. Language Bank ──────────────────────────────────────
+  // Aggregate all language_bank entries across live cities
+  const allPhrases = [];
+  for (const city of liveCities) {
+    for (const p of (city.research.language_bank || [])) {
+      allPhrases.push({ ...p, city: city.city });
+    }
+  }
+
+  // Determine platform from source string
+  function detectPlatform(source) {
+    if (!source) return 'web';
+    const s = source.toLowerCase();
+    if (s.includes('tiktok') || s.includes('@')) return 'tiktok';
+    if (s.includes('reddit') || s.includes('r/')) return 'reddit';
+    return 'web';
+  }
+
+  // Use-case tag HTML
+  function useCaseTag(use) {
+    if (!use) return `<span class="lang-use-tag lang-use-default">—</span>`;
+    const u = use.toLowerCase();
+    if (u.startsWith('pain')) return `<span class="lang-use-tag lang-use-pain">Pain</span>`;
+    if (u.startsWith('competitive')) return `<span class="lang-use-tag lang-use-competitive">Competitive</span>`;
+    if (u.startsWith('opportunity')) return `<span class="lang-use-tag lang-use-opportunity">Opportunity</span>`;
+    if (u.startsWith('educational')) return `<span class="lang-use-tag lang-use-educational">Educational</span>`;
+    return `<span class="lang-use-tag lang-use-default">${esc(use)}</span>`;
+  }
+
+  const langList = document.getElementById('lang-bank-list');
+  langList.innerHTML = allPhrases.map((p, i) => {
+    const platform = detectPlatform(p.source);
+    const useNorm = (p.use || '').toLowerCase().split(' ')[0].split('-')[0]; // first token
+    return `
+      <div class="lang-card" data-idx="${i}" data-use="${useNorm}" data-platform="${platform}">
+        <div class="lang-quote">"${esc(p.phrase)}"</div>
+        <div class="lang-footer">
+          ${useCaseTag(p.use)}
+          <span class="creator-city-tag">${esc(p.city)}</span>
+          <span class="lang-source">${esc(p.source || '')}${p.date ? ' · ' + esc(p.date) : ''}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Filter bar wiring
+  const filterBar = document.getElementById('lang-filter-bar');
+  filterBar.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    langList.querySelectorAll('.lang-card').forEach(card => {
+      let show = true;
+      if (filter !== 'all') {
+        const [type, val] = filter.split(':');
+        if (type === 'use') show = card.dataset.use === val;
+        if (type === 'platform') show = card.dataset.platform === val;
+      }
+      card.setAttribute('data-hidden', show ? 'false' : 'true');
+    });
+  });
+
+  // ── 3. Social Content Angles ──────────────────────────────
+  const allAngles = [];
+  for (const city of liveCities) {
+    for (const a of (city.research.social_angles || [])) {
+      allAngles.push({ ...a, city: city.city });
+    }
+  }
+
+  const anglesList = document.getElementById('social-angles-list');
+  anglesList.innerHTML = allAngles.map(a => `
+    <div class="angle-card">
+      <div class="angle-text">${esc(a.angle)}</div>
+      <div class="angle-footer">
+        ${a.format ? `<span class="angle-format-badge">${esc(a.format)}</span>` : ''}
+        ${a.platform ? `<span class="angle-platform-badge">${esc(a.platform)}</span>` : ''}
+        <span class="angle-city-tag">${esc(a.city)}</span>
+        ${a.source ? `<span class="angle-source">${esc(a.source)}</span>` : ''}
+      </div>
+    </div>
+  `).join('');
+
+  // ── 4. Platform Status ────────────────────────────────────
+  // Aggregate sources_unavailable across all live cities
+  const unavailableAll = [];
+  for (const city of liveCities) {
+    for (const s of (city.research.sources_unavailable || [])) {
+      unavailableAll.push(s.toLowerCase());
+    }
+  }
+
+  function platformStatus(keywords, positiveCheck) {
+    // positiveCheck: if any live city had data for this platform, it's green
+    const isDark = unavailableAll.some(s => keywords.some(k => s.includes(k)));
+    const isRateLimited = unavailableAll.some(s =>
+      keywords.some(k => s.includes(k)) && (s.includes('402') || s.includes('quota') || s.includes('rate'))
+    );
+    if (positiveCheck && !isDark) return 'green';
+    if (isRateLimited) return 'yellow';
+    if (isDark) return 'dark';
+    return 'green';
+  }
+
+  // Determine if a platform ever returned results across live cities
+  function anyResults(field) {
+    return liveCities.some(c => {
+      const rc = (c.research.run_confidence || '').toLowerCase();
+      return rc.includes(field);
+    });
+  }
+
+  // Reddit: check if any city got Reddit
+  const redditDark = unavailableAll.some(s => s.includes('reddit'));
+  const redditLimited = unavailableAll.some(s => s.includes('reddit') && (s.includes('rate') || s.includes('limit')));
+  const redditActive = liveCities.some(c =>
+    (c.research.run_confidence || '').toLowerCase().includes('reddit')
+    && !(c.research.sources_unavailable || []).some(s => s.toLowerCase().includes('reddit'))
+  );
+
+  // TikTok: check if any city got TikTok
+  const tiktokDark = unavailableAll.some(s => s.includes('tiktok'));
+  const tiktokActive = liveCities.some(c =>
+    (c.research.run_confidence || '').toLowerCase().includes('tiktok')
+    && !(c.research.sources_unavailable || []).some(s => s.toLowerCase().includes('tiktok'))
+  );
+
+  // YouTube: check sources_unavailable for youtube
+  const youtubeDark = unavailableAll.some(s => s.includes('youtube'));
+  const youtubeQuota = unavailableAll.some(s => s.includes('youtube') && (s.includes('402') || s.includes('quota')));
+
+  // X/Twitter
+  const twitterDark = unavailableAll.some(s => s.includes('twitter') || s.includes('x/twitter'));
+
+  const platforms = [
+    {
+      name: 'Reddit',
+      dot: redditActive ? 'green' : (redditLimited ? 'yellow' : (redditDark ? 'dark' : 'green')),
+      note: redditActive ? 'Active in some cities'
+           : redditDark ? 'Unavailable / rate-limited across runs'
+           : 'No data yet',
+    },
+    {
+      name: 'TikTok',
+      dot: tiktokActive ? 'green' : (tiktokDark ? 'dark' : 'green'),
+      note: tiktokActive ? 'Active in some cities'
+           : tiktokDark ? 'Unavailable in recent runs'
+           : 'No data yet',
+    },
+    {
+      name: 'YouTube',
+      dot: youtubeQuota ? 'yellow' : (youtubeDark ? 'dark' : 'green'),
+      note: youtubeQuota ? '402 quota errors — install yt-dlp to unlock'
+           : youtubeDark ? 'Unavailable in recent runs'
+           : 'Active',
+    },
+    {
+      name: 'X / Twitter',
+      dot: twitterDark ? 'dark' : 'green',
+      note: twitterDark ? 'Not configured' : 'Active',
+    },
+  ];
+
+  const platformGrid = document.getElementById('platform-status-grid');
+  platformGrid.innerHTML = platforms.map(p => `
+    <div class="platform-item">
+      <div class="platform-status-dot platform-status-${p.dot}"></div>
+      <div class="platform-info">
+        <div class="platform-name">${esc(p.name)}</div>
+        <div class="platform-note">${esc(p.note)}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // YouTube install note
+  const platformNotes = document.getElementById('platform-notes');
+  if (youtubeQuota || youtubeDark) {
+    platformNotes.innerHTML = `
+      <div class="platform-note-block">
+        YouTube: install <code>yt-dlp</code> (<code>brew install yt-dlp</code>) to unlock video research. Currently returning 402 quota errors or unavailable.
+      </div>
+    `;
+  } else {
+    platformNotes.innerHTML = '';
+  }
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -1245,6 +1983,106 @@ renderCompetitors();
 const savedTab = localStorage.getItem(TAB_STORAGE_KEY);
 if (savedTab) switchTab(savedTab);
 
+// ─────────────────────────────────────────────────────────────
+// CITY DETAIL DRAWER
+// ─────────────────────────────────────────────────────────────
+let _allCityData = null;
+
+function openCityDrawer(citySlug) {
+  if (!_allCityData) return;
+  const city = _allCityData.cities.find(c => c.city_slug === citySlug);
+  if (!city) return;
+  const r = city.research;
+
+  const signalsHtml = `
+    <div class="signal-grid">
+      ${r.parking_cost_signal ? `<div class="signal-item"><div class="signal-label">Parking cost</div><div class="signal-value">${esc(r.parking_cost_signal)}</div></div>` : ''}
+      ${r.availability_signal ? `<div class="signal-item"><div class="signal-label">Availability</div><div class="signal-value">${esc(r.availability_signal)}</div></div>` : ''}
+      ${r.regulatory_trend ? `<div class="signal-item"><div class="signal-label">Regulatory trend</div><div class="signal-value">${esc(r.regulatory_trend)}</div></div>` : ''}
+      ${r.hoa_friction_level ? `<div class="signal-item"><div class="signal-label">HOA friction</div><div class="signal-value">${esc(r.hoa_friction_level)}</div></div>` : ''}
+      ${r.visitor_parking_ratio ? `<div class="signal-item full-width"><div class="signal-label">Visitor parking ratio</div><div class="signal-value">${esc(r.visitor_parking_ratio)}</div></div>` : ''}
+      ${r.new_development_pipeline ? `<div class="signal-item full-width"><div class="signal-label">New development pipeline</div><div class="signal-value">${esc(r.new_development_pipeline)}</div></div>` : ''}
+    </div>`;
+
+  const contentGapHtml = r.content_gap ? `
+    <hr class="drawer-divider">
+    <div class="drawer-section">
+      <div class="drawer-section-title">Content gap</div>
+      <div class="content-gap-block">${esc(r.content_gap)}</div>
+    </div>` : '';
+
+  const competitorsHtml = '';
+
+  const socialHtml = (r.social_angles && r.social_angles.length) ? `
+    <hr class="drawer-divider">
+    <div class="drawer-section">
+      <div class="drawer-section-title">Social angles (${r.social_angles.length})</div>
+      ${r.social_angles.map(s => `
+        <div class="social-angle-row">
+          ${esc(s.angle)}
+          <div class="social-angle-meta">${esc(s.format || '')}${s.platform ? ` · ${esc(s.platform)}` : ''}${s.source ? ` · ${esc(s.source)}` : ''}</div>
+        </div>`).join('')}
+    </div>` : '';
+
+  const langBankHtml = (r.language_bank && r.language_bank.length) ? `
+    <hr class="drawer-divider">
+    <div class="drawer-section">
+      <div class="drawer-section-title">Language bank (${r.language_bank.length} phrases)</div>
+      ${r.language_bank.map(p => `
+        <div class="phrase-item">
+          <span class="phrase-text">"${esc(p.phrase)}"</span>
+          <span class="phrase-use ${esc(p.use||'')}">${esc(p.use)}</span>
+        </div>`).join('')}
+    </div>` : '';
+
+  const keywordsHtml = (r.top_keywords_found && r.top_keywords_found.length) ? `
+    <hr class="drawer-divider">
+    <div class="drawer-section">
+      <div class="drawer-section-title">Top keywords (${r.top_keywords_found.length})</div>
+      <div class="keyword-list">${r.top_keywords_found.map(k => `<span class="keyword-pill">${esc(k)}</span>`).join('')}</div>
+    </div>` : '';
+
+  const daysBack = daysAgo(r.last_run_date);
+  const runLabel = daysBack === 0 ? 'Today' : daysBack === 1 ? 'Yesterday' : `${daysBack}d ago`;
+
+  document.getElementById('city-drawer').innerHTML = `
+    <div class="drawer-header">
+      <span class="live-dot"></span>
+      <span class="city-name">${esc(city.city)}</span>
+      ${readinessBadge(r.market_readiness)}
+      <span style="font-size:0.75rem;color:var(--dim);margin-left:8px">${runLabel}</span>
+      <button class="drawer-close" onclick="closeCityDrawer()" aria-label="Close">✕</button>
+    </div>
+
+    <div class="drawer-section" style="padding-top:24px">
+      <div class="drawer-section-title">Outreach angle</div>
+      <div class="outreach-block"><div class="outreach-block-text">${esc(r.outreach_angle)}</div></div>
+    </div>
+
+    <hr class="drawer-divider">
+    <div class="drawer-section">
+      <div class="drawer-section-title">Market signals</div>
+      ${signalsHtml}
+    </div>
+
+    ${contentGapHtml}
+    ${competitorsHtml}
+    ${socialHtml}
+    ${langBankHtml}
+    ${keywordsHtml}
+  `;
+
+  document.getElementById('city-drawer-overlay').classList.add('open');
+  document.getElementById('city-drawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCityDrawer() {
+  document.getElementById('city-drawer-overlay').classList.remove('open');
+  document.getElementById('city-drawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 // Fetch data
 fetch('./city-index.json')
   .then(r => {
@@ -1252,10 +2090,12 @@ fetch('./city-index.json')
     return r.json();
   })
   .then(data => {
+    _allCityData = data;
     renderBanner(data);
     renderToday(data);
     renderLiveCities(data);
     renderPipeline(data);
+    renderSocial(data);
   })
   .catch(err => {
     console.error('Failed to load city-index.json:', err);
